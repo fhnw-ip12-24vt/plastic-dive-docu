@@ -10,6 +10,9 @@ Umfang dieses Dokuments 1-3 A4 Seiten.
 - Stimmen Sie diese Formulierung mit Kunden und Auftraggebern ab!
 
 Eine solche kurze Formulierung erleichtert die Kommunikation über das System. Sie definiert für alle Beteiligten das wichtigste Ziel (= das System). Gleichzeitig schafft sie einen begrifflichen Kontext, an dem sich alle Beteiligten orientieren können.
+
+Das System wird ein Videospiel sein, welches die Zielgruppe aufzeigt wie Mikroplastik ins Grundwasser gelangt und dadurch die Umwelt verschmutzt. Durch die Auswahl von Objekten aus den unteschiedlichen Materialien, welches eingescannt wird ,um die Schwierigkeit zu setzten, zeigen wir das unterschiedliches Material unteschiedliche Wirkung am Wasser hat. 
+
 ****
 
 == Kategorie von System
