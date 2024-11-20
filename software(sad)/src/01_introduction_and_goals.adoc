@@ -82,6 +82,7 @@ Tabelle mit Rollen- oder Personennamen, sowie deren Erwartungshaltung bezüglich
 [cols="1,1,2" options="header"]
 |===
 |Rolle |Kontakt |Erwartungshaltung
-| _<Rolle-1>_ | _<Kontakt-1>_ | _<Erwartung-1>_
-| _<Rolle-2>_ | _<Kontakt-2>_ | _<Erwartung-2>_ 
+| _PM_ | _David Cao_ | _<Erwartung-1>_
+| _UX_ | _Dean Bregenzer_ | _<Erwartung-2>_ 
+| _UX_ | _Dean Bregenzer_ | _<Erwartung-2>_ 
 |===
