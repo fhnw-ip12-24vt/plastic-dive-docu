@@ -21,3 +21,11 @@ Bei Bedarf unterscheiden Sie technische, organisatorische und politische Randbed
 Siehe https://docs.arc42.org/section-2/[Randbedingungen] in der online-Dokumentation (auf Englisch!).
 
 ****
+
+[cols="1,1,2" options="header"]
+|===
+|Rolle |Kontakt |Erwartungshaltung
+| _PM_ | _Simon Schneider_ | _<Erwartung-1>_
+| _SC_ | _Michael Galambos_ | _<Erwartung-2>_ 
+| _KOM_ | _Bojan Rodic | _<Erwartung-3>_ 
+|===
