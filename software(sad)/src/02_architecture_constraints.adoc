@@ -27,5 +27,5 @@ Siehe https://docs.arc42.org/section-2/[Randbedingungen] in der online-Dokumenta
 |Rolle |Kontakt |Erwartungshaltung
 | _PM_ | _Simon Schneider_ | _<Erwartung-1>_
 | _SC_ | _Michael Galambos_ | _<Erwartung-2>_ 
-| _KOM_ | _Bojan Rodic | _<Erwartung-3>_ 
+| _KOM_ | _Bojan Rodic_ | _<Erwartung-3>_ 
 |===
