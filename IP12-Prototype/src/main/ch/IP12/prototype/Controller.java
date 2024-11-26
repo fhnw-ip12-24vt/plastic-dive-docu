@@ -1,5 +1,7 @@
 package main.ch.IP12.prototype;
 
+import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import main.ch.IP12.prototype.model.Obstacle;
 import main.ch.IP12.prototype.model.Player;
 
@@ -20,6 +22,19 @@ public class Controller {
         this.executor = Executors.newSingleThreadScheduledExecutor();
     }
 
+    void createListeners(Scene scene){
+        scene.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.A || e.getCode() == KeyCode.LEFT) {
+
+            }
+            if (e.getCode() == KeyCode.D || e.getCode() == KeyCode.RIGHT) {
+
+            }
+            if (e.getCode() == KeyCode.S || e.getCode() == KeyCode.DOWN) {
+
+            }
+        });
+    }
 
     public void startGameLogic() {
         // Run the game logic at a fixed rate
