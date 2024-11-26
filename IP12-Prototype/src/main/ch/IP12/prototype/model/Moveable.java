@@ -1,5 +1,7 @@
 package main.ch.IP12.prototype.model;
 
+import main.ch.IP12.prototype.utils.IntUtils;
+
 public abstract class Moveable {
     public int x;
     public int y;
@@ -23,7 +25,7 @@ public abstract class Moveable {
 
     }
 
-    public boolean cloidesWith(Moveable moveable) {
-        return true;
+    public boolean collidesWith(Moveable moveable) {
+        return IntUtils.isRangeInRange(moveable.x, moveable.x+moveable.length, this.x, this.x+this.length) && IntUtils.isRangeInRange(moveable.y, moveable.y+moveable.height, this.y, this.y+this.height);
     }
 }

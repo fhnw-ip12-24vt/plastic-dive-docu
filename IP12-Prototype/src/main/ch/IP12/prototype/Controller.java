@@ -39,6 +39,10 @@ public class Controller {
         });
     }
 
+    void clearKeyListeners(Scene scene){
+        scene.setOnKeyPressed(e -> {});
+    }
+
     public void startGameLogic() {
         // Run the game logic at a fixed rate
         executor.scheduleAtFixedRate(() -> {
@@ -48,7 +52,7 @@ public class Controller {
                 player.update(deltaTime);
                 for (Obstacle obstacle : obstacles) {
                     obstacle.update(deltaTime);
-                    if (player.cloidesWith(obstacle)) {
+                    if (player.collidesWith(obstacle)) {
                         stopGameLogic();
                     };
                 }
