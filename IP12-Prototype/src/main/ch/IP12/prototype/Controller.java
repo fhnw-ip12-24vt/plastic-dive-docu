@@ -1,4 +1,4 @@
-package ch.IP12.prototype;
+package main.ch.IP12.prototype;
 
 public class Controller {
 }
