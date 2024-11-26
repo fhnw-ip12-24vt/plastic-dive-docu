@@ -14,7 +14,7 @@ public class App extends Application {
 
 
     public void start(Stage stage) {
-        Player player =  new Player();
+        Player player =  new Player(100,100,5,50,50,"asdf");
         ArrayList<Obstacle> obstacles = new ArrayList<>();
         Controller controller =  new Controller(player, obstacles);
 
