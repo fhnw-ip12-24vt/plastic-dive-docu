@@ -1,4 +1,4 @@
 package main.ch.IP12.prototype.model;
 
-public class Obtacle extends Moveable{
+public class Obstacle extends Moveable{
 }
