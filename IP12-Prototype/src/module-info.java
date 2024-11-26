@@ -1,9 +1,6 @@
-module com.example.hellofx {
+module main.ch.IP12.prototype {
     requires javafx.controls;
-    requires javafx.fxml;
 
-    requires com.almasb.fxgl.all;
 
-    opens com.example.hellofx to javafx.fxml;
-    exports com.example.hellofx;
+    exports main.ch.IP12.prototype;
 }

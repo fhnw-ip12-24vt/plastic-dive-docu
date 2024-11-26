@@ -10,7 +10,7 @@
       <plugin>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-maven-plugin</artifactId>
-        <version>0.0.8</version>
+        <version>${javafx.maven.plugin.version}</version>
         <configuration>
           <mainClass>ch.IP12.prototype.App</mainClass>
         </configuration>
@@ -46,6 +46,8 @@
   <properties>
     <maven.compiler.target>21</maven.compiler.target>
     <maven.compiler.source>21</maven.compiler.source>
+    <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <javafx.version>23.0.1</javafx.version>
   </properties>
 </project>
