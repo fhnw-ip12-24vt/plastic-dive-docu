@@ -21,7 +21,7 @@ public abstract class Moveable {
     }
     public void move(int direction){
 
-    };
+    }
 
     public boolean cloidesWith(Moveable moveable) {
         return true;

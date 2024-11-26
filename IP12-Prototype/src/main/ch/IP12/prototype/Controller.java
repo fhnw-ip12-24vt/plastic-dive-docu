@@ -25,13 +25,16 @@ public class Controller {
     void createListeners(Scene scene){
         scene.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.A || e.getCode() == KeyCode.LEFT) {
-
+                player.x--;
             }
             if (e.getCode() == KeyCode.D || e.getCode() == KeyCode.RIGHT) {
-
+                player.x++;
             }
             if (e.getCode() == KeyCode.S || e.getCode() == KeyCode.DOWN) {
-
+                player.y++;
+            }
+            if(e.getCode() == KeyCode.W || e.getCode() == KeyCode.UP){
+                player.y--;
             }
         });
     }
@@ -45,6 +48,9 @@ public class Controller {
                 player.update(deltaTime);
                 for (Obstacle obstacle : obstacles) {
                     obstacle.update(deltaTime);
+                    if (player.cloidesWith(obstacle)) {
+                        stopGameLogic();
+                    };
                 }
             }
         }, 0, 16, TimeUnit.MILLISECONDS); // 16ms ≈ 60 updates per second
