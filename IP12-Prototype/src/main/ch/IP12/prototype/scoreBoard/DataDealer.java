@@ -13,14 +13,16 @@ public class DataDealer {
     private String fileName;
     private final int sizeLimit;
 
-    public DataDealer(String fileName) throws IOException {
+    private static DataDealer instance = null;
+
+    private DataDealer(String fileName) throws IOException {
         this(fileName, 10);
     }
 
-    public DataDealer(String fileName, int BoardSizeLimit) throws IOException {
+    private DataDealer(String fileName, int boardSizeLimit) throws IOException {
         //check for file existence and creation if it doesn't
         boolean b;
-        sizeLimit = BoardSizeLimit;
+        sizeLimit = boardSizeLimit;
         setFileName(fileName);
         File f = new File(fileName);
         if(!f.exists()){
@@ -30,10 +32,24 @@ public class DataDealer {
         assert f.isFile();
     }
 
+    public static DataDealer getInstance(String fileName) throws IOException {
+        if(instance == null){
+            instance = new DataDealer(fileName);
+        }
+        return instance;
+    }
+
+    public static DataDealer getInstance(String fileName, int boardSizeLimit) throws IOException {
+        if(instance == null){
+            instance = new DataDealer(fileName, boardSizeLimit);
+        }
+        return instance;
+    }
+
     //IDE doesn't show warnings for "put" or "add" methods
     @SuppressWarnings("unchecked")
     //write score and datetime to JSON file
-    public void dataStore(String name, long Score){
+    public void dataStore(String name, long score){
         //create variables for JSON and content writing functionality
         boolean b = false;
         JSONObject json = new JSONObject();
@@ -42,7 +58,7 @@ public class DataDealer {
 
         //add values to JSON Object
         json.put("Name", name);
-        json.put("Score", Score);
+        json.put("Score", score);
 
         //write to file if it has entries already
         try {

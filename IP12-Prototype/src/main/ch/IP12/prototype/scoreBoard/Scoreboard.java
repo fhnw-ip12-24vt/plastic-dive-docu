@@ -46,7 +46,7 @@ public class Scoreboard {
 
     //refresh values inside scoreboard
     public void insertValues() throws IOException {
-        DataDealer d = new DataDealer("Highscore.json");
+        DataDealer d = DataDealer.getInstance("Highscore.json");
         scoreboard.clear();
         scoreboard.putAll(d.getValues());
     }
