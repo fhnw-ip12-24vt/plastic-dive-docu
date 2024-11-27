@@ -19,7 +19,7 @@ public class App extends Application {
 
     public void start(Stage stage) {
         //Creates the player and an array list for all the obstacles
-        Player player =  new Player(100,100,10,50,50,"asdf");
+        Player player =  new Player(100,100,3,50,50,"asdf");
         ArrayList<Obstacle> obstacles = new ArrayList<>();
 
         //Creates the area which we draw all the images on

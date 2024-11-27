@@ -6,12 +6,15 @@ import main.ch.IP12.prototype.model.Obstacle;
 import main.ch.IP12.prototype.model.Player;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Controller {
+    private final List<KeyCode> pressedKeys = Collections.synchronizedList(new ArrayList<KeyCode>());
     private Player player;
     private ArrayList<Obstacle> obstacles;
     private final ScheduledExecutorService executor;
@@ -28,23 +31,52 @@ public class Controller {
      * @param scene The Scene object which will receive the listeners
      */
     void createListeners(Scene scene){
+        scene.setOnKeyReleased(e -> {
+            if(!running){
+                //If the game is over and the player presses a button the key listeners are cleared
+                clearKeyListeners(scene);
+                return;
+            }
+
+            if (e.getCode() == KeyCode.A && pressedKeys.contains(e.getCode()) || e.getCode() == KeyCode.LEFT && pressedKeys.contains(e.getCode())) {
+                player.tempDir[1] = false;
+                pressedKeys.remove(e.getCode());
+            }
+            if (e.getCode() == KeyCode.D && pressedKeys.contains(e.getCode()) || e.getCode() == KeyCode.RIGHT && pressedKeys.contains(e.getCode())) {
+                player.tempDir[0] = false;
+                pressedKeys.remove(e.getCode());
+            }
+            if (e.getCode() == KeyCode.S && pressedKeys.contains(e.getCode()) || e.getCode() == KeyCode.DOWN && pressedKeys.contains(e.getCode())) {
+                player.tempDir[3] = false;
+                pressedKeys.remove(e.getCode());
+            }
+            if(e.getCode() == KeyCode.W && pressedKeys.contains(e.getCode()) || e.getCode() == KeyCode.UP && pressedKeys.contains(e.getCode())){
+                player.tempDir[2] = false;
+                pressedKeys.remove(e.getCode());
+            }
+        });
         scene.setOnKeyPressed(e -> {
             if(!running){
                 //If the game is over and the player presses a button the key listeners are cleared
                 clearKeyListeners(scene);
                 return;
             }
-            if (e.getCode() == KeyCode.A || e.getCode() == KeyCode.LEFT) {
-                player.x -= player.speed;
+
+            if (e.getCode() == KeyCode.A && !pressedKeys.contains(e.getCode()) || e.getCode() == KeyCode.LEFT && !pressedKeys.contains(e.getCode())) {
+                player.tempDir[1] = true;
+                pressedKeys.add(e.getCode());
             }
-            if (e.getCode() == KeyCode.D || e.getCode() == KeyCode.RIGHT) {
-                player.x += player.speed;
+            if (e.getCode() == KeyCode.D && !pressedKeys.contains(e.getCode()) || e.getCode() == KeyCode.RIGHT && !pressedKeys.contains(e.getCode())) {
+                player.tempDir[0] = true;
+                pressedKeys.add(e.getCode());
             }
-            if (e.getCode() == KeyCode.S || e.getCode() == KeyCode.DOWN) {
-                player.y += player.speed;
+            if (e.getCode() == KeyCode.S && !pressedKeys.contains(e.getCode()) || e.getCode() == KeyCode.DOWN && !pressedKeys.contains(e.getCode())) {
+                player.tempDir[3] = true;
+                pressedKeys.add(e.getCode());
             }
-            if(e.getCode() == KeyCode.W || e.getCode() == KeyCode.UP){
-                player.y -= player.speed;
+            if(e.getCode() == KeyCode.W && !pressedKeys.contains(e.getCode()) || e.getCode() == KeyCode.UP && !pressedKeys.contains(e.getCode())){
+                player.tempDir[2] = true;
+                pressedKeys.add(e.getCode());
             }
         });
     }
@@ -55,6 +87,7 @@ public class Controller {
      */
     void clearKeyListeners(Scene scene){
         scene.setOnKeyPressed(e -> {});
+        scene.setOnKeyReleased(e -> {});
     }
 
     /**
@@ -67,19 +100,17 @@ public class Controller {
             if (running) {
                 // Update the model (logic)
                 gameTicks.getAndIncrement();
-                System.out.println(gameTicks.get());
 
                 if (gameTicks.get() % 100 == 0) {
                     obstacles.add(new Obstacle(900, (int) (Math.random() * 500 + 50), 2, (int) (Math.random() * 50 + 10), (int) (Math.random() * 50 + 10), "asdf"));
                 }
 
                 double deltaTime = 0.016; // Approx. 60 FPS
+                player.moving = !pressedKeys.isEmpty();
                 player.update(deltaTime);
                 for (Obstacle obstacle : obstacles) {
                     //Obstacle movement to the left
-                    obstacle.x -= obstacle.speed;
                     obstacle.update(deltaTime);
-
                     if (player.collidesWith(obstacle)) {
                         stopGameLogic();
                     }

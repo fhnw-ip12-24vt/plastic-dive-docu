@@ -8,6 +8,9 @@ public abstract class Moveable {
     public final int speed;
     public int length;
     public int height;
+    public int direction;
+    public boolean[] tempDir = new boolean[4];
+    public boolean moving = true;
     //path to animation images
     public String spritePath;
 
@@ -25,15 +28,17 @@ public abstract class Moveable {
      * @param deltaTime
      */
     public void update(double deltaTime){
-        move(0);
+        if(moving){
+            move();
+        }
     }
 
     /**
      * Moves the moveable object in the specified direction.
-     * @param direction
      */
-    public void move(int direction) {
-
+    public void move() {
+        x += (int)(Math.cos(Math.toRadians(direction))*speed);
+        y += (int)(Math.sin(Math.toRadians(direction))*speed);
     }
 
     /**
