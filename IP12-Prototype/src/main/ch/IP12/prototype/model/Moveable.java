@@ -19,7 +19,7 @@ public abstract class Moveable {
         this.spritePath = spritePath;
     }
 
-    public void update(double deltaTime) {
+    public void update(double deltaTime){
         move(0);
     }
 
@@ -28,6 +28,7 @@ public abstract class Moveable {
     }
 
     public boolean collidesWith(Moveable moveable) {
-        return IntUtils.isRangeInRange(moveable.x, moveable.x+moveable.length, this.x, this.x+this.length) && IntUtils.isRangeInRange(moveable.y, moveable.y+moveable.height, this.y, this.y+this.height);
+        return IntUtils.isRangeInRange(moveable.x, moveable.x+moveable.length, this.x, this.x+this.length)
+                && IntUtils.isRangeInRange(moveable.y, moveable.y+moveable.height, this.y, this.y+this.height);
     }
 }

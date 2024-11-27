@@ -25,6 +25,10 @@ public class Controller {
 
     void createListeners(Scene scene){
         scene.setOnKeyPressed(e -> {
+            if(!running){
+                clearKeyListeners(scene);
+                return;
+            }
             if (e.getCode() == KeyCode.A || e.getCode() == KeyCode.LEFT) {
                 player.x -= player.speed;
             }
