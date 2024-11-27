@@ -1,0 +1,172 @@
+# Technischer Testplan zur Funktionsprüfung eines Raspberry Pi 3
+
+## Ziel des Tests
+Den Raspberry Pi 3 auf vollständige Funktionsfähigkeit überprüfen. Dazu gehören:
+1. Test der Hardware-Komponenten (CPU, RAM, GPU, Anschlüsse, Netzwerk).
+2. Überprüfung der Peripherie (HDMI, USB, GPIO, SD-Karte).
+3. Validierung der Stabilität unter Last.
+4. Sicherstellen, dass der Raspberry Pi für weitere Projekte geeignet ist.
+
+---
+
+## Testumgebung
+
+### Benötigte Hardware:
+1. **Raspberry Pi 3** (mit Gehäuse und ggf. Kühlung).
+2. **MicroSD-Karte** (mindestens 8 GB, funktionsfähig, mit Raspberry Pi OS vorinstalliert).
+3. **Stromadapter** (mindestens 2,5 A).
+4. **HDMI-Bildschirm**.
+5. **USB-Tastatur und -Maus**.
+6. **Ethernet-Kabel** oder kompatibler WLAN-Zugang.
+7. **Multimeter** (optional, zur Spannungsmessung).
+8. Testgeräte für GPIO-Pins (z. B. LEDs, Widerstände, Breadboard).
+
+### Benötigte Software:
+1. Betriebssystem: **Raspberry Pi OS** (Lite oder Desktop-Version).
+2. Testtools:
+   - **stress** (für CPU- und RAM-Tests).
+   - **vcgencmd** (für GPU- und Temperaturtests).
+   - **gpio** (für GPIO-Tests).
+   - **Netzwerkdiagnosetools** (ping, iperf3).
+
+---
+
+## Testablauf
+
+### 1. Stromversorgungstest (5 Minuten)
+- **Ziel**: Sicherstellen, dass der Raspberry Pi korrekt mit Strom versorgt wird.
+- **Schritte**:
+  1. Raspberry Pi anschließen und starten.
+  2. Power-LED überprüfen (sollte konstant leuchten).
+  3. Optional: Spannung an den GPIO-Pins messen:
+     - Pin 2 (5V) und Pin 6 (GND): Sollten ca. 5V liefern.
+     - Pin 1 (3.3V) und Pin 6 (GND): Sollten ca. 3.3V liefern.
+- **Bewertungskriterien**:
+  - Power-LED leuchtet konstant.
+  - Spannung ist innerhalb der Toleranz (±5%).
+
+---
+
+### 2. Boot- und SD-Kartentest (5 Minuten)
+- **Ziel**: Sicherstellen, dass die SD-Karte gelesen wird und das Betriebssystem korrekt startet.
+- **Schritte**:
+  1. Raspberry Pi starten und Boot-Dauer messen.
+  2. Während des Bootens HDMI-Ausgabe überprüfen.
+  3. Anmelden und Verfügbarkeit des Dateisystems prüfen (`df -h`).
+- **Bewertungskriterien**:
+  - Boot erfolgt innerhalb von 30 Sekunden.
+  - Keine Fehler beim Laden des Betriebssystems.
+  - Dateisystem ist korrekt gemountet.
+
+---
+
+### 3. CPU- und RAM-Test (10 Minuten)
+- **Ziel**: Belastungstest für CPU und RAM, um Stabilität sicherzustellen.
+- **Schritte**:
+  1. `stress`-Tool installieren und starten:
+     ```bash
+     sudo apt-get install stress
+     stress --cpu 4 --vm 2 --vm-bytes 128M --timeout 300s
+     ```
+  2. CPU-Auslastung und Temperatur während des Tests überwachen:
+     - `vcgencmd measure_temp` oder
+     - Alternativ `htop` verwenden.
+- **Bewertungskriterien**:
+  - CPU bleibt stabil ohne Abstürze.
+  - Temperatur bleibt unter 80°C (falls nötig, Kühlung prüfen).
+  - Keine Fehlermeldungen während des Tests.
+
+---
+
+### 4. Netzwerk- und Internetverbindungstest (5 Minuten)
+- **Ziel**: Sicherstellen, dass LAN und WLAN korrekt funktionieren.
+- **Schritte**:
+  1. **LAN-Test**:
+     - Ethernet-Kabel anschließen.
+     - Netzwerkstatus prüfen (`ifconfig` oder `ip a`).
+     - Verbindung testen:
+       ```bash
+       ping -c 4 8.8.8.8
+       ```
+  2. **WLAN-Test**:
+     - WLAN-Netzwerk einrichten (`raspi-config` oder GUI).
+     - Verbindung prüfen wie bei LAN.
+- **Bewertungskriterien**:
+  - LAN und WLAN verbinden sich erfolgreich.
+  - Ping-Zeit ist stabil (z. B. <50ms zu einem lokalen Server).
+
+---
+
+### 5. GPIO-Funktionstest (10 Minuten)
+- **Ziel**: Testen, ob GPIO-Pins korrekt arbeiten.
+- **Schritte**:
+  1. Testaufbau mit einer LED:
+     - LED und Widerstand an GPIO-Pin (z. B. Pin 18) und GND anschließen.
+  2. GPIO-Pin testen:
+     ```bash
+     gpio -g mode 18 out
+     gpio -g write 18 1  # LED sollte leuchten
+     gpio -g write 18 0  # LED sollte ausgehen
+     ```
+  3. Alternativ: Input-Pin testen mit Taster.
+- **Bewertungskriterien**:
+  - LED reagiert korrekt auf GPIO-Befehle.
+  - Keine GPIO-Fehlermeldungen.
+
+---
+
+### 6. HDMI- und USB-Test (5 Minuten)
+- **Ziel**: Sicherstellen, dass HDMI- und USB-Anschlüsse korrekt funktionieren.
+- **Schritte**:
+  1. **HDMI-Bildschirm** testen: Videoausgabe beobachten (keine Flackern oder Ausfälle).
+  2. **USB-Anschlüsse** prüfen:
+     - Tastatur und Maus anschließen.
+     - Reaktion testen (z. B. Texteingabe in der Konsole).
+- **Bewertungskriterien**:
+  - HDMI zeigt klare und stabile Ausgabe.
+  - USB-Geräte funktionieren problemlos.
+
+---
+
+### 7. Temperatur- und Laststabilitätstest (10 Minuten)
+- **Ziel**: System unter Dauerlast auf Überhitzung und Stabilität prüfen.
+- **Schritte**:
+  1. CPU und GPU unter Last setzen:
+     ```bash
+     stress --cpu 4 --timeout 600s
+     ```
+  2. GPU-Auslastung testen:
+     ```bash
+     glxgears
+     ```
+  3. Temperatur regelmäßig messen:
+     ```bash
+     vcgencmd measure_temp
+     ```
+- **Bewertungskriterien**:
+  - System bleibt stabil und schaltet sich nicht ab.
+  - Temperatur überschreitet nicht 80°C (mit passiver Kühlung).
+
+---
+
+## Ergebnisanalyse
+
+### Quantitative Ergebnisse:
+- Bootzeit, Netzwerk-Latenz, GPIO-Reaktionszeit, Temperaturwerte unter Last.
+
+### Qualitative Ergebnisse:
+- Beobachtungen zu HDMI- und USB-Ausgabe.
+- Stabilität des Systems unter Last.
+
+### Bewertungskriterien:
+- Raspberry Pi erfüllt alle Testanforderungen.
+- Alle Anschlüsse und Schnittstellen arbeiten fehlerfrei.
+- Temperatur bleibt im sicheren Bereich.
+
+---
+
+## Erwartetes Ergebnis
+Der Test stellt sicher, dass der Raspberry Pi 3 für den Einsatz geeignet ist.
+Abweichungen (z. B. Überhitzung, fehlerhafte GPIOs) deuten auf Hardwareprobleme hin,
+die behoben oder durch Austausch des Geräts gelöst werden müssen.
+```

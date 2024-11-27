@@ -1,0 +1,106 @@
+# User-Experience-Testplan für den Figma-Prototypen
+(Es gibt 3 Prototypen mit unterschiedlichen Designs)
+
+## Ziel des Tests
+Den Design-Prototypen des Spiels in Figma zu evaluieren, um:
+1. Das visuelle Design und die Spielidee zu bewerten.
+2. Die Intuitivität und Benutzerführung zu testen.
+3. Feedback zur generellen Attraktivität und Verständlichkeit des Spiels zu sammeln.
+4. Erste Eindrücke zur Spielmechanik und -idee zu gewinnen.
+
+---
+
+## Testumgebung
+### Software:
+- **Figma-Prototyp** mit interaktiven Elementen:
+  - Fischbewegung.
+  - Hindernisse.
+  - Spielablauf.
+- Gerät mit großem Bildschirm (z. B. Laptop, Tablet).
+- Browser oder Figma-App für die Präsentation.
+
+### Teilnehmer:
+- **2-4 Testpersonen** mit unterschiedlichen Gaming- und Design-Hintergründen:
+  - 2 Laien (keine Gaming-Erfahrung, keine Designkenntnisse).
+  - 1 Gelegenheits-Nutzer.
+  - 1 Experte (Gaming- oder UX-Design-Erfahrung).
+- **Alter**: 12-16 Jahre.
+
+---
+
+## Testablauf
+
+### 1. Einführung (5 Minuten)
+- **Aufgabe**:
+  - Kurze Präsentation des Prototypen:
+    - Ziel des Spiels: "Ein Fisch schwimmt von links nach rechts und muss Müllhindernissen ausweichen."
+    - Der Fokus liegt auf dem Design, der Benutzerführung und der Spielidee – keine funktionale Steuerung.
+  - Teilnehmer erhalten die Aufgabe, den Prototyp zu erkunden und anschließend Feedback zu geben.
+
+---
+
+### 2. Navigation und Benutzerführung (10 Minuten)
+- **Aufgabe**:
+  - Teilnehmer klicken sich durch den Prototyp:
+    - Hauptmenü (falls vorhanden).
+    - Spielstart-Screen.
+    - Spielablauf-Screen (Fischbewegung und Hindernisse).
+    - Game-Over-Screen (falls vorhanden).
+  - **Frage**: "Ist der Ablauf logisch und intuitiv?"
+- **Bewertungskriterien**:
+  - Verständnis der Benutzerführung (Ist klar, wo man klicken muss?).
+  - Übersichtlichkeit der Screens (Wirkt der Aufbau strukturiert?).
+  - Übergänge zwischen den Screens (Sind sie verständlich und ansprechend?).
+
+---
+
+### 3. Feedback zur visuellen Gestaltung (15 Minuten)
+- **Aufgabe**:
+  - Teilnehmer geben Feedback zu den folgenden Aspekten:
+    - **Hauptcharakter (Fisch)**: Ist das Design ansprechend und passend zur Spielidee?
+    - **Hindernisse (Müll)**: Sind sie leicht erkennbar und thematisch passend?
+    - **Hintergrund**: Passt die Gestaltung zur Spielatmosphäre (Farben, Stil)?
+- **Zusatzfragen**:
+  - Welche Elemente finden Sie optisch gelungen?
+  - Was wirkt unpassend oder störend?
+
+---
+
+### 4. Feedback zur Spielidee (10 Minuten)
+- **Diskussionsthemen**:
+  - Ist die Idee, Müll auszuweichen, klar und verständlich?
+  - Finden Sie die Spielidee originell oder unterhaltsam?
+  - Welche Emotionen löst das Spielkonzept bei Ihnen aus?
+  - Können Sie sich vorstellen, das Spiel ein zweites Mal zu spielen, um einen höheren Score zu erreichen?
+
+---
+
+### 5. Verbesserungsvorschläge und offene Diskussion (10 Minuten)
+- **Fragen an die Teilnehmer**:
+  - Gibt es Funktionen oder Designs, die Ihnen fehlen (z. B. Power-Ups, Punktesystem)?
+  - Haben Sie Vorschläge zur Verbesserung des Designs?
+  - Wie bewerten Sie das Gesamterlebnis auf einer Skala von 1-10?
+  - Wären Sie interessiert, eine voll funktionsfähige Version zu spielen?
+
+---
+
+## Ergebnisanalyse
+
+### 1. Quantitative Daten:
+- Bewertungen der Benutzerführung, des Designs und der Spielidee (Skala 1-10).
+- Anzahl der positiven/negativen Kommentare zu spezifischen Elementen (z. B. Fisch, Hindernisse).
+
+### 2. Qualitative Daten:
+- Häufiges Feedback zu Design, Struktur und Spielidee.
+- Vorschläge für Verbesserungen oder Erweiterungen.
+
+### 3. Offene Punkte:
+- Diskussion über Konflikte zwischen Design und Benutzerfreundlichkeit.
+- Unklare oder verwirrende Elemente im Prototyp.
+
+---
+
+## Erwartetes Ergebnis
+Der Test soll Aufschluss darüber geben, ob das visuelle Design und die Spielidee überzeugend und verständlich sind.
+Er liefert die Basis für Anpassungen am Layout, den visuell-interaktiven Elementen und der thematischen Gestaltung.
+So kann der Übergang von der Designphase zur Implementierung optimal vorbereitet werden.

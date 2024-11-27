@@ -1,4 +1,4 @@
-```markdown
+
 # User-Experience-Testplan für den Prototypen
 
 ## Ziel des Tests
@@ -46,7 +46,7 @@ Den groben Prototypen des Spiels zu evaluieren, um:
     - Nach oben/unten navigieren.
     - Überprüfen, wie präzise die Steuerung auf Joystick oder Tastatur-Eingaben reagiert.
   - **Verweildauer**:
-    - 2 Minuten freies Bewegen ohne Hindernisse.
+    - 2 Minuten freies Bewegen.
 - **Bewertungskriterien**:
   - Reaktionszeit (Verzögerung wahrnehmbar?).
   - Genauigkeit (Bewegt sich der Fisch wie erwartet?).
@@ -102,5 +102,6 @@ Den groben Prototypen des Spiels zu evaluieren, um:
 ---
 
 ## Erwartetes Ergebnis
-Dieser Test wird grundlegendes Feedback zur Benutzerfreundlichkeit und Intuitivität des Spiels liefern. Auf Basis der Ergebnisse können Anpassungen an der Steuerung, der Schwierigkeitsbalance und der visuellen Gestaltung vorgenommen werden.
+Dieser Test wird grundlegendes Feedback zur Benutzerfreundlichkeit und Intuitivität des Spiels liefern.
+Auf Basis der Ergebnisse können Anpassungen an der Steuerung, der Schwierigkeitsbalance und der visuellen Gestaltung vorgenommen werden.
 ```
