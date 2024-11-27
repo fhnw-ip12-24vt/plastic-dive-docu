@@ -4,8 +4,6 @@
 // Beschreiben Sie hier, wann Sie was testen wollen.
 
 
-# Testplan für die Projektwoche (25.11. – 29.11.2024)
-
 ## Einleitung
 Dieser Testplan bietet eine strukturierte Anleitung für die Durchführung und Dokumentation von Tests. Ziel ist es, präzise Ergebnisse im Testprotokoll festzuhalten und diese an den Testmanager (TM) weiterzugeben. Durch die frühzeitige Identifikation von Problemen in Hard- oder Software lassen sich Verzögerungen in der Projektentwicklung minimieren. Besonders wichtig ist das Feedback von Testpersonen im Zielgruppenalter, da es die Benutzerfreundlichkeit beeinflusst und wertvolle Erkenntnisse für die nächste Entwicklungsphase liefert.
 
@@ -39,6 +37,8 @@ Dieser Testplan bietet eine strukturierte Anleitung für die Durchführung und D
 ---
 
 ## Testpläne
+
+# Testplan für die Projektwoche (25.11. – 29.11.2024)
 
 ### 1. User-Experience-Test für Prototypen (Raspberry Pi oder PC)
 - **Ziel**: Evaluierung der Benutzererfahrung bei der Steuerung, speziell der Joystick-Eingaben.
