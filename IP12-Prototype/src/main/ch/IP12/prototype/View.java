@@ -22,6 +22,9 @@ public class View {
         this.obstacles = obstacles;
     }
 
+    /**
+     * Start rendering the relevant images for the objects on screen.
+     */
     public void startRendering() {
         AnimationTimer animationTimer = new AnimationTimer() {
             @Override
@@ -32,6 +35,9 @@ public class View {
         animationTimer.start();
     }
 
+    /**
+     * Draws the objects on the screen
+     */
     private void render() {
         graphicsContext.setFill(Color.BLACK);
         graphicsContext.fillRect(0, 0, 800, 600);

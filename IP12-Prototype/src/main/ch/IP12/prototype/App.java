@@ -10,7 +10,6 @@ import main.ch.IP12.prototype.model.Obstacle;
 import main.ch.IP12.prototype.model.Player;
 
 import java.util.ArrayList;
-import java.util.Stack;
 
 public class App extends Application {
     public static void main(String[] args) {
@@ -19,19 +18,23 @@ public class App extends Application {
 
 
     public void start(Stage stage) {
+        //Creates the player and an array list for all the obstacles
         Player player =  new Player(100,100,10,50,50,"asdf");
         ArrayList<Obstacle> obstacles = new ArrayList<>();
 
+        //Creates the area which we draw all the images on
         Canvas canvas = new Canvas(800, 600);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
 
+        //Initializes the controller and starts the game
         Controller controller = new Controller(player, obstacles);
         controller.startGameLogic();
 
-
+        //Starts the View and passes it the relevant things that are to be displayed
         View view = new View(graphicsContext, player, obstacles);
         view.startRendering();
 
+        //creates window and passes it the relevant objects (necessary for display)
         StackPane root = new StackPane(canvas);
         Scene scene = new Scene(root);
         controller.createListeners(scene);
@@ -39,7 +42,7 @@ public class App extends Application {
         stage.setTitle("MVC Example");
         stage.show();
 
-
+        //Stops the game if the window is exited
         stage.setOnCloseRequest(event -> controller.stopGameLogic());
     }
 

@@ -23,9 +23,14 @@ public class Controller {
         this.executor = Executors.newSingleThreadScheduledExecutor();
     }
 
+    /**
+     * Creates Key listeners for movement logic.
+     * @param scene The Scene object which will receive the listeners
+     */
     void createListeners(Scene scene){
         scene.setOnKeyPressed(e -> {
             if(!running){
+                //If the game is over and the player presses a button the key listeners are cleared
                 clearKeyListeners(scene);
                 return;
             }
@@ -44,10 +49,17 @@ public class Controller {
         });
     }
 
+    /**
+     * Clears Key listeners from provided Scene Object
+     * @param scene Scene Object
+     */
     void clearKeyListeners(Scene scene){
         scene.setOnKeyPressed(e -> {});
     }
 
+    /**
+     * Starts the game logic, such as Obstacle movement and tick incrementation.
+     */
     public void startGameLogic() {
         // Run the game logic at a fixed rate
         AtomicInteger gameTicks = new AtomicInteger();
@@ -64,8 +76,10 @@ public class Controller {
                 double deltaTime = 0.016; // Approx. 60 FPS
                 player.update(deltaTime);
                 for (Obstacle obstacle : obstacles) {
+                    //Obstacle movement to the left
                     obstacle.x -= obstacle.speed;
                     obstacle.update(deltaTime);
+
                     if (player.collidesWith(obstacle)) {
                         stopGameLogic();
                     }
@@ -74,6 +88,9 @@ public class Controller {
         }, 0, 16, TimeUnit.MILLISECONDS); // 16ms ≈ 60 updates per second
     }
 
+    /**
+     * Stops the game logic from running and kills all other threads related to it.
+     */
     public void stopGameLogic() {
         running = false;
         executor.shutdown();

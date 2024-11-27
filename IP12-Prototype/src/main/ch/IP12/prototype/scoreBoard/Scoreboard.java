@@ -6,8 +6,9 @@ import java.util.*;
 public class Scoreboard {
     //scoreboard list of scores and when
     private final Map<String, Long> scoreboard = new TreeMap<>();
+    private static Scoreboard instance = null;
 
-    Scoreboard(){
+    private Scoreboard(){
         try{
             insertValues();
         } catch (IOException e){
@@ -15,18 +16,35 @@ public class Scoreboard {
         }
     }
 
-    //return highest score value
-    public Long getHighscore(){
-        Long t = 0L;
-        for (Long i : scoreboard.values()){
-            if (i > t){
-                t = i;
-            }
+    public static Scoreboard getInstance(){
+        if (instance == null){
+            instance = new Scoreboard();
         }
-        return t;
+        return instance;
     }
 
-    //print Entire scoreboard
+    /**
+     * @return Highest score value on the leaderboard
+     */
+    public ScoreboardEnitity getHighscore(){
+        Long t = 0L;
+        String prevKey = "";
+        for (String i : scoreboard.keySet()){
+            if (prevKey.equals("")){
+                t = scoreboard.get(i);
+                prevKey = i;
+            } else if (scoreboard.get(i) > scoreboard.get(prevKey)){
+                t = scoreboard.get(i);
+                prevKey = i;
+            }
+        }
+        return new ScoreboardEnitity(t, prevKey);
+    }
+
+    /**
+     * Returns entire scoreboard.
+     * @return All the entries in the Scoreboard.
+     */
     public ScoreboardEnitity[] getList(){
         ArrayList<ScoreboardEnitity> list = new ArrayList<>();
         for (String i : scoreboard.keySet()){
@@ -44,7 +62,10 @@ public class Scoreboard {
         return list.toArray(new ScoreboardEnitity[0]);
     }
 
-    //refresh values inside scoreboard
+    /**
+     * Update values in the scoreboard
+     * @throws IOException File interaction warrants possible errors.
+     */
     public void insertValues() throws IOException {
         DataDealer d = DataDealer.getInstance("Highscore.json");
         scoreboard.clear();
