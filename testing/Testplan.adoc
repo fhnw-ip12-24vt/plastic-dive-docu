@@ -2,3 +2,93 @@
 
 // https://de.parasoft.com/blog/how-to-write-test-cases-for-software-examples-tutorial/
 // Beschreiben Sie hier, wann Sie was testen wollen.
+
+Testplan
+
+Einleitung
+Dieser Testplan dient als strukturierter Leitfaden für die Durchführung der erarbeiteten Tests. Ziel ist es, die Ergebnisse präzise im Testprotokoll zu dokumentieren und anschließend an den Testmanager (TM) zu übermitteln. Die frühzeitige Identifikation von Hardware- oder Softwareproblemen ermöglicht eine gezielte Reaktion und reduziert potenzielle Verzögerungen in der Entwicklungsphase.
+Besonders wichtig ist das Feedback von Testpersonen im vorgesehenen Altersbereich. Diese Rückmeldungen liefern wertvolle Erkenntnisse für die Optimierung der Benutzererfahrung und beeinflussen die nächste Entwicklungsphase maßgeblich.
+Wichtige Hinweise:
+•	Alle Tests müssen vollständig und gewissenhaft durchgeführt werden.
+•	Die Ergebnisse sind schriftlich festzuhalten und das Testprotokoll am Ende mit Datum und Unterschrift zu versehen.
+•	Rückmeldungen und Testergebnisse sollen an TM weitergeleitet werden.
+________________________________________
+Protokoll und Abschluss
+Am Ende jedes Tests sind die Ergebnisse schriftlich zu dokumentieren. Das Protokoll muss am Schluss mit Datum und Unterschrift versehen und an den TM übermittelt werden. Ein Protokoll ist im Moment ein von Hand oder PC verfasstes Dokument, welches Unterschrieben und Digital hinterlegt ist. Man listet die Punkte aus dem Testskript auf und Notiert die Ergebnisse.
+Protokoll enthält:
+•	Testergebnisse (quantitativ und qualitativ).
+•	Auffälligkeiten oder Mängel.
+•	Vorschläge oder Beobachtungen für mögliche Verbesserungen.
+________________________________________
+Wichtige Ansprechpartner:
+•	Testmanager (TM): Koordination und Auswertung der Tests.
+•	Projektmanager (PM): Organisation und Planung der nächsten Schritte.
+•	User-Experience-Manager (UX): Rückmeldungen zu Benutzererfahrung und Design.
+•	Softwarearchitekten (SA): Analyse und Behebung technischer Probleme.
+•	Softwareentwickler (SC): Umsetzung von Anpassungen oder Fehlerbehebungen.
+Mit diesem Testplan wird eine gründliche Prüfung und Dokumentation aller relevanten Aspekte gewährleistet, um eine erfolgreiche Weiterentwicklung des Projekts sicherzustellen.
+
+Testplan für die Projektwoche (25.11. – 29.11.2024)
+
+1. User-Experience-Test für Prototypen (Raspberry Pi oder PC)
+•	Ziel: Evaluierung der Benutzererfahrung bei der Steuerung des Spiels, insbesondere der Joystick-Eingaben.
+•	Durchführung: 
+o	Der Test sollte, wenn möglich, auf einem Raspberry Pi erfolgen, da dies die Zielplattform ist.
+o	Falls der Raspberry Pi nicht verfügbar oder funktionstüchtig ist, kann der Test auch auf einem PC durchgeführt werden.
+o	Der Source-Code des Spiels kann über GitLab bezogen werden, um den Test ggf. zu Hause mit Familienmitgliedern durchzuführen.
+•	Testpersonen: 
+o	Zielgruppe: Personen im vorgesehenen Altersbereich (Kinder und Jugendliche).
+o	Fokus: Spielerlebnis, Steuerbarkeit, Spielspaß und Verständlichkeit des Spiels.
+•	Dokumentation: 
+o	Rückmeldungen der Testpersonen schriftlich festhalten.
+o	Besonders auf wiederkehrende Probleme oder Kritikpunkte achten.
+o	Protokoll an TM und UX-Team übermitteln.
+________________________________________
+2. UX-Test des Prototyps in Figma
+•	Ziel: Bewertung der visuellen Gestaltung und Benutzerfreundlichkeit verschiedener Designvarianten.
+•	Durchführung: 
+o	Der Test erfolgt im Browser.
+o	Zugriff über Confluence unter Produktmanagement -> User Experience -> Testobjekt.
+o	Es stehen drei unterschiedliche Prototypen zur Verfügung. Jeder Prototyp sollte separat getestet und bewertet werden.
+•	Aufgaben: 
+o	Unterschiede zwischen den Prototypen klar herausarbeiten.
+o	Verstehen, welcher Prototyp am ansprechendsten wirkt und warum.
+o	Rückmeldung zu Design, Benutzerführung und emotionaler Wirkung der Prototypen geben.
+•	Dokumentation: 
+o	Präzises Feedback dokumentieren (positiv/negativ).
+o	Ergebnisse an das UX-Team und TM weiterleiten.
+________________________________________
+3. Technischer Test des Prototyps auf dem Raspberry Pi
+•	Ziel: Überprüfung, ob der Prototyp auf der Zielplattform technisch einwandfrei läuft.
+•	Durchführung: 
+o	Raspberry Pi gemäß Anleitung vorbereiten und den Spiel-Prototyp ausführen.
+o	Testbereiche: 
+	Hardwarestabilität.
+	Joystick-Integration und Reaktionszeiten.
+	Performance (z. B. Bildrate, flüssige Animationen).
+•	Wichtige Schritte: 
+o	Auffällige technische Mängel oder Abstürze notieren.
+o	Testergebnisse mit PM, TM, SA und SC besprechen.
+o	Bei Problemen wiederholte Tests nach Korrekturen durchführen.
+•	Dokumentation: 
+o	Alle Testergebnisse im Protokoll festhalten.
+o	Eventuelle technische Probleme detailliert beschreiben und mit Zeitstempel versehen.
+________________________________________
+4. Technischer Test des Raspberry Pi
+•	Ziel: Funktionsprüfung des Raspberry Pi, um Hardwareprobleme auszuschließen.
+•	Durchführung: 
+o	Der Raspberry Pi wird gemäß dem technischen Testplan geprüft.
+o	Schwerpunkte: 
+	Stromversorgung und Spannungswerte (ggf. mit Multimeter).
+	GPIO-Funktionalität (mit LEDs oder anderen Testgeräten).
+	Netzwerkfähigkeit (LAN und WLAN).
+	HDMI- und USB-Anschlüsse.
+o	Belastungstest der CPU und GPU (z. B. Temperatur unter Last).
+•	Hinweis: 
+o	Falls kein Multimeter verfügbar ist, kann dieser Teil des Tests entfallen.
+o	Besonderer Fokus auf Temperatur und Stabilität, um Überhitzung auszuschließen.
+•	Dokumentation: 
+o	Alle Testergebnisse im Protokoll festhalten.
+o	Unregelmäßigkeiten oder Probleme notieren und an TM weiterleiten.
+________________________________________
+
