@@ -1,0 +1,106 @@
+```markdown
+# User-Experience-Testplan für den Prototypen
+
+## Ziel des Tests
+Den groben Prototypen des Spiels zu evaluieren, um:
+1. Die Benutzerfreundlichkeit des Spiels zu testen.
+2. Die Intuitivität der Steuerung mit dem Joystick oder der Tastatur zu bewerten.
+3. Rückmeldungen zur visuellen Gestaltung und zum Spielgefühl zu sammeln.
+4. Fehler und Verbesserungspotenziale im frühen Stadium zu identifizieren.
+
+---
+
+## Testumgebung
+### Hardware:
+- **Raspberry Pi** (mit installiertem Spielprototypen).
+- **Bildschirm** (mindestens 10 Zoll, ideal für Prototypentests).
+- **Joystick oder Tastatur** (konfiguriert, um die Bewegungen des Fisches zu steuern).
+
+### Software:
+- **Prototypenversion des Spiels**:
+  - Der Fisch bewegt sich von links nach rechts.
+  - Hindernisse erscheinen zufällig.
+
+### Teilnehmer:
+- **Anzahl**: 2-4 Testpersonen mit unterschiedlichen Gaming-Erfahrungen:
+  - **2 Anfänger** (kaum bis keine Spielerfahrung).
+  - **1 Gelegenheits-Spieler**.
+  - **1 erfahrener Gamer**.
+- **Alter**: 10-16 Jahre.
+
+---
+
+## Testablauf
+
+### 1. Einführung (5 Minuten)
+- **Aufgabe**:
+  - Kurze Vorstellung des Spiels:
+    - "Der Spieler steuert einen Fisch, der Müll ausweichen muss. Ziel ist es, so gut wie möglich auszuweichen."
+  - Teilnehmer werden gebeten, Feedback zu notieren, während sie spielen.
+
+---
+
+### 2. Test der Joystick-Steuerung oder Tastatur (10 Minuten)
+- **Aufgabe**:
+  - Bewegungen des Fisches testen:
+    - Nach oben/unten navigieren.
+    - Überprüfen, wie präzise die Steuerung auf Joystick oder Tastatur-Eingaben reagiert.
+  - **Verweildauer**:
+    - 2 Minuten freies Bewegen ohne Hindernisse.
+- **Bewertungskriterien**:
+  - Reaktionszeit (Verzögerung wahrnehmbar?).
+  - Genauigkeit (Bewegt sich der Fisch wie erwartet?).
+  - Haptik des Joysticks oder der Tastatur (angenehme Bedienung?).
+
+---
+
+### 3. Gameplay-Test (15 Minuten)
+- **Aufgabe**:
+  - Spielen Sie zwei vollständige Durchgänge des Spiels:
+    - **1. Durchgang**: Ohne Anweisungen (intuitiv lernen).
+    - **2. Durchgang**: Mit kurzen Hinweisen zum Ausweichen von Hindernissen und dem Einfluss der gescannten Objekte.
+- **Bewertungskriterien**:
+  - Verständnis des Spielziels (Ist das Ziel sofort klar?).
+  - Schwierigkeitsgrad (Ist das Spiel zu leicht/schwer/frustrierend?).
+  - Sichtbarkeit und Klarheit der Hindernisse.
+
+---
+
+### 4. Visuelles Feedback (5 Minuten)
+- **Aufgabe**:
+  - Kommentieren Sie die visuelle Gestaltung:
+    - Ist der Fisch und der Müll klar erkennbar?
+    - Sind die Animationen flüssig?
+    - Passt das Farbschema (Kontraste, Lesbarkeit)?
+
+---
+
+### 5. Feedbackrunde (10 Minuten)
+- **Fragen an die Tester**:
+  - War die Steuerung intuitiv? Wenn nein, warum?
+  - Hat das Spiel Spaß gemacht? Was könnte verbessert werden?
+  - Hatten Sie technische Probleme (z. B. Ruckler, Joystick-Ausfall)?
+  - Welche zusätzlichen Features wären wünschenswert?
+  - Wie bewerten Sie das Gesamterlebnis auf einer Skala von 1-10?
+
+---
+
+## Ergebnisanalyse
+
+### 1. Quantitative Daten:
+- Durchschnittlicher Highscore pro Spieldurchgang.
+- Anzahl der Hindernisse, die erfolgreich umgangen wurden.
+- Bewertung der Steuerung (Skala 1-10).
+
+### 2. Qualitative Daten:
+- Häufiges Feedback zu Steuerung, Gameplay und visueller Gestaltung.
+- Vorschläge für Verbesserungen.
+
+### 3. Technische Probleme:
+- Liste der gemeldeten Bugs oder Performance-Probleme.
+
+---
+
+## Erwartetes Ergebnis
+Dieser Test wird grundlegendes Feedback zur Benutzerfreundlichkeit und Intuitivität des Spiels liefern. Auf Basis der Ergebnisse können Anpassungen an der Steuerung, der Schwierigkeitsbalance und der visuellen Gestaltung vorgenommen werden.
+```
