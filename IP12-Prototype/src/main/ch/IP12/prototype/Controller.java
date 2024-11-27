@@ -110,6 +110,7 @@ public class Controller {
     private void gameStep() {
         {
             if (running) {
+                List<Obstacle> deletionList = Collections.synchronizedList(new ArrayList<>());
                 // Update the model (logic)
                 gameTicks.getAndIncrement();
 
@@ -123,10 +124,16 @@ public class Controller {
                 obstacles.parallelStream().forEach(obstacle -> {
                     //Obstacle movement to the left
                     obstacle.update(deltaTime);
+                    if (obstacle.x + obstacle.length < 0) deletionList.add(obstacle);
                     if (player.collidesWith(obstacle)) {
                         stopGameLogic();
                     }
                 });
+
+                for (Obstacle obstacle : deletionList) {
+                    obstacles.remove(obstacle);
+                }
+                deletionList.clear();
             }
         }
     }

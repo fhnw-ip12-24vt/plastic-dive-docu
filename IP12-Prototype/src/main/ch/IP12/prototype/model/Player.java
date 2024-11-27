@@ -1,6 +1,9 @@
 package main.ch.IP12.prototype.model;
 
 public class Player extends Moveable{
+    public boolean moving = false;
+    public boolean[] tempDir = new boolean[4];
+
     public Player(int x, int y, int speed, int length, int height, String spritePath) {
         super(x, y, speed, length, height, spritePath);
     }

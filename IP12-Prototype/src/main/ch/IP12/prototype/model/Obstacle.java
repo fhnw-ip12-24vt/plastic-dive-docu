@@ -1,11 +1,13 @@
 package main.ch.IP12.prototype.model;
 
 public class Obstacle extends Moveable{
+    //forces the Obstacle to move to the left side of the screen.
+    //private int direction;
+
     private boolean waveUp = false;
     public Obstacle(int x, int y, int speed, int length, int height, String spritePath) {
         super(x, y, speed, length, height, spritePath);
-        //forces the Obstacle to move to the left side of the screen.
-        this.direction = 180;
+        direction = 180;
     }
 
     @Override

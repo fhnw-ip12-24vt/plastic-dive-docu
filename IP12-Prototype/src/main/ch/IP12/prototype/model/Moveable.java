@@ -9,8 +9,7 @@ public abstract class Moveable {
     public int length;
     public int height;
     public int direction;
-    public boolean[] tempDir = new boolean[4];
-    public boolean moving = true;
+    boolean moving = true;
     //path to animation images
     public String spritePath;
 
@@ -31,6 +30,7 @@ public abstract class Moveable {
         if(moving){
             move();
         }
+        nextFrame();
     }
 
     /**
@@ -49,5 +49,9 @@ public abstract class Moveable {
     public boolean collidesWith(Moveable moveable) {
         return IntUtils.isRangeInRange(moveable.x, moveable.x+moveable.length, this.x, this.x+this.length)
                 && IntUtils.isRangeInRange(moveable.y, moveable.y+moveable.height, this.y, this.y+this.height);
+    }
+
+    protected void nextFrame(){
+
     }
 }
