@@ -1,0 +1,131 @@
+```markdown
+# Technischer Testplan für den Raspberry Pi Prototyp
+
+## Ziel des Tests
+Die technische Stabilität, Leistung und Steuerbarkeit des Spiels auf dem Raspberry Pi zu evaluieren. Schwerpunkte sind:
+1. Hardware-Performance.
+2. Eingabeverarbeitung (Joystick-Input).
+3. Stabilität und Fehleranfälligkeit des Systems.
+4. Optimierungspotenziale für spätere Entwicklungsphasen.
+
+---
+
+## Testumgebung
+
+### Hardware:
+1. **Raspberry Pi**.
+2. **Joystick** (angeschlossen und konfiguriert).
+3. **Bildschirm** (HD-Auflösung empfohlen).
+4. **Stromversorgung** (stabiler Adapter).
+
+### Software:
+1. Betriebssystem: **Raspberry Pi OS** (oder eine andere unterstützte Distribution).
+2. **Spielprototyp** (installiert und lauffähig, inklusive Joystick-Support).
+3. **Debugging-Tools** (z. B. htop, Log-Monitoring).
+
+---
+
+## Testablauf
+
+### 1. Boot- und Ladezeiten (5 Minuten)
+- **Ziel**: Sicherstellen, dass das System und das Spiel schnell und stabil starten.
+- **Schritte**:
+  1. Raspberry Pi einschalten und Boot-Dauer messen.
+  2. Spiel starten und Ladezeit bis zum Hauptbildschirm messen.
+  3. Protokollieren, ob Fehler (z. B. Abstürze, Verzögerungen) auftreten.
+- **Bewertungskriterien**:
+  - Boot-Dauer: **Maximal 30 Sekunden**.
+  - Ladezeit des Spiels: **Maximal 5 Sekunden**.
+  - Stabile Anzeige ohne Flackern oder Abstürze.
+
+---
+
+### 2. Eingabeüberprüfung (Joystick oder Tastatur) (10 Minuten)
+- **Ziel**: Evaluieren, ob der Joystick-Eingabemechanismus korrekt und verzögerungsfrei funktioniert.
+- **Schritte**:
+  1. Joystick bewegen (nach oben, unten, links, rechts).
+  2. Reaktion des Fisches im Spiel beobachten.
+  3. Test mit schnellem Wechsel zwischen Richtungen.
+  4. Dauerhafte Eingabe (z. B. Halten des Joysticks nach oben) für 10 Sekunden testen.
+- **Bewertungskriterien**:
+  - Reaktionszeit: **Maximal 50ms Verzögerung**.
+  - Keine Eingabe-Aussetzer oder Verzögerungen.
+  - Präzision: Bewegungen des Fisches entsprechen den Eingaben.
+
+---
+
+### 3. Performance-Analyse (15 Minuten)
+- **Ziel**: Überprüfen, ob das Spiel flüssig läuft und die Systemressourcen effizient nutzt.
+- **Schritte**:
+  1. Spiel 10 Minuten lang spielen und Framerate beobachten (z. B. durch Anzeige in Logs).
+  2. CPU-, RAM- und GPU-Auslastung während des Spiels mit htop oder ähnlichem Tool überwachen.
+  3. Müllhindernisse und Fischbewegungen auf Ruckler analysieren.
+- **Bewertungskriterien**:
+  - Framerate: **Stabil bei mindestens 30 FPS**.
+  - CPU-Auslastung: **Unter 80% Spitzenlast**.
+  - RAM-Auslastung: **Unter 70% Nutzung**.
+  - Keine Ruckler oder Verzögerungen bei Hindernis-Animationen.
+
+---
+
+### 4. Systemstabilität (10 Minuten)
+- **Ziel**: Testen, ob das System unter Belastung stabil bleibt.
+- **Schritte**:
+  1. Spiel 10 Minuten durchgängig laufen lassen.
+  2. Währenddessen verschiedene Belastungsszenarien simulieren:
+     - Schnelles Bewegen des Joysticks.
+     - Viele Hindernisse gleichzeitig auf dem Bildschirm.
+     - Längeres Abwarten.
+  3. Verhalten des Systems beobachten (Abstürze, Verzögerungen, Überhitzung).
+- **Bewertungskriterien**:
+  - Keine Abstürze oder Hänger.
+  - Keine signifikante Hitzeentwicklung (**Temperatur unter 75°C**).
+  - Flüssige und stabile Darstellung.
+
+---
+
+### 5. Audio- und Grafikausgabe (5 Minuten)
+- **Ziel**: Sicherstellen, dass Audio- und Grafikelemente korrekt dargestellt werden.
+- **Schritte**:
+  1. Hintergrundmusik und Soundeffekte anhören und prüfen, ob sie synchron sind.
+  2. Grafikelemente (Fisch, Müll, Hintergrund) auf Darstellungsfehler überprüfen.
+- **Bewertungskriterien**:
+  - Klare und verzerrungsfreie Audioausgabe.
+  - Keine Artefakte oder fehlerhafte Darstellung der Grafiken.
+
+---
+
+### 6. Fehler-Logging und Recovery (5 Minuten)
+- **Ziel**: Testen, ob das System Fehler korrekt registriert und sich davon erholen kann.
+- **Schritte**:
+  1. Während des Spiels absichtlich den Joystick trennen und wieder verbinden.
+  2. Testen, was passiert, wenn das Spiel beendet und erneut gestartet wird.
+  3. Log-Dateien prüfen, ob Fehler korrekt protokolliert wurden.
+- **Bewertungskriterien**:
+  - System erkennt und verarbeitet Joystick-Wiederverbindung ohne Neustart.
+  - Keine unvorhergesehenen Abstürze.
+  - Detaillierte und nachvollziehbare Fehlerlogs.
+
+---
+
+## Ergebnisanalyse
+
+### Quantitative Ergebnisse:
+- Messwerte für Bootzeit, Ladezeit, Framerate, CPU-/RAM-Auslastung, Joystick-Reaktionszeit.
+- Anzahl der Abstürze oder Hänger.
+
+### Qualitative Ergebnisse:
+- Beobachtungen zu Stabilität und Performance.
+- Rückmeldung zur Audio- und Videoqualität.
+
+### Offene Punkte:
+- Engpässe in der Hardware (z. B. hohe CPU-Auslastung).
+- Unstimmigkeiten bei der Eingabeverarbeitung oder Darstellung.
+
+---
+
+## Erwartetes Ergebnis
+Der Test identifiziert technische Schwachstellen, insbesondere bei der Performance, Eingabeverarbeitung und Stabilität.
+Basierend auf den Ergebnissen können Optimierungen vorgenommen werden, z. B. durch Ressourcensparmaßnahmen,
+Debugging der Steuerung oder Anpassungen an der Hardware-Konfiguration.
+```
