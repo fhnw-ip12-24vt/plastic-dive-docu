@@ -15,6 +15,7 @@ public class View {
     private final GraphicsContext graphicsContext;
     private Player player;
     private ArrayList<Obstacle> obstacles;
+    private long clock;
 
     public View(GraphicsContext graphicsContext, Player player, ArrayList<Obstacle> obstacles) {
         this.graphicsContext = graphicsContext;
@@ -39,6 +40,8 @@ public class View {
      * Draws the objects on the screen
      */
     private void render() {
+        System.out.println(1000/(System.currentTimeMillis()-clock));
+        clock = System.currentTimeMillis();
         graphicsContext.setFill(Color.BLACK);
         graphicsContext.fillRect(0, 0, 800, 600);
 

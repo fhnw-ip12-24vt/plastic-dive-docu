@@ -28,19 +28,21 @@ public class App extends Application {
 
         //Initializes the controller and starts the game
         Controller controller = new Controller(player, obstacles);
-        controller.startGameLogic();
 
         //Starts the View and passes it the relevant things that are to be displayed
         View view = new View(graphicsContext, player, obstacles);
-        view.startRendering();
 
         //creates window and passes it the relevant objects (necessary for display)
         StackPane root = new StackPane(canvas);
         Scene scene = new Scene(root);
-        controller.createListeners(scene);
         stage.setScene(scene);
         stage.setTitle("MVC Example");
         stage.show();
+
+        controller.createListeners(scene);
+        controller.startGameLogic();
+
+        view.startRendering();
 
         //Stops the game if the window is exited
         stage.setOnCloseRequest(event -> controller.stopGameLogic());
