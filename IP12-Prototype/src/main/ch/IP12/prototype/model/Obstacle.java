@@ -10,6 +10,7 @@ public class Obstacle extends Moveable{
 
     @Override
     public void update(double deltaTime){
+        //forces the direction of the obstacle to change over time
         if (waveUp){
             direction--;
             if (direction < 135){

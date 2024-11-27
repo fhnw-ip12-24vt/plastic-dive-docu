@@ -108,13 +108,13 @@ public class Controller {
                 double deltaTime = 0.016; // Approx. 60 FPS
                 player.moving = !pressedKeys.isEmpty();
                 player.update(deltaTime);
-                for (Obstacle obstacle : obstacles) {
+                obstacles.parallelStream().forEach(obstacle -> {
                     //Obstacle movement to the left
                     obstacle.update(deltaTime);
                     if (player.collidesWith(obstacle)) {
                         stopGameLogic();
                     }
-                }
+                });
             }
         }, 0, 16, TimeUnit.MILLISECONDS); // 16ms ≈ 60 updates per second
     }
