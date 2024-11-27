@@ -19,6 +19,7 @@ public class Controller {
     private ArrayList<Obstacle> obstacles;
     private final ScheduledExecutorService executor;
     private volatile boolean running = true;
+    AtomicInteger gameTicks = new AtomicInteger();
 
     Controller(Player player, ArrayList<Obstacle> obstacles) {
         this.player = player;
@@ -95,8 +96,19 @@ public class Controller {
      */
     public void startGameLogic() {
         // Run the game logic at a fixed rate
-        AtomicInteger gameTicks = new AtomicInteger();
-        executor.scheduleAtFixedRate(() -> {
+        executor.scheduleAtFixedRate(this::gameStep, 0, 16, TimeUnit.MILLISECONDS); // 16ms ≈ 60 updates per second
+    }
+
+    /**
+     * Stops the game logic from running and kills all other threads related to it.
+     */
+    public void stopGameLogic() {
+        running = false;
+        executor.shutdown();
+    }
+
+    private void gameStep() {
+        {
             if (running) {
                 // Update the model (logic)
                 gameTicks.getAndIncrement();
@@ -116,14 +128,6 @@ public class Controller {
                     }
                 });
             }
-        }, 0, 16, TimeUnit.MILLISECONDS); // 16ms ≈ 60 updates per second
-    }
-
-    /**
-     * Stops the game logic from running and kills all other threads related to it.
-     */
-    public void stopGameLogic() {
-        running = false;
-        executor.shutdown();
+        }
     }
 }
