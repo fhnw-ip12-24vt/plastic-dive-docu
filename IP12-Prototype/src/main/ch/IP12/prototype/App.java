@@ -39,6 +39,7 @@ public class App extends Application {
         stage.setTitle("MVC Example");
         stage.show();
 
+        //starts the key listeners for the main scene.
         controller.createListeners(scene);
         controller.startGameLogic();
 

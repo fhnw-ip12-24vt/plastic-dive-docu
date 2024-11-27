@@ -4,7 +4,8 @@ public class Obstacle extends Moveable{
     //forces the Obstacle to move to the left side of the screen.
     //private int direction;
 
-    private boolean waveUp = false;
+    //randomizes whether the obstacles go up or down first
+    private boolean waveUp = Math.random() > 0.5;
     public Obstacle(int x, int y, int speed, int length, int height, String spritePath) {
         super(x, y, speed, length, height, spritePath);
         direction = 180;

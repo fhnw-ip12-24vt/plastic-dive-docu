@@ -8,6 +8,9 @@ public class Player extends Moveable{
         super(x, y, speed, length, height, spritePath);
     }
 
+    /**
+     * Overridden move function from super class for reason of temporary control scheme
+     */
     @Override
     public void move() {
         if(tempDir[0] && !tempDir[1]){
