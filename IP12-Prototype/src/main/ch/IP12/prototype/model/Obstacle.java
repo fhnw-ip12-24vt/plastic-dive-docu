@@ -16,14 +16,17 @@ public class Obstacle extends Moveable{
         //forces the direction of the obstacle to change over time
         if (waveUp){
             direction--;
-            if (direction < 135){
-                waveUp = false;
-            }
-
         } else {
             direction++;
+        }
+        while(direction > 225 || direction < 135){
+            if (direction < 135){
+                direction++;
+                waveUp = !waveUp;
+            }
             if (direction > 225){
-                waveUp = true;
+                direction--;
+                waveUp = !waveUp;
             }
         }
         move();
