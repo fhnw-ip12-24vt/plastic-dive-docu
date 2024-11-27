@@ -37,6 +37,11 @@ public class View {
         graphicsContext.fillRect(0, 0, 800, 600);
 
         graphicsContext.setFill(Color.RED);
-        graphicsContext.fillRect(player.x, player.y, player.height, player.height);
+        graphicsContext.fillRect(player.x, player.y, player.length, player.height);
+
+        for (Obstacle obstacle : obstacles) {
+            graphicsContext.setFill(Color.BLUE);
+            graphicsContext.fillRect(obstacle.x, obstacle.y, obstacle.length, obstacle.height);
+        }
     }
 }

@@ -19,7 +19,7 @@ public class App extends Application {
 
 
     public void start(Stage stage) {
-        Player player =  new Player(100,100,5,50,50,"asdf");
+        Player player =  new Player(100,100,10,50,50,"asdf");
         ArrayList<Obstacle> obstacles = new ArrayList<>();
 
         Canvas canvas = new Canvas(800, 600);

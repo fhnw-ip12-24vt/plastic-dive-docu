@@ -5,7 +5,7 @@ import main.ch.IP12.prototype.utils.IntUtils;
 public abstract class Moveable {
     public int x;
     public int y;
-    private final int speed;
+    public final int speed;
     public int length;
     public int height;
     public String spritePath;
@@ -17,11 +17,13 @@ public abstract class Moveable {
         this.length = length;
         this.height = height;
         this.spritePath = spritePath;
-           };
-    public void update(double deltaTime){
+    }
+
+    public void update(double deltaTime) {
         move(0);
     }
-    public void move(int direction){
+
+    public void move(int direction) {
 
     }
 
