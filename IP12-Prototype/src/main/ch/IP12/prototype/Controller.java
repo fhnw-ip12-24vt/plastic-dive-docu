@@ -16,8 +16,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Controller {
     private final List<KeyCode> pressedKeys = Collections.synchronizedList(new ArrayList<>());
-    private Player player;
-    private ArrayList<Obstacle> obstacles;
+    private final Player player;
+    private final ArrayList<Obstacle> obstacles;
     private final ScheduledExecutorService executor;
     private volatile boolean running = true;
     AtomicInteger gameTicks = new AtomicInteger();
@@ -110,39 +110,37 @@ public class Controller {
     }
 
     private void gameStep() {
-        {
-            if (running) {
-                List<Obstacle> deletionList = Collections.synchronizedList(new ArrayList<>());
-                // Update the model (logic)
-                gameTicks.getAndIncrement();
+        if (running) {
+            final List<Obstacle> deletionList = Collections.synchronizedList(new ArrayList<>());
+            // Update the model (logic)
+            gameTicks.getAndIncrement();
 
-                if (gameTicks.get() % 100 == 0) {
-                    obstacles.add(new Obstacle(900, (int) (Math.random() * 500 + 50), 2, (int) (Math.random() * 50 + 10), (int) (Math.random() * 50 + 10), Spritesheets.getRandomSpritesheet()));
-                }
-
-                double deltaTime = 0.016; // Approx. 60 FPS
-                player.moving = !pressedKeys.isEmpty();
-                player.update(deltaTime, 1);
-                obstacles.parallelStream().forEach(obstacle -> {
-                    //Obstacle updates
-                    obstacle.update(deltaTime, 1);
-
-                    //adds obstacle to deletion list if it is entirely out of frame for the player
-                    if (obstacle.x + obstacle.length < 0) deletionList.add(obstacle);
-
-                    //collision stops prototype
-                    if (player.collidesWith(obstacle)) {
-                        stopGameLogic();
-                    }
-                });
-
-                //removes obstacles from main obstacle array
-                //and clears the deletion list.
-                for (Obstacle obstacle : deletionList) {
-                    obstacles.remove(obstacle);
-                }
-                deletionList.clear();
+            if (gameTicks.get() % 100 == 0) {
+                obstacles.add(new Obstacle(900, (int) (Math.random() * 500 + 50), 2, (int) (Math.random() * 50 + 10), (int) (Math.random() * 50 + 10), Spritesheets.getRandomSpritesheet()));
             }
+
+            double deltaTime = 0.016; // Approx. 60 FPS
+            player.moving = !pressedKeys.isEmpty();
+            player.update(deltaTime, 1);
+            obstacles.parallelStream().forEach(obstacle -> {
+                //Obstacle updates
+                obstacle.update(deltaTime, 1);
+
+                //adds obstacle to deletion list if it is entirely out of frame for the player
+                if (obstacle.x + obstacle.length < 0) deletionList.add(obstacle);
+
+                //collision stops prototype
+                if (player.collidesWith(obstacle)) {
+                    stopGameLogic();
+                }
+            });
+
+            //removes obstacles from main obstacle array
+            //and clears the deletion list.
+            for (Obstacle obstacle : deletionList) {
+                obstacles.remove(obstacle);
+            }
+            deletionList.clear();
         }
     }
 }

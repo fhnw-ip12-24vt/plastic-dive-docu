@@ -13,7 +13,7 @@ public abstract class Moveable {
     public int direction;
     boolean moving = true;
     //path to animation images
-    public SpriteAnimation spriteAnimation;
+    public final SpriteAnimation spriteAnimation;
 
     Moveable(int x, int y, int speed, int length, int height, Spritesheets spriteSheet) {
         this.x = x;
