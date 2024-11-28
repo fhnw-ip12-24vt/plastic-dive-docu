@@ -1,10 +1,8 @@
 package main.ch.IP12.prototype;
 
 import javafx.animation.AnimationTimer;
-import javafx.application.Application;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 import main.ch.IP12.prototype.model.Obstacle;
 import main.ch.IP12.prototype.model.Player;
 
@@ -13,11 +11,11 @@ import java.util.ArrayList;
 
 public class View {
     private final GraphicsContext graphicsContext;
-    private Player player;
-    private ArrayList<Obstacle> obstacles;
+    private final Player player;
+    private final ArrayList<Obstacle> obstacles;
     private long clock;
 
-    public View(GraphicsContext graphicsContext, Player player, ArrayList<Obstacle> obstacles) {
+    View(GraphicsContext graphicsContext, Player player, ArrayList<Obstacle> obstacles) {
         this.graphicsContext = graphicsContext;
         this.player = player;
         this.obstacles = obstacles;
@@ -40,7 +38,7 @@ public class View {
      * Draws the objects on the screen
      */
     private void render() {
-        System.out.println(1000/(System.currentTimeMillis()-clock));
+        //System.out.println(1000/(System.currentTimeMillis()-clock));
         clock = System.currentTimeMillis();
         graphicsContext.setFill(Color.BLACK);
         graphicsContext.fillRect(0, 0, 800, 600);

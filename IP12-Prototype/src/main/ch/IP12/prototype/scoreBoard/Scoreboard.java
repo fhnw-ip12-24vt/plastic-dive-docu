@@ -30,7 +30,7 @@ public class Scoreboard {
         Long t = 0L;
         String prevKey = "";
         for (String i : scoreboard.keySet()){
-            if (prevKey.equals("")){
+            if (prevKey.isEmpty()){
                 t = scoreboard.get(i);
                 prevKey = i;
             } else if (scoreboard.get(i) > scoreboard.get(prevKey)){
@@ -58,6 +58,7 @@ public class Scoreboard {
             list.add(new ScoreboardEnitity(scoreboard.get(i), temp.toString()));
         }
         ScoreboardComparer comparator = new ScoreboardComparer();
+        //noinspection unchecked
         list.sort(comparator);
         return list.toArray(new ScoreboardEnitity[0]);
     }

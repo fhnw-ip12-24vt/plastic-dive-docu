@@ -8,6 +8,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import main.ch.IP12.prototype.model.Obstacle;
 import main.ch.IP12.prototype.model.Player;
+import main.ch.IP12.prototype.model.animations.Spritesheets;
 
 import java.util.ArrayList;
 
@@ -19,7 +20,7 @@ public class App extends Application {
 
     public void start(Stage stage) {
         //Creates the player and an array list for all the obstacles
-        Player player =  new Player(100,100,3,50,50,"player.png");
+        Player player =  new Player(100,100,3,50,50, Spritesheets.Player);
         ArrayList<Obstacle> obstacles = new ArrayList<>();
 
         //Creates the area which we draw all the images on
@@ -39,6 +40,7 @@ public class App extends Application {
         stage.setTitle("MVC Example");
         stage.show();
 
+        //starts the key listeners for the main scene.
         controller.createListeners(scene);
         controller.startGameLogic();
 

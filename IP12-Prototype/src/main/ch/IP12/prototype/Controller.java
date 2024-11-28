@@ -4,6 +4,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import main.ch.IP12.prototype.model.Obstacle;
 import main.ch.IP12.prototype.model.Player;
+import main.ch.IP12.prototype.model.animations.Spritesheets;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,13 +14,13 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Controller {
-    private final List<KeyCode> pressedKeys = Collections.synchronizedList(new ArrayList<KeyCode>());
-    private Player player;
-    private ArrayList<Obstacle> obstacles;
+class Controller {
+    private final List<KeyCode> pressedKeys = Collections.synchronizedList(new ArrayList<>());
+    private final Player player;
+    private final ArrayList<Obstacle> obstacles;
     private final ScheduledExecutorService executor;
     private volatile boolean running = true;
-    AtomicInteger gameTicks = new AtomicInteger();
+    final AtomicInteger gameTicks = new AtomicInteger();
 
     Controller(Player player, ArrayList<Obstacle> obstacles) {
         this.player = player;
@@ -34,7 +35,7 @@ public class Controller {
     void createListeners(Scene scene){
         scene.setOnKeyReleased(e -> {
             if(!running){
-                //If the game is over and the player presses a button the key listeners are cleared
+                //If the game is over and the player releases a button the key listeners are cleared
                 clearKeyListeners(scene);
                 return;
             }
@@ -63,6 +64,7 @@ public class Controller {
                 return;
             }
 
+            //moves player using temporary variables whilst there is no joystick present.
             if (e.getCode() == KeyCode.A && !pressedKeys.contains(e.getCode()) || e.getCode() == KeyCode.LEFT && !pressedKeys.contains(e.getCode())) {
                 player.tempDir[1] = true;
                 pressedKeys.add(e.getCode());
@@ -108,26 +110,37 @@ public class Controller {
     }
 
     private void gameStep() {
-        {
-            if (running) {
-                // Update the model (logic)
-                gameTicks.getAndIncrement();
+        if (running) {
+            final List<Obstacle> deletionList = Collections.synchronizedList(new ArrayList<>());
+            // Update the model (logic)
+            gameTicks.getAndIncrement();
 
-                if (gameTicks.get() % 100 == 0) {
-                    obstacles.add(new Obstacle(900, (int) (Math.random() * 500 + 50), 2, (int) (Math.random() * 50 + 10), (int) (Math.random() * 50 + 10), "asdf"));
-                }
-
-                double deltaTime = 0.016; // Approx. 60 FPS
-                player.moving = !pressedKeys.isEmpty();
-                player.update(deltaTime);
-                obstacles.parallelStream().forEach(obstacle -> {
-                    //Obstacle movement to the left
-                    obstacle.update(deltaTime);
-                    if (player.collidesWith(obstacle)) {
-                        stopGameLogic();
-                    }
-                });
+            if (gameTicks.get() % 100 == 0) {
+                obstacles.add(new Obstacle(900, (int) (Math.random() * 500 + 50), 2, (int) (Math.random() * 50 + 10), (int) (Math.random() * 50 + 10), Spritesheets.getRandomSpritesheet()));
             }
+
+            double deltaTime = 0.016; // Approx. 60 FPS
+            player.moving = !pressedKeys.isEmpty();
+            player.update(deltaTime, 1);
+            obstacles.parallelStream().forEach(obstacle -> {
+                //Obstacle updates
+                obstacle.update(deltaTime, 1);
+
+                //adds obstacle to deletion list if it is entirely out of frame for the player
+                if (obstacle.x + obstacle.length < 0) deletionList.add(obstacle);
+
+                //collision stops prototype
+                if (player.collidesWith(obstacle)) {
+                    stopGameLogic();
+                }
+            });
+
+            //removes obstacles from main obstacle array
+            //and clears the deletion list.
+            for (Obstacle obstacle : deletionList) {
+                obstacles.remove(obstacle);
+            }
+            deletionList.clear();
         }
     }
 }

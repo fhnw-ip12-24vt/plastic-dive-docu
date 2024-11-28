@@ -1,44 +1,55 @@
 package main.ch.IP12.prototype.model;
 
+import main.ch.IP12.prototype.model.animations.SpriteAnimation;
+import main.ch.IP12.prototype.model.animations.Spritesheets;
 import main.ch.IP12.prototype.utils.IntUtils;
 
 public abstract class Moveable {
     public int x;
     public int y;
     public final int speed;
-    public int length;
-    public int height;
+    public final int length;
+    public final int height;
     public int direction;
-    public boolean[] tempDir = new boolean[4];
-    public boolean moving = true;
+    final boolean moving = true;
     //path to animation images
-    public String spritePath;
+    public final SpriteAnimation spriteAnimation;
 
-    Moveable(int x, int y, int speed, int length, int height, String spritePath) {
+    Moveable(int x, int y, int speed, int length, int height, Spritesheets spriteSheet) {
         this.x = x;
         this.y = y;
         this.speed = speed;
         this.length = length;
         this.height = height;
-        this.spritePath = spritePath;
+        this.spriteAnimation = spriteSheet.getSpriteAnimation();
+    }
+
+    Moveable(int x, int y, int speed, int length, int height, SpriteAnimation spriteAnimation) {
+        this.x = x;
+        this.y = y;
+        this.speed = speed;
+        this.length = length;
+        this.height = height;
+        this.spriteAnimation = spriteAnimation;
     }
 
     /**
      * Updates the Object instance every x...
      * @param deltaTime
      */
-    public void update(double deltaTime){
+    public void update(double deltaTime, float strength){
         if(moving){
-            move();
+            move(strength);
         }
+        nextFrame();
     }
 
     /**
      * Moves the moveable object in the specified direction.
      */
-    public void move() {
-        x += (int)(Math.cos(Math.toRadians(direction))*speed);
-        y += (int)(Math.sin(Math.toRadians(direction))*speed);
+    public void move(float strength) {
+        x += (int)(Math.cos(Math.toRadians(direction))*(speed*strength));
+        y += (int)(Math.sin(Math.toRadians(direction))*(speed*strength));
     }
 
     /**
@@ -49,5 +60,9 @@ public abstract class Moveable {
     public boolean collidesWith(Moveable moveable) {
         return IntUtils.isRangeInRange(moveable.x, moveable.x+moveable.length, this.x, this.x+this.length)
                 && IntUtils.isRangeInRange(moveable.y, moveable.y+moveable.height, this.y, this.y+this.height);
+    }
+
+    protected void nextFrame(){
+
     }
 }
