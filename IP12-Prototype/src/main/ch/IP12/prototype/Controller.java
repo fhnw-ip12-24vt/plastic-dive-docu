@@ -14,13 +14,13 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Controller {
+class Controller {
     private final List<KeyCode> pressedKeys = Collections.synchronizedList(new ArrayList<>());
     private final Player player;
     private final ArrayList<Obstacle> obstacles;
     private final ScheduledExecutorService executor;
     private volatile boolean running = true;
-    AtomicInteger gameTicks = new AtomicInteger();
+    final AtomicInteger gameTicks = new AtomicInteger();
 
     Controller(Player player, ArrayList<Obstacle> obstacles) {
         this.player = player;

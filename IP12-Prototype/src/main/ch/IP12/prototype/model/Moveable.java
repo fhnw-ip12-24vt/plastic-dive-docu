@@ -8,10 +8,10 @@ public abstract class Moveable {
     public int x;
     public int y;
     public final int speed;
-    public int length;
-    public int height;
+    public final int length;
+    public final int height;
     public int direction;
-    boolean moving = true;
+    final boolean moving = true;
     //path to animation images
     public final SpriteAnimation spriteAnimation;
 

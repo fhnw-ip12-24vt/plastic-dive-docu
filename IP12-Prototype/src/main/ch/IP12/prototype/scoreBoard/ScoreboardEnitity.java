@@ -1,8 +1,8 @@
 package main.ch.IP12.prototype.scoreBoard;
 
 public class ScoreboardEnitity {
-    long score;
-    String name;
+    final long score;
+    final String name;
 
     /**
      * Creates a scoreboard entity.
