@@ -121,10 +121,10 @@ public class Controller {
 
                 double deltaTime = 0.016; // Approx. 60 FPS
                 player.moving = !pressedKeys.isEmpty();
-                player.update(deltaTime);
+                player.update(deltaTime, 1);
                 obstacles.parallelStream().forEach(obstacle -> {
                     //Obstacle updates
-                    obstacle.update(deltaTime);
+                    obstacle.update(deltaTime, 1);
 
                     //adds obstacle to deletion list if it is entirely out of frame for the player
                     if (obstacle.x + obstacle.length < 0) deletionList.add(obstacle);

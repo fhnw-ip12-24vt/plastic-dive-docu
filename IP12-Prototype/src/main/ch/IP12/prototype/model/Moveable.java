@@ -26,9 +26,9 @@ public abstract class Moveable {
      * Updates the Object instance every x...
      * @param deltaTime
      */
-    public void update(double deltaTime){
+    public void update(double deltaTime, float strength){
         if(moving){
-            move();
+            move(strength);
         }
         nextFrame();
     }
@@ -36,9 +36,9 @@ public abstract class Moveable {
     /**
      * Moves the moveable object in the specified direction.
      */
-    public void move() {
-        x += (int)(Math.cos(Math.toRadians(direction))*speed);
-        y += (int)(Math.sin(Math.toRadians(direction))*speed);
+    public void move(float strength) {
+        x += (int)(Math.cos(Math.toRadians(direction))*(speed*strength));
+        y += (int)(Math.sin(Math.toRadians(direction))*(speed*strength));
     }
 
     /**
