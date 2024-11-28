@@ -4,6 +4,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import main.ch.IP12.prototype.model.Obstacle;
 import main.ch.IP12.prototype.model.Player;
+import main.ch.IP12.prototype.model.animations.Spritesheets;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Controller {
-    private final List<KeyCode> pressedKeys = Collections.synchronizedList(new ArrayList<KeyCode>());
+    private final List<KeyCode> pressedKeys = Collections.synchronizedList(new ArrayList<>());
     private Player player;
     private ArrayList<Obstacle> obstacles;
     private final ScheduledExecutorService executor;
@@ -116,7 +117,7 @@ public class Controller {
                 gameTicks.getAndIncrement();
 
                 if (gameTicks.get() % 100 == 0) {
-                    obstacles.add(new Obstacle(900, (int) (Math.random() * 500 + 50), 2, (int) (Math.random() * 50 + 10), (int) (Math.random() * 50 + 10), "asdf"));
+                    obstacles.add(new Obstacle(900, (int) (Math.random() * 500 + 50), 2, (int) (Math.random() * 50 + 10), (int) (Math.random() * 50 + 10), Spritesheets.getRandomSpritesheet()));
                 }
 
                 double deltaTime = 0.016; // Approx. 60 FPS

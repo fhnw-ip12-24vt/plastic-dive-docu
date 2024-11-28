@@ -1,5 +1,7 @@
 package main.ch.IP12.prototype.model;
 
+import main.ch.IP12.prototype.model.animations.SpriteAnimation;
+import main.ch.IP12.prototype.model.animations.Spritesheets;
 import main.ch.IP12.prototype.utils.IntUtils;
 
 public abstract class Moveable {
@@ -11,15 +13,24 @@ public abstract class Moveable {
     public int direction;
     boolean moving = true;
     //path to animation images
-    public String spritePath;
+    public SpriteAnimation spriteAnimation;
 
-    Moveable(int x, int y, int speed, int length, int height, String spritePath) {
+    Moveable(int x, int y, int speed, int length, int height, Spritesheets spriteSheet) {
         this.x = x;
         this.y = y;
         this.speed = speed;
         this.length = length;
         this.height = height;
-        this.spritePath = spritePath;
+        this.spriteAnimation = spriteSheet.getSpriteAnimation();
+    }
+
+    Moveable(int x, int y, int speed, int length, int height, SpriteAnimation spriteAnimation) {
+        this.x = x;
+        this.y = y;
+        this.speed = speed;
+        this.length = length;
+        this.height = height;
+        this.spriteAnimation = spriteAnimation;
     }
 
     /**
