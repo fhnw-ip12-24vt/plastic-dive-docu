@@ -7,14 +7,24 @@ import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
 public class SpriteAnimation extends Transition {
+    //main image as an image view
     private final ImageView imageView;
+
+    //frame count
     private final int count;
+
+    //amount of columns in sprite sheet
     private final int columns;
+
+    //offset from the side of the sprite sheet
     private final int offsetX;
     private final int offsetY;
+
+    //size of a frame
     private final int width;
     private final int height;
 
+    //last frame used
     private int lastIndex;
 
     public SpriteAnimation(ImageView imageView, int count, int columns, int offsetX, int offsetY, int width, int height, Duration duration) {

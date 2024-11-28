@@ -7,6 +7,7 @@ import javafx.util.Duration;
 import java.util.Random;
 
 public enum Spritesheets {
+    //to add more obstacle variations add an entry to the list bellow.
     Player(new SpriteAnimation(new ImageView(new Image("https://upload.wikimedia.org/wikipedia/commons/7/73/The_Horse_in_Motion.jpg")), 0,0,0,0,0, 0, Duration.millis(1000))),
     SmallCluster(new SpriteAnimation(new ImageView(new Image("https://upload.wikimedia.org/wikipedia/commons/7/73/The_Horse_in_Motion.jpg")), 0,0,0,0,0, 0, Duration.millis(1000))),
     MediumCluster(new SpriteAnimation(new ImageView(new Image("https://upload.wikimedia.org/wikipedia/commons/7/73/The_Horse_in_Motion.jpg")), 0,0,0,0,0, 0, Duration.millis(1000))),
@@ -18,14 +19,23 @@ public enum Spritesheets {
         this.spriteAnimation = spriteAnimation;
     }
 
+    /**
+     * Gets a random obstacle animation and sprite sheet.
+     * @return Obstacle sprite sheet.
+     */
     public static Spritesheets getRandomSpritesheet() {
         if (values().length == 1) {
             return values()[0];
         }
+        //random number based on the size of the sprite sheet list.
         int randInt = new Random().nextInt(1, values().length);
         return values()[randInt];
     }
 
+    /**
+     * Returns animation object for selected sprite sheet.
+     * @return Sprite animation object.
+     */
     public SpriteAnimation getSpriteAnimation() {
         return spriteAnimation;
     }

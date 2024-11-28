@@ -16,12 +16,7 @@ public abstract class Moveable {
     public final SpriteAnimation spriteAnimation;
 
     Moveable(int x, int y, int speed, int length, int height, Spritesheets spriteSheet) {
-        this.x = x;
-        this.y = y;
-        this.speed = speed;
-        this.length = length;
-        this.height = height;
-        this.spriteAnimation = spriteSheet.getSpriteAnimation();
+        this(x, y, speed, length, height, spriteSheet.getSpriteAnimation());
     }
 
     Moveable(int x, int y, int speed, int length, int height, SpriteAnimation spriteAnimation) {
