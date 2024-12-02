@@ -5,8 +5,8 @@ import main.ch.IP12.prototype.model.animations.Spritesheets;
 import main.ch.IP12.prototype.utils.IntUtils;
 
 public abstract class Moveable {
-    public int x;
-    public int y;
+    public double x;
+    public double y;
     public final int speed;
     public final int length;
     public final int height;
@@ -32,7 +32,7 @@ public abstract class Moveable {
      * Updates the Object instance every x...
      * @param deltaTime
      */
-    public void update(double deltaTime, float strength){
+    public void update(double deltaTime, double strength){
         if(moving){
             move(strength);
         }
@@ -42,9 +42,9 @@ public abstract class Moveable {
     /**
      * Moves the moveable object in the specified direction.
      */
-    public void move(float strength) {
-        x += (int)(Math.cos(Math.toRadians(direction))*(speed*strength));
-        y += (int)(Math.sin(Math.toRadians(direction))*(speed*strength));
+    public void move(double strength) {
+        x += (Math.cos(Math.toRadians(direction))*(speed*strength));
+        y += (Math.sin(Math.toRadians(direction))*(speed*strength));
     }
 
     /**

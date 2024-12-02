@@ -124,7 +124,7 @@ class Controller {
             player.update(deltaTime, 1);
             obstacles.parallelStream().forEach(obstacle -> {
                 //Obstacle updates
-                obstacle.update(deltaTime, 1);
+                obstacle.update(deltaTime, 0.9);
 
                 //adds obstacle to deletion list if it is entirely out of frame for the player
                 if (obstacle.x + obstacle.length < 0) deletionList.add(obstacle);

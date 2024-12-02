@@ -19,7 +19,7 @@ public class Player extends Moveable{
      * Overridden move function from super class for reason of temporary control scheme
      */
     @Override
-    public void move(float strength) {
+    public void move(double strength) {
         if(tempDir[0] && !tempDir[1]){
             x += speed;
         } else if(tempDir[1] && !tempDir[0]){

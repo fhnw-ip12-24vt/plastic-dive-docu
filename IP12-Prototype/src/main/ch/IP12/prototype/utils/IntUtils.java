@@ -8,7 +8,7 @@ public class IntUtils {
      * @param max Highest number in range.
      * @return Boolean value if the number is in the range.
      */
-    public static boolean isInRange(int value, int min, int max) {
+    public static boolean isInRange(double value, double min, double max) {
         return value >= min && value <= max;
     }
 
@@ -20,8 +20,8 @@ public class IntUtils {
      * @param max Highest number in base range.
      * @return Boolean value if the ranges overlap.
      */
-    public static boolean isRangeInRange(int valueMin, int valueMax, int min, int max) {
-        for (int i = valueMin; i <= valueMax; i++) {
+    public static boolean isRangeInRange(double valueMin, double valueMax, double min, double max) {
+        for (double i = valueMin; i <= valueMax; i++) {
             if (isInRange(i, min, max)) {
                 return true;
             }
