@@ -1,10 +1,10 @@
-package main.ch.IP12.prototype;
+package ch.IP12.prototype;
 
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
-import main.ch.IP12.prototype.model.Obstacle;
-import main.ch.IP12.prototype.model.Player;
-import main.ch.IP12.prototype.model.animations.Spritesheets;
+import ch.IP12.prototype.model.Obstacle;
+import ch.IP12.prototype.model.Player;
+import ch.IP12.prototype.model.animations.Spritesheets;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package main.ch.IP12.prototype.utils;
+package ch.IP12.prototype.utils;
 
 public class IntUtils {
     /**

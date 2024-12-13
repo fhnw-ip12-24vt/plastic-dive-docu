@@ -1,4 +1,4 @@
-package main.ch.IP12.prototype.model.animations;
+package ch.IP12.prototype.model.animations;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;

@@ -1,4 +1,4 @@
-package main.ch.IP12.prototype;
+package ch.IP12.prototype;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -7,9 +7,9 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-import main.ch.IP12.prototype.model.Obstacle;
-import main.ch.IP12.prototype.model.Player;
-import main.ch.IP12.prototype.model.animations.Spritesheets;
+import ch.IP12.prototype.model.Obstacle;
+import ch.IP12.prototype.model.Player;
+import ch.IP12.prototype.model.animations.Spritesheets;
 
 import java.util.ArrayList;
 

@@ -1,10 +1,10 @@
-package main.ch.IP12.prototype;
+package ch.IP12.prototype;
 
 import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import main.ch.IP12.prototype.model.Obstacle;
-import main.ch.IP12.prototype.model.Player;
+import ch.IP12.prototype.model.Obstacle;
+import ch.IP12.prototype.model.Player;
 
 import java.util.ArrayList;
 

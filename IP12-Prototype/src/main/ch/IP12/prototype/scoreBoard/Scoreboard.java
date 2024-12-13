@@ -1,4 +1,4 @@
-package main.ch.IP12.prototype.scoreBoard;
+package ch.IP12.prototype.scoreBoard;
 
 import java.io.IOException;
 import java.util.*;

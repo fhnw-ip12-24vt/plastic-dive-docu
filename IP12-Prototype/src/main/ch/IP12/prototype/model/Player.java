@@ -1,7 +1,7 @@
-package main.ch.IP12.prototype.model;
+package ch.IP12.prototype.model;
 
-import main.ch.IP12.prototype.model.animations.SpriteAnimation;
-import main.ch.IP12.prototype.model.animations.Spritesheets;
+import ch.IP12.prototype.model.animations.SpriteAnimation;
+import ch.IP12.prototype.model.animations.Spritesheets;
 
 public class Player extends Moveable{
     public boolean moving = false;

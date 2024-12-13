@@ -1,8 +1,8 @@
-package main.ch.IP12.prototype.model;
+package ch.IP12.prototype.model;
 
-import main.ch.IP12.prototype.model.animations.SpriteAnimation;
-import main.ch.IP12.prototype.model.animations.Spritesheets;
-import main.ch.IP12.prototype.utils.IntUtils;
+import ch.IP12.prototype.model.animations.SpriteAnimation;
+import ch.IP12.prototype.model.animations.Spritesheets;
+import ch.IP12.prototype.utils.IntUtils;
 
 public abstract class Moveable {
     public double x;

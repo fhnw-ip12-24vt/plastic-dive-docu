@@ -1,12 +1,13 @@
-package main.ch.IP12.prototype.model;
+package ch.IP12.prototype.model;
 
-import main.ch.IP12.prototype.model.animations.SpriteAnimation;
-import main.ch.IP12.prototype.model.animations.Spritesheets;
+import ch.IP12.prototype.model.animations.SpriteAnimation;
+import ch.IP12.prototype.model.animations.Spritesheets;
 
 public class Obstacle extends Moveable{
-
     //randomizes whether the obstacles go up or down first
+    private final int maxAnglechange = 55;
     private boolean waveUp = Math.random() > 0.5;
+
     public Obstacle(int x, int y, int speed, int length, int height, Spritesheets spriteSheet) {
         super(x, y, speed, length, height, spriteSheet);
         //forces the Obstacle to move to the left side of the screen.
@@ -27,12 +28,12 @@ public class Obstacle extends Moveable{
         } else {
             direction++;
         }
-        while(direction > 225 || direction < 135){
-            if (direction < 135){
+        while(direction > (180+maxAnglechange) || direction < (180-maxAnglechange)){
+            if (direction < (180-maxAnglechange)){
                 direction++;
                 waveUp = false;
             }
-            if (direction > 225){
+            if (direction > (180+maxAnglechange)){
                 direction--;
                 waveUp = true;
             }

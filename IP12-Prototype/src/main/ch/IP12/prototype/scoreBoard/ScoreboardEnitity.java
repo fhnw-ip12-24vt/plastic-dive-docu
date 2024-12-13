@@ -1,4 +1,4 @@
-package main.ch.IP12.prototype.scoreBoard;
+package ch.IP12.prototype.scoreBoard;
 
 public class ScoreboardEnitity {
     final long score;
