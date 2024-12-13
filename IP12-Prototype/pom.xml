@@ -29,6 +29,13 @@
 
     <dependencies>
         <dependency>
+            <groupId>json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/json-simple-1.1.1.jar</systemPath>
+        </dependency>
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
@@ -153,7 +160,7 @@
                         <configuration>
                             <target>
                                 <copy todir="${project.build.directory}/distribution" overwrite="true" flatten="true">
-                                    <fileset dir="assets" includes="*.sh" ></fileset>
+                                    <fileset dir="assets" includes="*.sh" />
                                 </copy>
                                 <chmod dir="${project.build.directory}/distribution" perm="ugo+rx" includes="**/*.sh"/>
                             </target>
