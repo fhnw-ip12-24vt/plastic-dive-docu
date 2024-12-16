@@ -21,11 +21,15 @@ class Controller {
     private final ScheduledExecutorService executor;
     private volatile boolean running = true;
     protected final AtomicInteger gameTicks = new AtomicInteger();
+    protected final double maxX;
+    protected final double maxY;
 
-    Controller(Player player, ArrayList<Obstacle> obstacles) {
+    Controller(Player player, ArrayList<Obstacle> obstacles, double maxX, double maxY) {
         this.player = player;
         this.obstacles = obstacles;
         this.executor = Executors.newSingleThreadScheduledExecutor();
+        this.maxX = maxX;
+        this.maxY = maxY;
     }
 
     /**
@@ -116,7 +120,7 @@ class Controller {
             gameTicks.getAndIncrement();
 
             if (gameTicks.get() % 100 == 0) {
-                obstacles.add(new Obstacle(900, (int) (Math.random() * 500 + 50), 2, (int) (Math.random() * 50 + 10), (int) (Math.random() * 50 + 10), Spritesheets.getRandomSpritesheet()));
+                obstacles.add(new Obstacle(900, (int) (Math.random() * 500 + 50), 2, (int) (Math.random() * 50 + 10), (int) (Math.random() * 50 + 10), maxX, maxY, Spritesheets.getRandomSpritesheet()));
             }
 
             double deltaTime = 0.016; // Approx. 60 FPS

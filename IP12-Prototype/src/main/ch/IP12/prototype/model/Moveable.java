@@ -12,20 +12,25 @@ public abstract class Moveable {
     protected final int height;
     protected int direction;
 
+    protected final double maxX;
+    protected final double maxY;
+
     //path to animation images
     protected final SpriteAnimation spriteAnimation;
 
-    Moveable(int x, int y, int speed, int length, int height, Spritesheets spriteSheet) {
-        this(x, y, speed, length, height, spriteSheet.getSpriteAnimation());
+    Moveable(int x, int y, int speed, int length, int height, double maxX, double maxY, Spritesheets spriteSheet) {
+        this(x, y, speed, length, height, maxX, maxY, spriteSheet.getSpriteAnimation());
     }
 
-    Moveable(int x, int y, int speed, int length, int height, SpriteAnimation spriteAnimation) {
+    Moveable(int x, int y, int speed, int length, int height, double maxX, double maxY, SpriteAnimation spriteAnimation) {
         this.x = x;
         this.y = y;
         this.speed = speed;
         this.length = length;
         this.height = height;
         this.spriteAnimation = spriteAnimation;
+        this.maxX = maxX;
+        this.maxY = maxY;
     }
 
     /**

@@ -20,16 +20,18 @@ public class App extends Application {
 
 
     public void start(Stage stage) {
+        final int width = 800;
+        final int height = 600;
         //Creates the player and an array list for all the obstacles
-        Player player =  new Player(100,100,3,50,50, Spritesheets.Player);
+        Player player =  new Player(100,100,3,50,50, width, height, Spritesheets.Player);
         ArrayList<Obstacle> obstacles = new ArrayList<>();
 
         //Creates the area which we draw all the images on
-        Canvas canvas = new Canvas(800, 600);
+        Canvas canvas = new Canvas(width, height);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
 
         //Initializes the controller and starts the game
-        Controller controller = new Controller(player, obstacles);
+        Controller controller = new Controller(player, obstacles, width, height);
 
         //Starts the View and passes it the relevant things that are to be displayed
         View view = new View(graphicsContext, player, obstacles);

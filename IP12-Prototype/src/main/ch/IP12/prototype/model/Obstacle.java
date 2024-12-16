@@ -8,14 +8,14 @@ public class Obstacle extends Moveable{
     private final int maxAnglechange = 55;
     private boolean waveUp = Math.random() > 0.5;
 
-    public Obstacle(int x, int y, int speed, int length, int height, Spritesheets spriteSheet) {
-        super(x, y, speed, length, height, spriteSheet);
+    public Obstacle(int x, int y, int speed, int length, int height, double maxX, double maxY, Spritesheets spriteSheet) {
+        super(x, y, speed, length, height, maxX, maxY, spriteSheet);
         //forces the Obstacle to move to the left side of the screen.
         direction = 180;
     }
 
-    public Obstacle(int x, int y, int speed, int length, int height, SpriteAnimation spriteAnimation) {
-        super(x, y, speed, length, height, spriteAnimation);
+    public Obstacle(int x, int y, int speed, int length, int height, double maxX, double maxY, SpriteAnimation spriteAnimation) {
+        super(x, y, speed, length, height, maxX, maxY, spriteAnimation);
         //forces the Obstacle to move to the left side of the screen.
         direction = 180;
     }

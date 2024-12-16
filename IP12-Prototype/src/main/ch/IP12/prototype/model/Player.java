@@ -6,12 +6,12 @@ import ch.IP12.prototype.model.animations.Spritesheets;
 public class Player extends Moveable{
     protected final boolean[] tempDir = new boolean[4];
 
-    public Player(int x, int y, int speed, int length, int height, Spritesheets spriteSheet) {
-        super(x, y, speed, length, height, spriteSheet);
+    public Player(int x, int y, int speed, int length, int height, double maxX, double maxY, Spritesheets spriteSheet) {
+        super(x, y, speed, length, height, maxX, maxY, spriteSheet);
     }
 
-    public Player(int x, int y, int speed, int length, int height, SpriteAnimation spriteAnimation) {
-        super(x, y, speed, length, height, spriteAnimation);
+    public Player(int x, int y, int speed, int length, int height, double maxX, double maxY, SpriteAnimation spriteAnimation) {
+        super(x, y, speed, length, height, maxX, maxY, spriteAnimation);
     }
 
     /**
@@ -19,14 +19,14 @@ public class Player extends Moveable{
      */
     @Override
     public void move(double strength) {
-        if(tempDir[0] && !tempDir[1]){
+        if(tempDir[0] && !tempDir[1] && !((x+length+speed) > maxX)){
             x += speed;
-        } else if(tempDir[1] && !tempDir[0]){
+        } else if(tempDir[1] && !tempDir[0] && !((x-speed) < 0)){
             x -= speed;
         }
-        if (tempDir[3] && !tempDir[2]) {
+        if (tempDir[3] && !tempDir[2]  && !((y+height+speed) > maxY)) {
             y += speed;
-        } else if (tempDir[2] && !tempDir[3]) {
+        } else if (tempDir[2] && !tempDir[3] && !((y-speed) < 0)) {
             y -= speed;
         }
     }
