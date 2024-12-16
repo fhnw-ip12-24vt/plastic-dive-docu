@@ -39,7 +39,7 @@ The run configuration in IntelliJ should use the module "IP12-Prototype", the ma
 \\\__**App**
 
 &nbsp;<br>
-If it asks for a package path to it is:<br>
+If it asks for a package path to it, it is:<br>
 ```ch.IP12.prototype.App```<br><br>
 After this the program can be run using the run configuration.
 <br>
