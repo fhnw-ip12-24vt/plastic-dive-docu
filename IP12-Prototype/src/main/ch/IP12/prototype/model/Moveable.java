@@ -5,15 +5,15 @@ import ch.IP12.prototype.model.animations.Spritesheets;
 import ch.IP12.prototype.utils.IntUtils;
 
 public abstract class Moveable {
-    public double x;
-    public double y;
-    public final int speed;
-    public final int length;
-    public final int height;
-    public int direction;
-    final boolean moving = true;
+    protected double x;
+    protected double y;
+    protected final int speed;
+    protected final int length;
+    protected final int height;
+    protected int direction;
+
     //path to animation images
-    public final SpriteAnimation spriteAnimation;
+    protected final SpriteAnimation spriteAnimation;
 
     Moveable(int x, int y, int speed, int length, int height, Spritesheets spriteSheet) {
         this(x, y, speed, length, height, spriteSheet.getSpriteAnimation());
@@ -33,9 +33,7 @@ public abstract class Moveable {
      * @param deltaTime
      */
     public void update(double deltaTime, double strength){
-        if(moving){
-            move(strength);
-        }
+        move(strength);
         nextFrame();
     }
 
@@ -55,6 +53,34 @@ public abstract class Moveable {
     public boolean collidesWith(Moveable moveable) {
         return IntUtils.isRangeInRange(moveable.x, moveable.x+moveable.length, this.x, this.x+this.length)
                 && IntUtils.isRangeInRange(moveable.y, moveable.y+moveable.height, this.y, this.y+this.height);
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public SpriteAnimation getSpriteAnimation() {
+        return spriteAnimation;
+    }
+
+    public int getDirection() {
+        return direction;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public int getSpeed() {
+        return speed;
     }
 
     protected void nextFrame(){

@@ -20,7 +20,7 @@ class Controller {
     private final ArrayList<Obstacle> obstacles;
     private final ScheduledExecutorService executor;
     private volatile boolean running = true;
-    final AtomicInteger gameTicks = new AtomicInteger();
+    protected final AtomicInteger gameTicks = new AtomicInteger();
 
     Controller(Player player, ArrayList<Obstacle> obstacles) {
         this.player = player;
@@ -41,19 +41,19 @@ class Controller {
             }
 
             if (e.getCode() == KeyCode.A && pressedKeys.contains(e.getCode()) || e.getCode() == KeyCode.LEFT && pressedKeys.contains(e.getCode())) {
-                player.tempDir[1] = false;
+                player.setTempDir(false, 1);
                 pressedKeys.remove(e.getCode());
             }
             if (e.getCode() == KeyCode.D && pressedKeys.contains(e.getCode()) || e.getCode() == KeyCode.RIGHT && pressedKeys.contains(e.getCode())) {
-                player.tempDir[0] = false;
+                player.setTempDir(false, 0);
                 pressedKeys.remove(e.getCode());
             }
             if (e.getCode() == KeyCode.S && pressedKeys.contains(e.getCode()) || e.getCode() == KeyCode.DOWN && pressedKeys.contains(e.getCode())) {
-                player.tempDir[3] = false;
+                player.setTempDir(false, 3);
                 pressedKeys.remove(e.getCode());
             }
             if(e.getCode() == KeyCode.W && pressedKeys.contains(e.getCode()) || e.getCode() == KeyCode.UP && pressedKeys.contains(e.getCode())){
-                player.tempDir[2] = false;
+                player.setTempDir(false, 2);
                 pressedKeys.remove(e.getCode());
             }
         });
@@ -66,19 +66,19 @@ class Controller {
 
             //moves player using temporary variables whilst there is no joystick present.
             if (e.getCode() == KeyCode.A && !pressedKeys.contains(e.getCode()) || e.getCode() == KeyCode.LEFT && !pressedKeys.contains(e.getCode())) {
-                player.tempDir[1] = true;
+                player.setTempDir(true, 1);
                 pressedKeys.add(e.getCode());
             }
             if (e.getCode() == KeyCode.D && !pressedKeys.contains(e.getCode()) || e.getCode() == KeyCode.RIGHT && !pressedKeys.contains(e.getCode())) {
-                player.tempDir[0] = true;
+                player.setTempDir(true, 0);
                 pressedKeys.add(e.getCode());
             }
             if (e.getCode() == KeyCode.S && !pressedKeys.contains(e.getCode()) || e.getCode() == KeyCode.DOWN && !pressedKeys.contains(e.getCode())) {
-                player.tempDir[3] = true;
+                player.setTempDir(true, 3);
                 pressedKeys.add(e.getCode());
             }
             if(e.getCode() == KeyCode.W && !pressedKeys.contains(e.getCode()) || e.getCode() == KeyCode.UP && !pressedKeys.contains(e.getCode())){
-                player.tempDir[2] = true;
+                player.setTempDir(true, 2);
                 pressedKeys.add(e.getCode());
             }
         });
@@ -120,14 +120,15 @@ class Controller {
             }
 
             double deltaTime = 0.016; // Approx. 60 FPS
-            player.moving = !pressedKeys.isEmpty();
             player.update(deltaTime, 1);
             obstacles.parallelStream().forEach(obstacle -> {
                 //Obstacle updates
                 obstacle.update(deltaTime, 0.9);
 
+                obstacle.update(deltaTime, 1);
+
                 //adds obstacle to deletion list if it is entirely out of frame for the player
-                if (obstacle.x + obstacle.length < 0) deletionList.add(obstacle);
+                if (obstacle.getX() + obstacle.getLength() < 0) deletionList.add(obstacle);
 
                 //collision stops prototype
                 if (player.collidesWith(obstacle)) {
@@ -137,9 +138,7 @@ class Controller {
 
             //removes obstacles from main obstacle array
             //and clears the deletion list.
-            for (Obstacle obstacle : deletionList) {
-                obstacles.remove(obstacle);
-            }
+            obstacles.removeAll(deletionList);
             deletionList.clear();
         }
     }

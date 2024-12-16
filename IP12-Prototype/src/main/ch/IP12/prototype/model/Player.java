@@ -4,8 +4,7 @@ import ch.IP12.prototype.model.animations.SpriteAnimation;
 import ch.IP12.prototype.model.animations.Spritesheets;
 
 public class Player extends Moveable{
-    public boolean moving = false;
-    public final boolean[] tempDir = new boolean[4];
+    protected final boolean[] tempDir = new boolean[4];
 
     public Player(int x, int y, int speed, int length, int height, Spritesheets spriteSheet) {
         super(x, y, speed, length, height, spriteSheet);
@@ -30,5 +29,9 @@ public class Player extends Moveable{
         } else if (tempDir[2] && !tempDir[3]) {
             y -= speed;
         }
+    }
+
+    public void setTempDir(boolean val, int index) {
+        tempDir[index] = val;
     }
 }
