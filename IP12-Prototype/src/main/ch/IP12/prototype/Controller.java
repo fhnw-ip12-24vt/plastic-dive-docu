@@ -125,8 +125,6 @@ class Controller {
                 //Obstacle updates
                 obstacle.update(deltaTime, 0.9);
 
-                obstacle.update(deltaTime, 1);
-
                 //adds obstacle to deletion list if it is entirely out of frame for the player
                 if (obstacle.getX() + obstacle.getLength() < 0) deletionList.add(obstacle);
 
