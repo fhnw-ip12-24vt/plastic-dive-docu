@@ -3,7 +3,6 @@ package ch.IP12.prototype.model;
 import ch.IP12.prototype.model.animations.SpriteAnimation;
 import ch.IP12.prototype.model.animations.Spritesheets;
 import ch.IP12.prototype.utils.IntUtils;
-import javafx.animation.Animation;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.canvas.GraphicsContext;
 
@@ -18,22 +17,26 @@ public abstract class Moveable {
     protected final double maxX;
     protected final double maxY;
 
+    protected final int spriteScale;
+
     //path to animation images
     protected final SpriteAnimation animation;
 
-    Moveable(int x, int y, int speed, int length, int height, double maxX, double maxY, Spritesheets spritesheets){
-        this(x, y, speed, length, height, maxX, maxY, spritesheets.getSpriteAnimation());
+    Moveable(int x, int y, int speed, double maxX, double maxY, Spritesheets spritesheets, int spriteScale){
+        this(x, y, speed, maxX, maxY, spritesheets.getSpriteAnimation(), spriteScale);
     }
 
-    Moveable(int x, int y, int speed, int length, int height, double maxX, double maxY, SpriteAnimation spriteAnimation) {
+    Moveable(int x, int y, int speed, double maxX, double maxY, SpriteAnimation spriteAnimation, int spriteScale) {
         this.x = x;
         this.y = y;
         this.speed = speed;
-        this.length = length;
-        this.height = height;
         this.animation = spriteAnimation;
         this.maxX = maxX;
         this.maxY = maxY;
+        this.spriteScale = spriteScale;
+
+        this.length = animation.getWidth()*spriteScale-5;
+        this.height = animation.getHeight()*spriteScale-5;
     }
 
     /**
