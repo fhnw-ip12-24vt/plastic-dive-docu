@@ -21,15 +21,11 @@ class Controller {
     private final ScheduledExecutorService executor;
     private volatile boolean running = true;
     protected final AtomicInteger gameTicks = new AtomicInteger();
-    protected final double maxX;
-    protected final double maxY;
 
-    Controller(Player player, ArrayList<Obstacle> obstacles, double maxX, double maxY) {
+    Controller(Player player, ArrayList<Obstacle> obstacles) {
         this.player = player;
         this.obstacles = obstacles;
         this.executor = Executors.newSingleThreadScheduledExecutor();
-        this.maxX = maxX;
-        this.maxY = maxY;
     }
 
     /**
@@ -119,8 +115,8 @@ class Controller {
             // Update the model (logic)
             gameTicks.getAndIncrement();
 
-            if (gameTicks.get() % 100 == 0) {
-                obstacles.add(new Obstacle(900, (int) (Math.random() * 500 + 50), 2, maxX, maxY, Spritesheets.getRandomSpritesheet()));
+            if (gameTicks.get() % 50 == 0) {
+                obstacles.add(new Obstacle(App.WIDTH, (int) ((Math.random() * (App.HEIGHT))), 2, App.WIDTH, App.HEIGHT, Spritesheets.getRandomSpritesheet()));
             }
 
             double deltaTime = 0.016; // Approx. 60 FPS

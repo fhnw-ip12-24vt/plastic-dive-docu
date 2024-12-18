@@ -11,28 +11,39 @@ import ch.IP12.prototype.model.Obstacle;
 import ch.IP12.prototype.model.Player;
 import ch.IP12.prototype.model.animations.Spritesheets;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public class App extends Application {
+    static int WIDTH = 800;
+    static int HEIGHT = 600;
     public static void main(String[] args) {
         launch(args);
     }
 
 
     public void start(Stage stage) {
-        final int width = 800;
-        final int height = 600;
+
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        WIDTH = screenSize.width;
+        HEIGHT = screenSize.height;
+        stage.setResizable(false);
+        stage.setFullScreenExitHint("");
+        stage.setFullScreen(true);
+
+
+
         //Creates the player and an array list for all the obstacles
-        Player player =  new Player(100,100,3,width,height,Spritesheets.Player);
+        Player player =  new Player(100,100,3, WIDTH, HEIGHT,Spritesheets.Player);
         ArrayList<Obstacle> obstacles = new ArrayList<>();
 
         //Creates the area which we draw all the images on
-        Canvas canvas = new Canvas(width, height);
+        Canvas canvas = new Canvas(WIDTH, HEIGHT);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.setImageSmoothing(false);
 
         //Initializes the controller and starts the game
-        Controller controller = new Controller(player, obstacles, width, height);
+        Controller controller = new Controller(player, obstacles);
 
         //Starts the View and passes it the relevant things that are to be displayed
         View view = new View(graphicsContext, player, obstacles);

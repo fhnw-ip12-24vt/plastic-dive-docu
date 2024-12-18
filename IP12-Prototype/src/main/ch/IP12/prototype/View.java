@@ -43,15 +43,15 @@ public class View {
     private void render() {
         //System.out.println(1000/(System.currentTimeMillis()-clock));
         clock = System.currentTimeMillis();
-        graphicsContext.setFill(Color.BLACK);
-        graphicsContext.fillRect(0, 0, 800, 600);
+        graphicsContext.setFill(Color.DARKBLUE);
+        graphicsContext.fillRect(0, 0, App.WIDTH, App.HEIGHT);
 
         graphicsContext.setFill(Color.RED);
         graphicsContext.fillRect(player.getX(), player.getY(), player.getLength(), player.getHeight());
         player.drawAnimation(graphicsContext);
 
         for (Obstacle obstacle : obstacles) {
-            graphicsContext.setFill(Color.BLUE);
+            graphicsContext.setFill(Color.SEAGREEN);
             graphicsContext.fillRect(obstacle.getX(), obstacle.getY(), obstacle.getLength(), obstacle.getHeight());
         }
     }
