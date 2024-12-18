@@ -3,11 +3,9 @@ package ch.IP12.prototype.model;
 import ch.IP12.prototype.model.animations.SpriteAnimation;
 import ch.IP12.prototype.model.animations.Spritesheets;
 
-import java.util.Random;
-
 public class Obstacle extends Moveable{
     //randomizes whether the obstacles go up or down first
-    private final int maxAnglechange = 55;
+    private final int maxAnglechange = ((int)(Math.random()*20))+50;
     private boolean waveUp = Math.random() > 0.5;
 
     public Obstacle(int x, int y, int speed, double maxX, double maxY, Spritesheets spriteSheet) {
