@@ -44,6 +44,9 @@ public class SpriteAnimation extends Transition {
 
     @Override
     protected void interpolate(double v) {
+        if (count <= 0 || columns <= 0 || width <= 0 || height <= 0) {
+            return;
+        }
         final int index = Math.min((int) Math.floor(v * count), count - 1);
         if (index != lastIndex) {
             final int x = (index % columns) * width  + offsetX;
@@ -51,5 +54,17 @@ public class SpriteAnimation extends Transition {
             imageView.setViewport(new Rectangle2D(x, y, width, height));
             lastIndex = index;
         }
+    }
+
+    public ImageView getImageView() {
+        return imageView;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
     }
 }

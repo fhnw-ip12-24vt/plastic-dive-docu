@@ -120,7 +120,7 @@ class Controller {
             gameTicks.getAndIncrement();
 
             if (gameTicks.get() % 100 == 0) {
-                obstacles.add(new Obstacle(900, (int) (Math.random() * 500 + 50), 2, (int) (Math.random() * 50 + 10), (int) (Math.random() * 50 + 10), maxX, maxY, Spritesheets.getRandomSpritesheet()));
+                obstacles.add(new Obstacle(900, (int) (Math.random() * 500 + 50), 2, maxX, maxY, Spritesheets.getRandomSpritesheet()));
             }
 
             double deltaTime = 0.016; // Approx. 60 FPS

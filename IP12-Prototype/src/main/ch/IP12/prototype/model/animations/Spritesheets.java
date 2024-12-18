@@ -8,11 +8,10 @@ import java.util.Random;
 
 public enum Spritesheets {
     //to add more obstacle variations add an entry to the list bellow.
-    Player(new SpriteAnimation(new ImageView(new Image("player.png")), 2, 2, 0, 0, 16, 16, Duration.millis(1000))),
-    SmallCluster(new SpriteAnimation(new ImageView(new Image("https://upload.wikimedia.org/wikipedia/commons/7/73/The_Horse_in_Motion.jpg")), 0, 0, 0, 0, 0, 0, Duration.millis(1000))),
-    MediumCluster(new SpriteAnimation(new ImageView(new Image("https://upload.wikimedia.org/wikipedia/commons/7/73/The_Horse_in_Motion.jpg")), 0, 0, 0, 0, 0, 0, Duration.millis(1000))),
-    LargeCluster(new SpriteAnimation(new ImageView(new Image("https://upload.wikimedia.org/wikipedia/commons/7/73/The_Horse_in_Motion.jpg")), 0, 0, 0, 0, 0, 0, Duration.millis(1000))),
-    ;
+    Player(new SpriteAnimation(new ImageView(new Image("player.png")), 2,2,0,0,16, 16, Duration.millis(200))),
+    SmallCluster(new SpriteAnimation(new ImageView(new Image("https://upload.wikimedia.org/wikipedia/commons/7/73/The_Horse_in_Motion.jpg")), 0,0,0,0,20, 20, Duration.millis(1000))),
+    MediumCluster(new SpriteAnimation(new ImageView(new Image("https://upload.wikimedia.org/wikipedia/commons/7/73/The_Horse_in_Motion.jpg")), 0,0,0,0,35, 35, Duration.millis(1000))),
+    LargeCluster(new SpriteAnimation(new ImageView(new Image("https://upload.wikimedia.org/wikipedia/commons/7/73/The_Horse_in_Motion.jpg")), 0,0,0,0,50, 50, Duration.millis(1000))),;
 
     private final SpriteAnimation spriteAnimation;
 
@@ -22,7 +21,6 @@ public enum Spritesheets {
 
     /**
      * Gets a random obstacle animation and sprite sheet.
-     *
      * @return Obstacle sprite sheet.
      */
     public static Spritesheets getRandomSpritesheet() {
@@ -36,7 +34,6 @@ public enum Spritesheets {
 
     /**
      * Returns animation object for selected sprite sheet.
-     *
      * @return Sprite animation object.
      */
     public SpriteAnimation getSpriteAnimation() {

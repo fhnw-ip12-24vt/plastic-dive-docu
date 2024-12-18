@@ -3,34 +3,40 @@ package ch.IP12.prototype.model;
 import ch.IP12.prototype.model.animations.SpriteAnimation;
 import ch.IP12.prototype.model.animations.Spritesheets;
 import ch.IP12.prototype.utils.IntUtils;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.canvas.GraphicsContext;
 
 public abstract class Moveable {
     protected double x;
     protected double y;
     protected final int speed;
-    protected final int length;
-    protected final int height;
+    protected final double length;
+    protected final double height;
     protected int direction;
 
     protected final double maxX;
     protected final double maxY;
 
-    //path to animation images
-    protected final SpriteAnimation spriteAnimation;
+    protected final double spriteScale;
 
-    Moveable(int x, int y, int speed, int length, int height, double maxX, double maxY, Spritesheets spriteSheet) {
-        this(x, y, speed, length, height, maxX, maxY, spriteSheet.getSpriteAnimation());
+    //path to animation images
+    protected final SpriteAnimation animation;
+
+    Moveable(int x, int y, int speed, double maxX, double maxY, Spritesheets spritesheets, double spriteScale){
+        this(x, y, speed, maxX, maxY, spritesheets.getSpriteAnimation(), spriteScale);
     }
 
-    Moveable(int x, int y, int speed, int length, int height, double maxX, double maxY, SpriteAnimation spriteAnimation) {
+    Moveable(int x, int y, int speed, double maxX, double maxY, SpriteAnimation spriteAnimation, double spriteScale) {
         this.x = x;
         this.y = y;
         this.speed = speed;
-        this.length = length;
-        this.height = height;
-        this.spriteAnimation = spriteAnimation;
+        this.animation = spriteAnimation;
         this.maxX = maxX;
         this.maxY = maxY;
+        this.spriteScale = spriteScale;
+
+        this.length = animation.getWidth()*spriteScale-5;
+        this.height = animation.getHeight()*spriteScale-5;
     }
 
     /**
@@ -39,7 +45,6 @@ public abstract class Moveable {
      */
     public void update(double deltaTime, double strength){
         move(strength);
-        nextFrame();
     }
 
     /**
@@ -68,27 +73,17 @@ public abstract class Moveable {
         return y;
     }
 
-    public SpriteAnimation getSpriteAnimation() {
-        return spriteAnimation;
-    }
-
-    public int getDirection() {
-        return direction;
-    }
-
-    public int getHeight() {
+    public double getHeight() {
         return height;
     }
 
-    public int getLength() {
+    public double getLength() {
         return length;
     }
 
-    public int getSpeed() {
-        return speed;
-    }
-
-    protected void nextFrame(){
-
+    public void drawAnimation(GraphicsContext graphicsContext){
+        animation.play();
+        Rectangle2D viewRect = animation.getImageView().getViewport();
+        graphicsContext.drawImage(animation.getImageView().getImage(), viewRect.getMinX(), viewRect.getMinY(),viewRect.getWidth(), viewRect.getHeight(), x, y, length, height);
     }
 }

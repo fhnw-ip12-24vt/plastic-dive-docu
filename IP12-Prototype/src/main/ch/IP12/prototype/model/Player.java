@@ -6,12 +6,12 @@ import ch.IP12.prototype.model.animations.Spritesheets;
 public class Player extends Moveable{
     protected final boolean[] tempDir = new boolean[4];
 
-    public Player(int x, int y, int speed, int length, int height, double maxX, double maxY, Spritesheets spriteSheet) {
-        super(x, y, speed, length, height, maxX, maxY, spriteSheet);
+    public Player(int x, int y, int speed, double maxX, double maxY, Spritesheets spriteSheet) {
+        super(x, y, speed, maxX, maxY, spriteSheet, 3);
     }
 
-    public Player(int x, int y, int speed, int length, int height, double maxX, double maxY, SpriteAnimation spriteAnimation) {
-        super(x, y, speed, length, height, maxX, maxY, spriteAnimation);
+    public Player(int x, int y, int speed, double maxX, double maxY, SpriteAnimation spriteAnimation) {
+        super(x, y, speed, maxX, maxY, spriteAnimation, 3);
     }
 
     /**

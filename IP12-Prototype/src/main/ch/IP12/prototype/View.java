@@ -48,12 +48,7 @@ public class View {
 
         graphicsContext.setFill(Color.RED);
         graphicsContext.fillRect(player.getX(), player.getY(), player.getLength(), player.getHeight());
-        player.getSpriteAnimation().setCycleCount(Animation.INDEFINITE);
-        player.getSpriteAnimation().play();
-        SpriteAnimation pa = player.getSpriteAnimation();
-        Rectangle2D rect = pa.imageView.getViewport();
-
-        graphicsContext.drawImage(player.getSpriteAnimation().imageView.getImage(), rect.getMinX(), rect.getMinY(),rect.getWidth(), rect.getHeight(),player.getX(),player.getY(),player.getLength(),player.getHeight());
+        player.drawAnimation(graphicsContext);
 
         for (Obstacle obstacle : obstacles) {
             graphicsContext.setFill(Color.BLUE);

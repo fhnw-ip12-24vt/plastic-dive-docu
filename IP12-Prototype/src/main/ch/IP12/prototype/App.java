@@ -23,7 +23,7 @@ public class App extends Application {
         final int width = 800;
         final int height = 600;
         //Creates the player and an array list for all the obstacles
-        Player player =  new Player(100,100,3,50,50, width, height, Spritesheets.Player);
+        Player player =  new Player(100,100,3,width,height,Spritesheets.Player);
         ArrayList<Obstacle> obstacles = new ArrayList<>();
 
         //Creates the area which we draw all the images on
