@@ -40,7 +40,7 @@ public class App extends Application {
         StackPane root = new StackPane(canvas);
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("MVC Example");
+        stage.setTitle("IP12 Prototype");
         stage.show();
 
         //starts the key listeners for the main scene.
