@@ -29,6 +29,7 @@ public class App extends Application {
         //Creates the area which we draw all the images on
         Canvas canvas = new Canvas(width, height);
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.setImageSmoothing(false);
 
         //Initializes the controller and starts the game
         Controller controller = new Controller(player, obstacles, width, height);
