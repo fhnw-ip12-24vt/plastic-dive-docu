@@ -52,4 +52,8 @@ public class SpriteAnimation extends Transition {
             lastIndex = index;
         }
     }
+
+    public ImageView getImageView() {
+        return imageView;
+    }
 }
