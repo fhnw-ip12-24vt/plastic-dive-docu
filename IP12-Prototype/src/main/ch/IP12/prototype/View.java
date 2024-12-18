@@ -1,6 +1,9 @@
 package ch.IP12.prototype;
 
+import ch.IP12.prototype.model.animations.SpriteAnimation;
+import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import ch.IP12.prototype.model.Obstacle;
@@ -45,6 +48,12 @@ public class View {
 
         graphicsContext.setFill(Color.RED);
         graphicsContext.fillRect(player.getX(), player.getY(), player.getLength(), player.getHeight());
+        player.getSpriteAnimation().setCycleCount(Animation.INDEFINITE);
+        player.getSpriteAnimation().play();
+        SpriteAnimation pa = player.getSpriteAnimation();
+        Rectangle2D rect = pa.imageView.getViewport();
+
+        graphicsContext.drawImage(player.getSpriteAnimation().imageView.getImage(), rect.getMinX(), rect.getMinY(),rect.getWidth(), rect.getHeight(),player.getX(),player.getY(),player.getLength(),player.getHeight());
 
         for (Obstacle obstacle : obstacles) {
             graphicsContext.setFill(Color.BLUE);

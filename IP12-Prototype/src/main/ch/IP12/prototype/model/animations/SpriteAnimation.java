@@ -8,7 +8,7 @@ import javafx.util.Duration;
 
 public class SpriteAnimation extends Transition {
     //main image as an image view
-    private final ImageView imageView;
+    public final ImageView imageView;
 
     //frame count
     private final int count;
