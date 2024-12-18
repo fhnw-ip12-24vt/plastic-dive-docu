@@ -11,13 +11,13 @@ public class Obstacle extends Moveable{
     private boolean waveUp = Math.random() > 0.5;
 
     public Obstacle(int x, int y, int speed, double maxX, double maxY, Spritesheets spriteSheet) {
-        super(x, y, speed, maxX, maxY, spriteSheet,(int)((Math.random()+0.5)*2));
+        super(x, y, speed, maxX, maxY, spriteSheet,((Math.random()+0.5)*2));
         //forces the Obstacle to move to the left side of the screen.
         direction = 180;
     }
 
     public Obstacle(int x, int y, int speed, double maxX, double maxY, SpriteAnimation spriteAnimation) {
-        super(x, y, speed, maxX, maxY, spriteAnimation,(int)((Math.random()+3)*0.5));
+        super(x, y, speed, maxX, maxY, spriteAnimation,((Math.random()+0.5)*2));
         //forces the Obstacle to move to the left side of the screen.
         direction = 180;
     }

@@ -10,23 +10,23 @@ public abstract class Moveable {
     protected double x;
     protected double y;
     protected final int speed;
-    protected final int length;
-    protected final int height;
+    protected final double length;
+    protected final double height;
     protected int direction;
 
     protected final double maxX;
     protected final double maxY;
 
-    protected final int spriteScale;
+    protected final double spriteScale;
 
     //path to animation images
     protected final SpriteAnimation animation;
 
-    Moveable(int x, int y, int speed, double maxX, double maxY, Spritesheets spritesheets, int spriteScale){
+    Moveable(int x, int y, int speed, double maxX, double maxY, Spritesheets spritesheets, double spriteScale){
         this(x, y, speed, maxX, maxY, spritesheets.getSpriteAnimation(), spriteScale);
     }
 
-    Moveable(int x, int y, int speed, double maxX, double maxY, SpriteAnimation spriteAnimation, int spriteScale) {
+    Moveable(int x, int y, int speed, double maxX, double maxY, SpriteAnimation spriteAnimation, double spriteScale) {
         this.x = x;
         this.y = y;
         this.speed = speed;
@@ -73,11 +73,11 @@ public abstract class Moveable {
         return y;
     }
 
-    public int getHeight() {
+    public double getHeight() {
         return height;
     }
 
-    public int getLength() {
+    public double getLength() {
         return length;
     }
 
