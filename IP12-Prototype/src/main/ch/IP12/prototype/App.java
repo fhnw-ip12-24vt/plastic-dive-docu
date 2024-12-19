@@ -1,6 +1,8 @@
 package ch.IP12.prototype;
 
+import ch.IP12.prototype.Scenes.Scenes;
 import javafx.application.Application;
+import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -11,7 +13,8 @@ import ch.IP12.prototype.model.Obstacle;
 import ch.IP12.prototype.model.Player;
 import ch.IP12.prototype.model.animations.Spritesheets;
 
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 
 public class App extends Application {
@@ -23,7 +26,6 @@ public class App extends Application {
 
 
     public void start(Stage stage) {
-
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         WIDTH = screenSize.width;
         HEIGHT = screenSize.height;
@@ -31,10 +33,8 @@ public class App extends Application {
         stage.setFullScreenExitHint("");
         stage.setFullScreen(true);
 
-
-
         //Creates the player and an array list for all the obstacles
-        Player player =  new Player(100,100,3, WIDTH, HEIGHT,Spritesheets.Player);
+        Player player =  new Player(100,HEIGHT/2,3, WIDTH, HEIGHT,Spritesheets.Player);
         ArrayList<Obstacle> obstacles = new ArrayList<>();
 
         //Creates the area which we draw all the images on
@@ -49,14 +49,13 @@ public class App extends Application {
         View view = new View(graphicsContext, player, obstacles);
 
         //creates window and passes it the relevant objects (necessary for display)
-        StackPane root = new StackPane(canvas);
-        Scene scene = new Scene(root);
+        Scene scene = Scenes.getGameScene(canvas);
         stage.setScene(scene);
         stage.setTitle("IP12 Prototype");
         stage.show();
 
         //starts the key listeners for the main scene.
-        controller.createListeners(scene);
+        controller.createGameKeyListeners(scene);
         controller.startGameLogic();
 
         view.startRendering();

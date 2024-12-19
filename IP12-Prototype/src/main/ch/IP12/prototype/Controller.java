@@ -32,7 +32,7 @@ class Controller {
      * Creates Key listeners for movement logic.
      * @param scene The Scene object which will receive the listeners
      */
-    void createListeners(Scene scene){
+    void createGameKeyListeners(Scene scene){
         scene.setOnKeyReleased(e -> {
             if(!running){
                 //If the game is over and the player releases a button the key listeners are cleared
@@ -109,6 +109,14 @@ class Controller {
         executor.shutdown();
     }
 
+    public void resetGame(){
+        obstacles.clear();
+        player.resetPosition();
+        gameTicks.set(0);
+        running = true;
+        startGameLogic();
+    }
+
     private void gameStep() {
         if (running) {
             final List<Obstacle> deletionList = Collections.synchronizedList(new ArrayList<>());
@@ -117,6 +125,7 @@ class Controller {
 
             if (gameTicks.get() % 50 == 0) {
                 obstacles.add(new Obstacle(App.WIDTH, (int) ((Math.random() * (App.HEIGHT))), 2, App.WIDTH, App.HEIGHT, Spritesheets.getRandomSpritesheet()));
+                gameTicks.set(0);
             }
 
             double deltaTime = 0.016; // Approx. 60 FPS
