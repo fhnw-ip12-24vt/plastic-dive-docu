@@ -25,6 +25,7 @@
 			<directory>src/assembly</directory>
 			<outputDirectory>.</outputDirectory>
 			<lineEnding>unix</lineEnding>
+			<filtered>true</filtered>
 			<includes>
 				<include>*.sh</include>
 			</includes>

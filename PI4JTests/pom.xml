@@ -24,13 +24,13 @@
 
     <properties>
         <!-- The class that will be started, choose one and only one -->
-        <launcher.class>ch.fhnw.hellopi.HelloGpio</launcher.class>
+        <launcher.class>ch.pi4j.tests.Main</launcher.class>
 
         <jar.name>HelloPi</jar.name>
 
         <!-- Setup for the RaspPi -->
         <pi.hostname>pi4j</pi.hostname>
-        <pi.ipnumber>10.175.4.80</pi.ipnumber>
+        <pi.ipnumber>192.168.0.38</pi.ipnumber>
         <!-- <pi.ipnumber>pi4j.local</pi.ipnumber>  --> <!-- can be used if Pi is uniquein wlan -->
         <pi.port>22</pi.port>
         <pi.username>pi</pi.username>
@@ -39,7 +39,7 @@
         <pi.startScript>start.sh</pi.startScript>
 
         <!-- Java Compiler Version -->
-        <java.version>22</java.version>
+        <java.version>21</java.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -299,7 +299,7 @@
                                 </goals>
                                 <configuration>
                                     <target>
-                                        <!-- Ensure target directory exists on RaspPi -->
+                                       <!-- Ensure target directory exists on RaspPi -->
                                         <sshexec host="${pi.ipnumber}" port="${pi.port}"
                                                  username="${pi.username}" password="${pi.password}"
                                                  trust="true" command="mkdir --parents ${pi.deploydirectory}; rm -r -f ${pi.deploydirectory}/*"/>

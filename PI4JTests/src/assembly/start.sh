@@ -1,5 +1,5 @@
 #!/bin/bash
-cd "$1"
+cd /home/pi/deploy/HelloPi
 pkill java
-DISPLAY=:0 XAUTHORITY=/home/pi/.Xauthority java -Dsun.java2d.opengl=True -XX:+UseZGC -Xmx1G -jar "$2".jar
+DISPLAY=:0 XAUTHORITY=/home/pi/.Xauthority java -XX:+UseZGC -Xmx1G -jar HelloPi.jar
 exit 0
