@@ -18,7 +18,7 @@ Maven is used for library management and is therefore necessary for the project 
 
 There are two options for how the libraries can be installed:
 * Using a Maven plugin in the IDE (e.g. Maven Helper in IntelliJ IDEA) and running the "clean" and "install" lifecycle projects on the module IP12-Prototype.
-* Downloading maven binaries and running ```cd PathToProject\IP12-prototype``` and then ```mvn clean install``` in the terminal.
+* Downloading maven binaries and running ```cd PathToProject\IP12-prototype``` and then ```mvn validate clean install package``` in the terminal.
 
 ### Run configuration
 The java version used during programming and testing is temurin 21.
@@ -49,7 +49,7 @@ Maven wird für die Bibliotheksverwaltung verwendet und ist daher für die Ausf�
 
 Es gibt zwei Möglichkeiten, wie die Bibliotheken installiert werden können:
 * Verwendung eines Maven-Plugins in der IDE (z.B. Maven Helper in IntelliJ IDEA) und Ausführen der Lebenszyklusprojekte „clean“ und „install“ für das Modul IP12-Prototype.
-* Herunterladen der Maven-Binärdateien und Ausführen von ```cd Pfad-Zum-Projekt\IP12-prototype``` und dann ```mvn clean install``` im Terminal.
+* Herunterladen der Maven-Binärdateien und Ausführen von ```cd Pfad-Zum-Projekt\IP12-prototype``` und dann ```mvn validate clean install package``` im Terminal.
 
 ### Laufkonfiguration
 Die beim Programmieren und Testen verwendete Java-Version ist Temurin 21.
