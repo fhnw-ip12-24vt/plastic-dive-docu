@@ -3,6 +3,5 @@ module ch.IP12.prototype {
     requires json.simple;
     requires java.desktop;
 
-
     exports ch.IP12.prototype;
 }

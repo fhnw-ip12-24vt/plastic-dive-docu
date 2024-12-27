@@ -21,6 +21,7 @@ public class App extends Application {
     static int WIDTH = 800;
     static int HEIGHT = 600;
     public static void main(String[] args) {
+        System.out.println("Hello World!");
         launch(args);
     }
 
