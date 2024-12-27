@@ -19,10 +19,12 @@ public class App extends Application {
     static int WIDTH = 800;
     static int HEIGHT = 600;
     public static void main(String[] args) {
-        System.out.println("Hello World!");
         launch(args);
     }
 
+    @Override
+    public void init(){
+    }
 
     public void start(Stage stage) {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
