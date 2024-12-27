@@ -270,23 +270,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-install-plugin</artifactId>
                     <version>${maven-install-plugin.version}</version>
-                    <configuration>
-                        <groupId>org.json.simple</groupId>
-                        <artifactId>json-simple</artifactId>
-                        <version>1.1.1</version>
-                        <packaging>jar</packaging>
-                        <file>${basedir}/lib/json-simple-1.1.1.jar</file>
-                        <generatePom>true</generatePom>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>install-jar-lib</id>
-                            <goals>
-                                <goal>install-file</goal>
-                            </goals>
-                            <phase>validate</phase>
-                        </execution>
-                    </executions>
                 </plugin>
 
                 <plugin>
