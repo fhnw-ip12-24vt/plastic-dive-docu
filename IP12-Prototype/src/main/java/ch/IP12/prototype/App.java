@@ -2,11 +2,9 @@ package ch.IP12.prototype;
 
 import ch.IP12.prototype.Scenes.Scenes;
 import javafx.application.Application;
-import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import ch.IP12.prototype.model.Obstacle;

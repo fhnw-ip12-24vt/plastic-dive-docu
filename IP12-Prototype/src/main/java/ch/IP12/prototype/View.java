@@ -1,9 +1,6 @@
 package ch.IP12.prototype;
 
-import ch.IP12.prototype.model.animations.SpriteAnimation;
-import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import ch.IP12.prototype.model.Obstacle;
