@@ -10,9 +10,7 @@ public class Player extends Moveable{
     private final double initialYValue;
 
     public Player(int x, int y, int speed, double maxX, double maxY, Spritesheets spriteSheet) {
-        super(x, y, speed, maxX, maxY, spriteSheet, 3);
-        this.initialXValue = x;
-        this.initialYValue = y;
+        this(x,y,speed,maxX, maxY, spriteSheet.getSpriteAnimation());
     }
 
     public Player(int x, int y, int speed, double maxX, double maxY, SpriteAnimation spriteAnimation) {

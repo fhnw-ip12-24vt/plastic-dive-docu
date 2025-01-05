@@ -11,7 +11,8 @@ public enum Spritesheets {
     Player(new SpriteAnimation(new ImageView(new Image("player.png")), 2,2,0,0,16, 16, Duration.millis(200))),
     SmallCluster(new SpriteAnimation(new ImageView(new Image("https://upload.wikimedia.org/wikipedia/commons/7/73/The_Horse_in_Motion.jpg")), 0,0,0,0,20, 20, Duration.millis(1000))),
     MediumCluster(new SpriteAnimation(new ImageView(new Image("https://upload.wikimedia.org/wikipedia/commons/7/73/The_Horse_in_Motion.jpg")), 0,0,0,0,35, 35, Duration.millis(1000))),
-    LargeCluster(new SpriteAnimation(new ImageView(new Image("https://upload.wikimedia.org/wikipedia/commons/7/73/The_Horse_in_Motion.jpg")), 0,0,0,0,50, 50, Duration.millis(1000))),;
+    LargeCluster(new SpriteAnimation(new ImageView(new Image("https://upload.wikimedia.org/wikipedia/commons/7/73/The_Horse_in_Motion.jpg")), 0,0,0,0,50, 50, Duration.millis(1000))),
+    ;
 
     private final SpriteAnimation spriteAnimation;
 
