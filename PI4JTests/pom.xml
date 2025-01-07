@@ -32,7 +32,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Project Dependency Versions-->
-        <pi4j.version>2.7.0-SNAPSHOT</pi4j.version>
+        <pi4j.version>2.7.0</pi4j.version>
         <jSerialComm.version>2.11.0</jSerialComm.version>
 
         <junit.version>5.11.0</junit.version>

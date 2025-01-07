@@ -4,7 +4,7 @@
   <groupId>ch.IP12.prototype</groupId>
   <artifactId>IP12-Prototype</artifactId>
   <name>IP12-Prototype</name>
-  <version>1.0-Prototype</version>
+  <version>1.0</version>
   <build>
     <pluginManagement>
       <plugins>
@@ -365,35 +365,35 @@
     </dependency>
   </dependencies>
   <properties>
+    <maven-install-plugin.version>3.1.3</maven-install-plugin.version>
     <ant-jsch.version>1.10.15</ant-jsch.version>
+    <jar.name>IP12-Prototype</jar.name>
     <jSerialComm.version>2.11.0</jSerialComm.version>
     <pi.username>pi</pi.username>
+    <launcher.class>ch.IP12.prototype.Main</launcher.class>
+    <maven-dependency-plugin.version>3.8.0</maven-dependency-plugin.version>
     <pi.hostname>pi4j</pi.hostname>
     <maven-javadoc-plugin.version>3.10.0</maven-javadoc-plugin.version>
     <slf4j.version>2.0.16</slf4j.version>
     <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <javafx.version>23.0.1</javafx.version>
     <junit.version>5.11.0</junit.version>
-    <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
-    <maven.compiler.source>${java.version}</maven.compiler.source>
-    <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
-    <maven-clean-plugin.version>3.4.0</maven-clean-plugin.version>
-    <maven-surefire-plugin.version>3.5.0</maven-surefire-plugin.version>
-    <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
-    <exec-maven-plugin.version>3.4.1</exec-maven-plugin.version>
-    <maven-install-plugin.version>3.1.3</maven-install-plugin.version>
-    <jar.name>IP12-Prototype</jar.name>
-    <launcher.class>ch.IP12.prototype.Main</launcher.class>
-    <maven-dependency-plugin.version>3.8.0</maven-dependency-plugin.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <pi.deploydirectory>/home/pi/deploy</pi.deploydirectory>
     <pi.startScript>start.sh</pi.startScript>
+    <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
     <pi.ipnumber>192.168.0.38</pi.ipnumber>
     <java.version>21</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
     <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
     <pi4j.version>2.7.0</pi4j.version>
+    <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+    <maven-clean-plugin.version>3.4.0</maven-clean-plugin.version>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <pi.password>pi4j</pi.password>
+    <maven-surefire-plugin.version>3.5.0</maven-surefire-plugin.version>
     <pi.port>22</pi.port>
+    <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+    <exec-maven-plugin.version>3.4.1</exec-maven-plugin.version>
   </properties>
 </project>

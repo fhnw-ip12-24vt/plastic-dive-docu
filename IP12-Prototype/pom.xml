@@ -5,7 +5,7 @@
 
     <groupId>ch.IP12.prototype</groupId>
     <artifactId>IP12-Prototype</artifactId>
-    <version>1.0-Prototype</version>
+    <version>1.0</version>
     <name>IP12-Prototype</name>
 
     <properties>
