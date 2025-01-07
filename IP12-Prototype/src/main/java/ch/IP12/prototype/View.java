@@ -7,15 +7,16 @@ import ch.IP12.prototype.model.Obstacle;
 import ch.IP12.prototype.model.Player;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class View {
     private final GraphicsContext graphicsContext;
     private final Player player;
-    private final ArrayList<Obstacle> obstacles;
+    private final List<Obstacle> obstacles;
     private long clock;
 
-    View(GraphicsContext graphicsContext, Player player, ArrayList<Obstacle> obstacles) {
+    View(GraphicsContext graphicsContext, Player player, List<Obstacle> obstacles) {
         this.graphicsContext = graphicsContext;
         this.player = player;
         this.obstacles = obstacles;

@@ -14,6 +14,9 @@ import ch.IP12.prototype.model.animations.Spritesheets;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class App extends Application {
     static int WIDTH = 800;
@@ -36,7 +39,7 @@ public class App extends Application {
 
         //Creates the player and an array list for all the obstacles
         Player player =  new Player(100,HEIGHT/2,3, WIDTH, HEIGHT,Spritesheets.Player);
-        ArrayList<Obstacle> obstacles = new ArrayList<>();
+        List<Obstacle> obstacles = Collections.synchronizedList(new ArrayList<>());
 
         //Creates the area which we draw all the images on
         Canvas canvas = new Canvas(WIDTH, HEIGHT);

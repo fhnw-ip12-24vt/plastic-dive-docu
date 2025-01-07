@@ -17,12 +17,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 class Controller {
     private final List<KeyCode> pressedKeys = Collections.synchronizedList(new ArrayList<>());
     private final Player player;
-    private final ArrayList<Obstacle> obstacles;
+    private final List<Obstacle> obstacles;
     private final ScheduledExecutorService executor;
     private volatile boolean running = true;
     protected final AtomicInteger gameTicks = new AtomicInteger();
 
-    Controller(Player player, ArrayList<Obstacle> obstacles) {
+    Controller(Player player, List<Obstacle> obstacles) {
         this.player = player;
         this.obstacles = obstacles;
         this.executor = Executors.newSingleThreadScheduledExecutor();
