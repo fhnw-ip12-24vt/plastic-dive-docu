@@ -12,7 +12,7 @@
         <!-- The class that will be started, choose one and only one -->
         <launcher.class>ch.IP12.prototype.Main</launcher.class>
 
-        <jar.name>IP12-Prototype</jar.name>
+        <jar.name>IP12-Prototype-1.0-shaded</jar.name>
 
         <!-- Setup for the RaspPi -->
         <pi.hostname>pi4j</pi.hostname>
