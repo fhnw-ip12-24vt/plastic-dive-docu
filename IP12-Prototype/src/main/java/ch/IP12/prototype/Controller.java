@@ -123,7 +123,7 @@ class Controller {
             // Update the model (logic)
             gameTicks.getAndIncrement();
 
-            if (gameTicks.get() % 50 == 0) {
+            if (gameTicks.get() >= 50) {
                 obstacles.add(new Obstacle(App.WIDTH, (int) ((Math.random() * (App.HEIGHT))), 2, App.WIDTH, App.HEIGHT, Spritesheets.getRandomSpritesheet()));
                 gameTicks.set(0);
             }
