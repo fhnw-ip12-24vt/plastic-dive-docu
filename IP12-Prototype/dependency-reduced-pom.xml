@@ -107,8 +107,6 @@
           <arguments>
             <argument>--module-path</argument>
             <argument>${project.build.directory}/distribution</argument>
-            <argument>--module</argument>
-            <argument>com.pi4j.example/com.pi4j.example.MinimalExample</argument>
           </arguments>
         </configuration>
       </plugin>
@@ -271,6 +269,12 @@
                 <artifactId>ant-jsch</artifactId>
                 <version>${ant-jsch.version}</version>
               </dependency>
+              <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-base</artifactId>
+                <version>21.0.1</version>
+                <classifier>linux-aarch64</classifier>
+              </dependency>
             </dependencies>
           </plugin>
         </plugins>
@@ -372,7 +376,7 @@
     <maven-javadoc-plugin.version>3.10.0</maven-javadoc-plugin.version>
     <slf4j.version>2.0.16</slf4j.version>
     <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
-    <javafx.version>23.0.1</javafx.version>
+    <javafx.version>21.0.1</javafx.version>
     <junit.version>5.11.0</junit.version>
     <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -388,7 +392,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <pi.deploydirectory>/home/pi/deploy</pi.deploydirectory>
     <pi.startScript>start.sh</pi.startScript>
-    <pi.ipnumber>192.168.0.38</pi.ipnumber>
+    <pi.ipnumber>192.168.186.198</pi.ipnumber>
     <java.version>21</java.version>
     <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
     <pi4j.version>2.7.0</pi4j.version>
