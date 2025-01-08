@@ -107,8 +107,6 @@
           <arguments>
             <argument>--module-path</argument>
             <argument>${project.build.directory}/distribution</argument>
-            <argument>--module</argument>
-            <argument>com.pi4j.example/com.pi4j.example.MinimalExample</argument>
           </arguments>
         </configuration>
       </plugin>
@@ -271,6 +269,12 @@
                 <artifactId>ant-jsch</artifactId>
                 <version>${ant-jsch.version}</version>
               </dependency>
+              <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-base</artifactId>
+                <version>21.0.1</version>
+                <classifier>linux-aarch64</classifier>
+              </dependency>
             </dependencies>
           </plugin>
         </plugins>
@@ -365,35 +369,35 @@
     </dependency>
   </dependencies>
   <properties>
-    <maven-install-plugin.version>3.1.3</maven-install-plugin.version>
     <ant-jsch.version>1.10.15</ant-jsch.version>
-    <jar.name>IP12-Prototype-1.0-shaded</jar.name>
     <jSerialComm.version>2.11.0</jSerialComm.version>
     <pi.username>pi</pi.username>
-    <launcher.class>ch.IP12.prototype.Main</launcher.class>
-    <maven-dependency-plugin.version>3.8.0</maven-dependency-plugin.version>
     <pi.hostname>pi4j</pi.hostname>
     <maven-javadoc-plugin.version>3.10.0</maven-javadoc-plugin.version>
     <slf4j.version>2.0.16</slf4j.version>
     <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <javafx.version>23.0.1</javafx.version>
+    <javafx.version>21.0.1</javafx.version>
     <junit.version>5.11.0</junit.version>
-    <pi.deploydirectory>/home/pi/deploy</pi.deploydirectory>
-    <pi.startScript>start.sh</pi.startScript>
     <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
-    <pi.ipnumber>192.168.0.38</pi.ipnumber>
-    <java.version>21</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
-    <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
-    <pi4j.version>2.7.0</pi4j.version>
     <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
     <maven-clean-plugin.version>3.4.0</maven-clean-plugin.version>
-    <maven.compiler.target>${java.version}</maven.compiler.target>
-    <pi.password>pi4j</pi.password>
     <maven-surefire-plugin.version>3.5.0</maven-surefire-plugin.version>
-    <pi.port>22</pi.port>
     <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
     <exec-maven-plugin.version>3.4.1</exec-maven-plugin.version>
+    <maven-install-plugin.version>3.1.3</maven-install-plugin.version>
+    <jar.name>IP12-Prototype</jar.name>
+    <launcher.class>ch.IP12.prototype.Main</launcher.class>
+    <maven-dependency-plugin.version>3.8.0</maven-dependency-plugin.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <pi.deploydirectory>/home/pi/deploy</pi.deploydirectory>
+    <pi.startScript>start.sh</pi.startScript>
+    <pi.ipnumber>192.168.186.198</pi.ipnumber>
+    <java.version>21</java.version>
+    <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
+    <pi4j.version>2.7.0</pi4j.version>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <pi.password>pi4j</pi.password>
+    <pi.port>22</pi.port>
   </properties>
 </project>

@@ -16,7 +16,7 @@
 
         <!-- Setup for the RaspPi -->
         <pi.hostname>pi4j</pi.hostname>
-        <pi.ipnumber>192.168.0.38</pi.ipnumber>
+        <pi.ipnumber>192.168.186.198</pi.ipnumber>
         <!-- <pi.ipnumber>pi4j.local</pi.ipnumber>  --> <!-- can be used if Pi is uniquein wlan -->
         <pi.port>22</pi.port>
         <pi.username>pi</pi.username>
@@ -31,7 +31,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <javafx.version>23.0.1</javafx.version>
+        <javafx.version>21.0.1</javafx.version>
         <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
 
         <!-- DEPENDENCIES VERSIONS -->
@@ -196,8 +196,6 @@
                     <arguments>
                         <argument>--module-path</argument>
                         <argument>${project.build.directory}/distribution</argument>
-                        <argument>--module</argument>
-                        <argument>com.pi4j.example/com.pi4j.example.MinimalExample</argument>
                     </arguments>
                 </configuration>
             </plugin>
@@ -409,6 +407,12 @@
         </profile>
         <profile>
             <id>run-on-Pi</id>
+            <activation>
+                <os>
+                    <family>unix</family>
+                    <arch>aarch64</arch>
+                </os>
+            </activation>
             <build>
                 <plugins>
                     <plugin>
@@ -459,6 +463,12 @@
                                 <groupId>org.apache.ant</groupId>
                                 <artifactId>ant-jsch</artifactId>
                                 <version>${ant-jsch.version}</version>
+                            </dependency>
+                            <dependency>
+                                <groupId>org.openjfx</groupId>
+                                <artifactId>javafx-base</artifactId>
+                                <classifier>linux-aarch64</classifier>
+                                <version>21.0.1</version>
                             </dependency>
                         </dependencies>
                     </plugin>

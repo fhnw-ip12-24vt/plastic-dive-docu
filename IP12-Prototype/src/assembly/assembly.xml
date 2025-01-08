@@ -7,17 +7,11 @@
 
 	<fileSets>
 		<fileSet>
-			<directory>${project.build.directory}/libs</directory>
-			<outputDirectory>libs</outputDirectory>
-			<filtered>false</filtered>
-		</fileSet>
-
-		<fileSet>
 			<directory>${project.build.directory}</directory>
 			<outputDirectory>.</outputDirectory>
 			<filtered>false</filtered>
 			<includes>
-				<include>${build.finalName}.jar</include>
+				<include>${build.finalName}-1.0-shaded.jar</include>
 			</includes>
 		</fileSet>
 
