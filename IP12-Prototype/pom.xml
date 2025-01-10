@@ -416,7 +416,7 @@
                         </executions>
                         <configuration>
                             <executable>java</executable>
-                            <commandlineArgs>-jar "${project.build.directory}/${jar.name}.jar"</commandlineArgs>
+                            <commandlineArgs>-jar "${project.build.directory}/${jar.name}-{project.version}-shaded.jar"</commandlineArgs>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -424,12 +424,6 @@
         </profile>
         <profile>
             <id>run-on-Pi</id>
-            <activation>
-                <os>
-                    <family>unix</family>
-                    <arch>aarch64</arch>
-                </os>
-            </activation>
             <build>
                 <plugins>
                     <plugin>
