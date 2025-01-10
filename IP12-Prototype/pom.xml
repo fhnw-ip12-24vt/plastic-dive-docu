@@ -119,6 +119,7 @@
             <classifier>linux</classifier>
         </dependency>
 
+        <!-- JAVAFX graphics installation for mac-->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-graphics</artifactId>
