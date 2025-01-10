@@ -31,7 +31,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <javafx.version>21.0.1</javafx.version>
+        <javafx.version>21.0.2</javafx.version>
         <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
 
         <!-- DEPENDENCIES VERSIONS -->
@@ -98,16 +98,33 @@
             <scope>test</scope>
         </dependency>
 
+        <!--Multiplatform JAVAFX installation-->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>23.0.1</version>
+            <version>${javafx.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-media</artifactId>
-            <version>22.0.1</version>
+            <version>${javafx.version}</version>
+        </dependency>
+
+        <!-- JAVAFX graphics installation for linux-->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>${javafx.version}</version>
+            <classifier>linux</classifier>
+        </dependency>
+
+        <!-- JAVAFX graphics installation for mac-->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>${javafx.version}</version>
+            <classifier>mac</classifier>
         </dependency>
 
         <!-- jSerialComm library for serial connections -->
@@ -399,7 +416,7 @@
                         </executions>
                         <configuration>
                             <executable>java</executable>
-                            <commandlineArgs>-jar "${project.build.directory}/${jar.name}.jar"</commandlineArgs>
+                            <commandlineArgs>-jar "${project.build.directory}/${jar.name}-{project.version}-shaded.jar"</commandlineArgs>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -407,12 +424,6 @@
         </profile>
         <profile>
             <id>run-on-Pi</id>
-            <activation>
-                <os>
-                    <family>unix</family>
-                    <arch>aarch64</arch>
-                </os>
-            </activation>
             <build>
                 <plugins>
                     <plugin>
@@ -463,12 +474,6 @@
                                 <groupId>org.apache.ant</groupId>
                                 <artifactId>ant-jsch</artifactId>
                                 <version>${ant-jsch.version}</version>
-                            </dependency>
-                            <dependency>
-                                <groupId>org.openjfx</groupId>
-                                <artifactId>javafx-base</artifactId>
-                                <classifier>linux-aarch64</classifier>
-                                <version>21.0.1</version>
                             </dependency>
                         </dependencies>
                     </plugin>
