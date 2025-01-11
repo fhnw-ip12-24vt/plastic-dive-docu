@@ -18,7 +18,7 @@
 
         <!-- Setup for the RaspPi -->
         <pi.hostname>pi4j</pi.hostname>
-        <pi.ipnumber>192.168.0.38</pi.ipnumber>
+        <pi.ipnumber>192.168.1.222</pi.ipnumber>
         <!-- <pi.ipnumber>pi4j.local</pi.ipnumber>  --> <!-- can be used if Pi is uniquein wlan -->
         <pi.port>22</pi.port>
         <pi.username>pi</pi.username>
@@ -73,12 +73,12 @@
         </dependency>
         <dependency>
             <groupId>com.pi4j</groupId>
-            <artifactId>pi4j-plugin-gpiod</artifactId>
+            <artifactId>pi4j-plugin-raspberrypi</artifactId>
             <version>${pi4j.version}</version>
         </dependency>
         <dependency>
             <groupId>com.pi4j</groupId>
-            <artifactId>pi4j-plugin-linuxfs</artifactId>
+            <artifactId>pi4j-plugin-gpiod</artifactId>
             <version>${pi4j.version}</version>
         </dependency>
 
@@ -109,6 +109,12 @@
             <artifactId>junit-jupiter-params</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.pi4j</groupId>
+            <artifactId>pi4j-plugin-linuxfs</artifactId>
+            <version>2.7.0</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
