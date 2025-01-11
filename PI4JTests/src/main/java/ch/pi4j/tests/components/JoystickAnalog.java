@@ -37,6 +37,7 @@ public class JoystickAnalog extends Component {
     private final SimpleButton push;
 
     private final double normThreshold;
+    final double homeArea = 0.1;
 
     private double xActualValue;
     private double yActualValue;
@@ -88,8 +89,7 @@ public class JoystickAnalog extends Component {
     }
 
     private synchronized void notifyIfNeeded(PositionConsumer onMove, Runnable onCenter){
-        final double homeArea = 0.1;
-        if (Math.abs(xActualValue) <= homeArea && Math.abs(yActualValue) <= homeArea) {
+        if (inHomePosition()) {
             xLastNotifiedValue = xActualValue;
             yLastNotifiedValue = yActualValue;
             if (onCenter != null) {
@@ -108,6 +108,42 @@ public class JoystickAnalog extends Component {
                 }
             }
         }
+
+        System.out.println("Angle in degrees: "+getDegrees());
+        System.out.println("Strength of movement: "+getStrength());
+    }
+
+    public double getDegrees() {
+        if (inHomePosition()){
+            return 0.0;
+        }
+
+        // Compute the angle in radians
+        double radians = Math.atan2(yActualValue, -xActualValue);
+
+        // Convert to degrees
+        double degrees = Math.toDegrees(radians);
+
+        // Ensure the angle is in the range [0, 360)
+        if (degrees < 0) {
+            degrees += 360;
+        }
+
+        return (double) Math.round(degrees * 100) / 100;
+    }
+
+    public double getStrength(){
+        if (inHomePosition()){
+            return 0.0;
+        }
+        double magnitude = Math.sqrt(Math.pow(yActualValue, 2) + Math.pow(xActualValue, 2));
+        double strength = magnitude / Math.sqrt(2);
+
+        return (double) Math.round(Math.min(1, strength)*100) / 100;
+    }
+
+    public boolean inHomePosition(){
+        return Math.abs(xActualValue) <= homeArea && Math.abs(yActualValue) <= homeArea;
     }
 
     /**

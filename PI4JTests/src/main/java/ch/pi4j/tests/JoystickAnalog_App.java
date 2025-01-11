@@ -28,10 +28,6 @@ public class JoystickAnalog_App implements Application {
         joystick.onMove((xPos, yPos) -> System.out.printf("Current position of joystick is: %.2f, %.2f%n", xPos, yPos),
                 ()           -> System.out.println("Joystick in home position"));
 
-        joystick.onDown      (() -> System.out.println("Pressing the button"));
-        joystick.onUp        (() -> System.out.println("Stopped pressing."));
-        joystick.whilePressed(() -> System.out.println("Button is still pressed."), Duration.ofMillis(500));
-
         //start continuous reading after all ADC channels are configured
         ads1115.startContinuousReading(0.1);
 
