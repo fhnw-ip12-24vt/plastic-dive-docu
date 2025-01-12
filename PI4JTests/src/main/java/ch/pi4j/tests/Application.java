@@ -17,26 +17,6 @@ public interface Application {
     void execute(Context pi4j);
 
     /**
-     * Returns a unique name which is used to determine how the application can be called.
-     * This uses the simple class name by default, so that the application has the same name as its class.
-     *
-     * @return Unique application name
-     */
-    default String getName() {
-        return this.getClass().getSimpleName();
-    }
-
-    /**
-     * Returns a human-readable description what this application is doing.
-     * This returns a short explanation together with the class FQDN by default.
-     *
-     * @return Human-readable application description
-     */
-    default String getDescription() {
-        return this.getClass().getName();
-    }
-
-    /**
      * Utility function to sleep for the specified amount of milliseconds.
      * An {@link InterruptedException} will be catched and ignored while setting the interrupt flag again.
      *
