@@ -1,9 +1,11 @@
 package ch.IP12.prototype;
 
+import ch.IP12.prototype.components.Ads1115;
+import ch.IP12.prototype.components.JoystickAnalog;
+import com.pi4j.Pi4J;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
-import ch.IP12.prototype.model.Obstacle;
-import ch.IP12.prototype.model.Player;
+import ch.IP12.prototype.model.*;
 import ch.IP12.prototype.model.animations.Spritesheets;
 
 import java.util.ArrayList;
@@ -21,8 +23,13 @@ class Controller {
     private final ScheduledExecutorService executor;
     private static volatile boolean running = true;
     protected final AtomicInteger gameTicks = new AtomicInteger();
+    protected final JoystickAnalog joystick;
+    protected final Ads1115 ads1115;
 
-    Controller(Player player, List<Obstacle> obstacles) {
+    Controller(Player player, List<Obstacle> obstacles, Ads1115 ads1115) {
+        this.ads1115 = ads1115;
+        joystick = new JoystickAnalog(ads1115, Ads1115.Channel.A0, Ads1115.Channel.A1);
+
         this.player = player;
         this.obstacles = obstacles;
         this.executor = Executors.newSingleThreadScheduledExecutor();
@@ -82,6 +89,9 @@ class Controller {
                 pressedKeys.add(e.getCode());
             }
         });
+
+        joystick.onMove();
+        ads1115.startContinuousReading(0.1);
     }
 
     /**
@@ -91,6 +101,9 @@ class Controller {
     void clearKeyListeners(Scene scene){
         scene.setOnKeyPressed(e -> {});
         scene.setOnKeyReleased(e -> {});
+
+        joystick.reset();
+        ads1115.stopContinuousReading();
     }
 
     /**
@@ -133,7 +146,7 @@ class Controller {
             }
 
             double deltaTime = 0.016; // Approx. 60 FPS
-            player.update(deltaTime, 1);
+            player.update(deltaTime, JoystickAnalog.getStrength());
             obstacles.parallelStream().forEach(obstacle -> {
                 //Obstacle updates
                 obstacle.update(deltaTime, 0.9);

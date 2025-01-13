@@ -9,10 +9,12 @@ import javafx.scene.canvas.GraphicsContext;
 public abstract class Moveable {
     protected double x;
     protected double y;
+
     protected final int speed;
     protected final double length;
     protected final double height;
-    protected int direction;
+
+    protected double direction;
 
     protected final double maxX;
     protected final double maxY;

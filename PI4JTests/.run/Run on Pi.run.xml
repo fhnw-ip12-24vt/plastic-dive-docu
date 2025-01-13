@@ -41,7 +41,7 @@
             <list />
           </option>
           <option name="resolveToWorkspace" value="false" />
-          <option name="workingDirPath" value="C:\Projects\docu\PI4JTests" />
+          <option name="workingDirPath" value="$PROJECT_DIR$/IP12-Prototype" />
         </MavenRunnerParameters>
       </option>
     </MavenSettings>

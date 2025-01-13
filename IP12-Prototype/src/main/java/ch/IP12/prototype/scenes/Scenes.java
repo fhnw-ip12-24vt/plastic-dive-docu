@@ -1,4 +1,4 @@
-package ch.IP12.prototype.Scenes;
+package ch.IP12.prototype.scenes;
 
 import javafx.scene.Cursor;
 import javafx.scene.Scene;

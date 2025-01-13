@@ -1,5 +1,6 @@
 package ch.IP12.prototype.model;
 
+import ch.IP12.prototype.components.JoystickAnalog;
 import ch.IP12.prototype.model.animations.SpriteAnimation;
 import ch.IP12.prototype.model.animations.Spritesheets;
 
@@ -24,15 +25,21 @@ public class Player extends Moveable{
      */
     @Override
     public void move(double strength) {
-        if(tempDir[0] && !tempDir[1] && !((x+length+speed) > maxX)){
-            x += speed;
-        } else if(tempDir[1] && !tempDir[0] && !((x-speed) < 0)){
-            x -= speed;
-        }
-        if (tempDir[3] && !tempDir[2]  && !((y+height+speed) > maxY)) {
-            y += speed;
-        } else if (tempDir[2] && !tempDir[3] && !((y-speed) < 0)) {
-            y -= speed;
+        direction = JoystickAnalog.getDegrees();
+
+        if(direction != 0){
+            super.move(strength);
+        } else {
+            if(tempDir[0] && !tempDir[1] && !((x+length+speed) > maxX)){
+                x += speed;
+            } else if(tempDir[1] && !tempDir[0] && !((x-speed) < 0)){
+                x -= speed;
+            }
+            if (tempDir[3] && !tempDir[2]  && !((y+height+speed) > maxY)) {
+                y += speed;
+            } else if (tempDir[2] && !tempDir[3] && !((y-speed) < 0)) {
+                y -= speed;
+            }
         }
     }
 

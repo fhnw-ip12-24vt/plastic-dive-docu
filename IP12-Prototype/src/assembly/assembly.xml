@@ -11,7 +11,7 @@
 			<outputDirectory>.</outputDirectory>
 			<filtered>false</filtered>
 			<includes>
-				<include>${build.finalName}-1.0-shaded.jar</include>
+				<include>${build.finalName}-${project.version}-shaded.jar</include>
 			</includes>
 		</fileSet>
 

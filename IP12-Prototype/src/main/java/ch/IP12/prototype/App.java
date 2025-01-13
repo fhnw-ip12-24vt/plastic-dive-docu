@@ -1,6 +1,9 @@
 package ch.IP12.prototype;
 
-import ch.IP12.prototype.Scenes.Scenes;
+import ch.IP12.prototype.components.Ads1115;
+import ch.IP12.prototype.components.helpers.Component;
+import ch.IP12.prototype.scenes.Scenes;
+import com.pi4j.Pi4J;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -29,15 +32,15 @@ public class App extends Application {
     }
 
     public void start(Stage stage) {
-        for (String key : System.getProperties().stringPropertyNames()) {
-            System.out.println(key + ": " + System.getProperty(key));
-        }
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         WIDTH = screenSize.width;
         HEIGHT = screenSize.height;
         stage.setResizable(false);
         stage.setFullScreenExitHint("");
         stage.setFullScreen(true);
+
+        var pi4j = Pi4J.newAutoContext();
+        Ads1115 ads1115 = new Ads1115(pi4j);
 
         //Creates the player and an array list for all the obstacles
         Player player =  new Player(100,HEIGHT/2,3, WIDTH, HEIGHT,Spritesheets.Player);
@@ -49,7 +52,7 @@ public class App extends Application {
         graphicsContext.setImageSmoothing(false);
 
         //Initializes the controller and starts the game
-        Controller controller = new Controller(player, obstacles);
+        Controller controller = new Controller(player, obstacles, ads1115);
 
         //Starts the View and passes it the relevant things that are to be displayed
         View view = new View(graphicsContext, player, obstacles);

@@ -4,7 +4,6 @@ import java.time.Duration;
 
 import com.pi4j.context.Context;
 
-import ch.pi4j.tests.components.helpers.PIN;
 import ch.pi4j.tests.components.Ads1115;
 import ch.pi4j.tests.components.JoystickAnalog;
 
