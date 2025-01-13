@@ -29,6 +29,9 @@ public class App extends Application {
     }
 
     public void start(Stage stage) {
+        for (String key : System.getProperties().stringPropertyNames()) {
+            System.out.println(key + ": " + System.getProperty(key));
+        }
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         WIDTH = screenSize.width;
         HEIGHT = screenSize.height;

@@ -22,7 +22,7 @@ public class JoystickAnalog_App implements Application {
         Ads1115 ads1115 = new Ads1115(pi4j);
 
         //joystick with normalized axis from -1 to 1
-        JoystickAnalog joystick = new JoystickAnalog(ads1115, Ads1115.Channel.A0, Ads1115.Channel.A1, PIN.D26, true);
+        JoystickAnalog joystick = new JoystickAnalog(ads1115, Ads1115.Channel.A0, Ads1115.Channel.A1);
 
         //register all event handlers you need
         joystick.onMove((xPos, yPos) -> System.out.printf("Current position of joystick is: %.2f, %.2f%n", xPos, yPos),

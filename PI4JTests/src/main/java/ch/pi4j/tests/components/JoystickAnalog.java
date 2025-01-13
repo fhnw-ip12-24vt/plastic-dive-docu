@@ -55,12 +55,12 @@ public class JoystickAnalog extends Component {
      * @param channelYAxis analog potentiometer y-axis
      * @param pin          additional push button on joystick
      */
-    public JoystickAnalog(Ads1115 ads1115, Ads1115.Channel channelXAxis, Ads1115.Channel channelYAxis, PIN pin, boolean inverted) {
+    public JoystickAnalog(Ads1115 ads1115, Ads1115.Channel channelXAxis, Ads1115.Channel channelYAxis) {
         this(ads1115,
                 new Potentiometer(ads1115, channelXAxis, Potentiometer.Range.MINUS_ONE_TO_ONE),
                 new Potentiometer(ads1115, channelYAxis, Potentiometer.Range.MINUS_ONE_TO_ONE),
-                0.05,
-                pin != null ? new SimpleButton(ads1115.getPi4j(), pin, inverted) : null);
+                0.05
+        );
     }
 
     /**
@@ -68,11 +68,10 @@ public class JoystickAnalog extends Component {
      * @param potentiometerY potentiometer object for y-axis
      * @param push           simpleButton object for push button on joystick
      */
-    JoystickAnalog(Ads1115 ads1115, Potentiometer potentiometerX, Potentiometer potentiometerY, double normThreshold, SimpleButton push) {
+    JoystickAnalog(Ads1115 ads1115, Potentiometer potentiometerX, Potentiometer potentiometerY, double normThreshold) {
         this.ads1115       = ads1115;
         this.xAxis         = potentiometerX;
         this.yAxis         = potentiometerY;
-        this.push          = push;
         this.normThreshold = normThreshold;
     }
 
