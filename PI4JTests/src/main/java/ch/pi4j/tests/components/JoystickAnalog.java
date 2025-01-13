@@ -1,9 +1,6 @@
 package ch.pi4j.tests.components;
 
 import ch.pi4j.tests.components.helpers.Component;
-import ch.pi4j.tests.components.helpers.PIN;
-
-import java.time.Duration;
 
 /**
  * An analog joystick needs to use an analog-digital convertor (ADC) to be attached to RaspPi.

@@ -30,6 +30,9 @@ public class View {
             @Override
             public void handle(long now) {
                 render();
+                if (!Controller.isRunning()){
+                    this.stop();
+                }
             }
         };
         animationTimer.start();

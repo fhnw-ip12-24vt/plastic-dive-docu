@@ -19,7 +19,7 @@ class Controller {
     private final Player player;
     private final List<Obstacle> obstacles;
     private final ScheduledExecutorService executor;
-    private volatile boolean running = true;
+    private static volatile boolean running = true;
     protected final AtomicInteger gameTicks = new AtomicInteger();
 
     Controller(Player player, List<Obstacle> obstacles) {
@@ -115,6 +115,10 @@ class Controller {
         gameTicks.set(0);
         running = true;
         startGameLogic();
+    }
+
+    public static boolean isRunning(){
+        return running;
     }
 
     private void gameStep() {
