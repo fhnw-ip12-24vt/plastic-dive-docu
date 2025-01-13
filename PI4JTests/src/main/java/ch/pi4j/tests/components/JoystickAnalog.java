@@ -29,12 +29,6 @@ public class JoystickAnalog extends Component {
      * potentiometer y axis
      */
     private final Potentiometer yAxis;
-    /**
-     * button push
-     *
-     * Can be 'null' if joystick doesn't have button functionality or if you don't want to use it
-     */
-    private final SimpleButton push;
 
     private final double normThreshold;
     final double homeArea = 0.1;
@@ -53,7 +47,6 @@ public class JoystickAnalog extends Component {
      * @param ads1115      ads object
      * @param channelXAxis analog potentiometer x-axis
      * @param channelYAxis analog potentiometer y-axis
-     * @param pin          additional push button on joystick
      */
     public JoystickAnalog(Ads1115 ads1115, Ads1115.Channel channelXAxis, Ads1115.Channel channelYAxis) {
         this(ads1115,
@@ -66,7 +59,6 @@ public class JoystickAnalog extends Component {
     /**
      * @param potentiometerX potentiometer object for x-axis
      * @param potentiometerY potentiometer object for y-axis
-     * @param push           simpleButton object for push button on joystick
      */
     JoystickAnalog(Ads1115 ads1115, Potentiometer potentiometerX, Potentiometer potentiometerY, double normThreshold) {
         this.ads1115       = ads1115;
@@ -146,48 +138,6 @@ public class JoystickAnalog extends Component {
     }
 
     /**
-     * Sets or disables the handler for the onDown event.
-     * This event gets triggered whenever the button is pressed.
-     * Only a single event handler can be registered at once.
-     *
-     * @param task Event handler to call or null to disable
-     */
-    public void onDown(Runnable task) {
-        if(push == null){
-            throw new IllegalStateException("no button set, you can't register an event");
-        }
-        push.onDown(task);
-    }
-
-    /**
-     * Sets or disables the handler for the onUp event.
-     * This event gets triggered whenever the button is no longer pressed.
-     * Only a single event handler can be registered at once.
-     *
-     * @param task Event handler to call or null to disable
-     */
-    public void onUp(Runnable task) {
-        if(push == null){
-            throw new IllegalStateException("no button set, you can't register an event");
-        }
-        push.onUp(task);
-    }
-
-    /**
-     * Sets or disables the handler for the whilePressed event.
-     * This event gets triggered whenever the button is pressed.
-     * Only a single event handler can be registered at once.
-     *
-     * @param task Event handler to call or null to disable
-     */
-    public void whilePressed(Runnable task, Duration whilePressedDelay) {
-        if(push == null){
-            throw new IllegalStateException("no button set, you can't register an event");
-        }
-        push.whilePressed(task, whilePressedDelay);
-    }
-
-    /**
      * disables all the handlers on joystick events
      */
     @Override
@@ -195,7 +145,6 @@ public class JoystickAnalog extends Component {
         ads1115.stopContinuousReading();
         xAxis.reset();
         yAxis.reset();
-        push.reset();
     }
 
     @FunctionalInterface
