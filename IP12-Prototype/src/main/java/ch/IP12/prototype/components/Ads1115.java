@@ -198,13 +198,14 @@ public class Ads1115 extends I2CDevice {
         writeRegister(CONFIG_REGISTER, configRegisterTemplate | mpc.getMux() | OperationMode.SINGLE.getMode());
         //wait until ad converter has stored new value in conversion register
         //delay time is reciprocal of 1/2 of sampling time (*1000 from s to ms)
+        System.out.println(channel.name()+" "+ dataRate.sps+" "+(2000/dataRate.getSpS())+" "+CONVERSION_REGISTER);
+
         delay(Duration.ofMillis((long) (2000.0 / dataRate.getSpS())));
 
         //now we can read the channel value from conversion register
         int registeredValue = readRegister(CONVERSION_REGISTER);
 
         double voltage = pga.gainPerBit * registeredValue;
-
         RawValueRange range = getRange(channel);
         range.maxRawValue = Math.max(range.maxRawValue, voltage);
         range.minRawValue = Math.min(range.minRawValue, voltage);
@@ -227,6 +228,9 @@ public class Ads1115 extends I2CDevice {
             while (continuousReadingActive) {
                 //start measuring time
                 long startTime = System.nanoTime();
+                if (channelsInUse.isEmpty()) {
+                    throw new IllegalStateException("No channels in use");
+                }
 
                 channelsInUse.forEach((channel, onValueChange) -> {
                     if(continuousReadingActive){ //can be set to false in the meantime

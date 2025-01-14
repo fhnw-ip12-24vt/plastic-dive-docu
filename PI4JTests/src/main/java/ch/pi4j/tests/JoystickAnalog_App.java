@@ -2,9 +2,9 @@ package ch.pi4j.tests;
 
 import java.time.Duration;
 
+import ch.pi4j.tests.components.Ads1115;
 import com.pi4j.context.Context;
 
-import ch.pi4j.tests.components.Ads1115;
 import ch.pi4j.tests.components.JoystickAnalog;
 
 /**

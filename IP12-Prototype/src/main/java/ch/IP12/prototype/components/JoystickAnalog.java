@@ -1,7 +1,6 @@
 package ch.IP12.prototype.components;
 
 import ch.IP12.prototype.components.helpers.*;
-import ch.IP12.prototype.components.Ads1115;
 
 
 /**
@@ -76,7 +75,7 @@ public class JoystickAnalog extends Component {
         });
 
         yAxis.onNormalizedValueChange((yPos) -> {
-            yActualValue = -yPos;
+            yActualValue = yPos;
             updateVals();
         });
     }
@@ -96,15 +95,11 @@ public class JoystickAnalog extends Component {
                 yLastNotifiedValue = yActualValue;
 
                 // Compute the angle in radians
-                double radians = Math.atan2(yActualValue, -xActualValue);
+                double radians = Math.atan2(-yActualValue, xActualValue);
 
                 // Convert to degrees
                 double degrees = Math.toDegrees(radians);
 
-                // Ensure the angle is in the range [0, 360)
-                if (degrees < 0) {
-                    degrees += 360;
-                }
                 direction = (double) Math.round(degrees * 100) / 100;
 
                 //calculate magnitude of joystick direction vector
@@ -133,8 +128,13 @@ public class JoystickAnalog extends Component {
      */
     @Override
     public void reset() {
+        ads1115.stopContinuousReading();
         xAxis.reset();
         yAxis.reset();
+    }
+
+    public Ads1115 getAds1115() {
+        return ads1115;
     }
 
     @FunctionalInterface

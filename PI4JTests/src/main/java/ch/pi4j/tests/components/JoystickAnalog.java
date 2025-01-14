@@ -107,15 +107,10 @@ public class JoystickAnalog extends Component {
         }
 
         // Compute the angle in radians
-        double radians = Math.atan2(yActualValue, -xActualValue);
+        double radians = Math.atan2(-yActualValue, xActualValue);
 
         // Convert to degrees
         double degrees = Math.toDegrees(radians);
-
-        // Ensure the angle is in the range [0, 360)
-        if (degrees < 0) {
-            degrees += 360;
-        }
 
         return (double) Math.round(degrees * 100) / 100;
     }
@@ -148,5 +143,4 @@ public class JoystickAnalog extends Component {
     public interface PositionConsumer{
         void accept(double xPos, double YPos);
     }
-
 }

@@ -24,11 +24,9 @@ class Controller {
     private static volatile boolean running = true;
     protected final AtomicInteger gameTicks = new AtomicInteger();
     protected final JoystickAnalog joystick;
-    protected final Ads1115 ads1115;
 
-    Controller(Player player, List<Obstacle> obstacles, Ads1115 ads1115) {
-        this.ads1115 = ads1115;
-        joystick = new JoystickAnalog(ads1115, Ads1115.Channel.A0, Ads1115.Channel.A1);
+    Controller(Player player, List<Obstacle> obstacles, JoystickAnalog joystick) {
+        this.joystick = joystick;
 
         this.player = player;
         this.obstacles = obstacles;
@@ -90,8 +88,18 @@ class Controller {
             }
         });
 
-        joystick.onMove();
-        ads1115.startContinuousReading(0.1);
+        if (this.joystick != null) {
+            joystick.onMove();
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            joystick.getAds1115().startContinuousReading(0.1);
+        } else {
+            System.out.println("No joystick found");
+        }
+
     }
 
     /**
@@ -103,7 +111,6 @@ class Controller {
         scene.setOnKeyReleased(e -> {});
 
         joystick.reset();
-        ads1115.stopContinuousReading();
     }
 
     /**

@@ -1,9 +1,11 @@
 package ch.IP12.prototype;
 
 import ch.IP12.prototype.components.Ads1115;
+import ch.IP12.prototype.components.JoystickAnalog;
 import ch.IP12.prototype.components.helpers.Component;
 import ch.IP12.prototype.scenes.Scenes;
 import com.pi4j.Pi4J;
+import com.pi4j.context.Context;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -23,8 +25,11 @@ import java.util.List;
 public class App extends Application {
     static int WIDTH = 800;
     static int HEIGHT = 600;
+    static Context pi4j;
+
     public static void main(String[] args) {
         launch(args);
+        pi4j.shutdown();
     }
 
     @Override
@@ -39,8 +44,11 @@ public class App extends Application {
         stage.setFullScreenExitHint("");
         stage.setFullScreen(true);
 
-        var pi4j = Pi4J.newAutoContext();
+        pi4j = Pi4J.newAutoContext();
+
         Ads1115 ads1115 = new Ads1115(pi4j);
+
+        JoystickAnalog joystick = new JoystickAnalog(ads1115, Ads1115.Channel.A0, Ads1115.Channel.A1);
 
         //Creates the player and an array list for all the obstacles
         Player player =  new Player(100,HEIGHT/2,3, WIDTH, HEIGHT,Spritesheets.Player);
@@ -52,7 +60,7 @@ public class App extends Application {
         graphicsContext.setImageSmoothing(false);
 
         //Initializes the controller and starts the game
-        Controller controller = new Controller(player, obstacles, ads1115);
+        Controller controller = new Controller(player, obstacles, joystick);
 
         //Starts the View and passes it the relevant things that are to be displayed
         View view = new View(graphicsContext, player, obstacles);
@@ -70,7 +78,9 @@ public class App extends Application {
         view.startRendering();
 
         //Stops the game if the window is exited
-        stage.setOnCloseRequest(event -> controller.stopGameLogic());
+        stage.setOnCloseRequest(event -> {
+            controller.stopGameLogic();
+        });
     }
 
 }

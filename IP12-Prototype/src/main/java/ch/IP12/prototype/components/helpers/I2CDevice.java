@@ -34,12 +34,12 @@ public abstract class I2CDevice extends Component  {
     /**
      * send a single command to device
      */
-    protected void sendCommand(byte cmd) {
+    protected synchronized void sendCommand(byte cmd) {
         i2c.write(cmd);
         delay(Duration.ofNanos(100_000));
     }
 
-    protected int readRegister(int register) {
+    protected synchronized int readRegister(int register) {
         return i2c.readRegisterWord(register);
     }
 
@@ -48,7 +48,7 @@ public abstract class I2CDevice extends Component  {
      *
      * @param config custom configuration
      */
-    protected void writeRegister(int register, int config) {
+    protected synchronized void writeRegister(int register, int config) {
         i2c.writeRegisterWord(register, config);
     }
 
@@ -57,7 +57,7 @@ public abstract class I2CDevice extends Component  {
      *
      * @param data
      */
-    protected void write(byte data){
+    protected synchronized void write(byte data){
         i2c.write(data);
     }
 
@@ -67,7 +67,7 @@ public abstract class I2CDevice extends Component  {
      * @param command Select the LCD Command
      * @param data    Setup command data
      */
-    protected void sendCommand(byte command, byte data) {
+    protected synchronized void sendCommand(byte command, byte data) {
         sendCommand((byte) (command | data));
     }
 
