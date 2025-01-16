@@ -41,10 +41,15 @@
             <list />
           </option>
           <option name="resolveToWorkspace" value="false" />
-          <option name="workingDirPath" value="$PROJECT_DIR$/IP12-Prototype" />
+          <option name="workingDirPath" value="$PROJECT_DIR$/PI4JTests" />
         </MavenRunnerParameters>
       </option>
     </MavenSettings>
+    <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+      <option name="credential" />
+      <option name="region" />
+      <option name="useCurrentConnection" value="false" />
+    </extension>
     <method v="2" />
   </configuration>
 </component>

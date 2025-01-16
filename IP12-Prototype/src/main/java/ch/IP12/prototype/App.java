@@ -25,10 +25,17 @@ import java.util.List;
 public class App extends Application {
     static int WIDTH = 800;
     static int HEIGHT = 600;
-    static Context pi4j;
+    static JoystickAnalog joystick;
 
     public static void main(String[] args) {
+        var pi4j = Pi4J.newAutoContext();
+
+        Ads1115 ads1115 = new Ads1115(pi4j);
+        joystick = new JoystickAnalog(ads1115, Ads1115.Channel.A0, Ads1115.Channel.A1);
+
         launch(args);
+
+        joystick.reset();
         pi4j.shutdown();
     }
 
@@ -43,12 +50,6 @@ public class App extends Application {
         stage.setResizable(false);
         stage.setFullScreenExitHint("");
         stage.setFullScreen(true);
-
-        pi4j = Pi4J.newAutoContext();
-
-        Ads1115 ads1115 = new Ads1115(pi4j);
-
-        JoystickAnalog joystick = new JoystickAnalog(ads1115, Ads1115.Channel.A0, Ads1115.Channel.A1);
 
         //Creates the player and an array list for all the obstacles
         Player player =  new Player(100,HEIGHT/2,3, WIDTH, HEIGHT,Spritesheets.Player);

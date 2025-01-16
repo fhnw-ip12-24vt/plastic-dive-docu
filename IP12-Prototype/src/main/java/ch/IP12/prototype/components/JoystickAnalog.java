@@ -68,24 +68,30 @@ public class JoystickAnalog extends Component {
         this.normThreshold = normThreshold;
     }
 
-    public void onMove(){
+    public void onMove(PositionConsumer onMove, Runnable onCenter){
         xAxis.onNormalizedValueChange((xPos) -> {
             xActualValue = xPos;
-            updateVals();
+            updateVals(onMove, onCenter);
         });
 
         yAxis.onNormalizedValueChange((yPos) -> {
             yActualValue = yPos;
-            updateVals();
+            updateVals(onMove, onCenter);
         });
+        ads1115.startContinuousReading(0.1);
     }
 
-    private synchronized void updateVals(){
+    private synchronized void updateVals(PositionConsumer onMove, Runnable onCenter){
         if (inHomePosition()) {
             xLastNotifiedValue = xActualValue;
             yLastNotifiedValue = yActualValue;
+
             strength = 0.0;
             direction = 0.0;
+
+            if (onCenter != null) {
+                onCenter.run();
+            }
         }
         else {
             double distance = Math.sqrt(Math.pow(xActualValue - xLastNotifiedValue, 2) + Math.pow(yActualValue - yLastNotifiedValue, 2));
@@ -93,6 +99,10 @@ public class JoystickAnalog extends Component {
             if(distance > normThreshold){
                 xLastNotifiedValue = xActualValue;
                 yLastNotifiedValue = yActualValue;
+
+                if(onMove != null){
+                    onMove.accept(xLastNotifiedValue, yLastNotifiedValue);
+                }
 
                 // Compute the angle in radians
                 double radians = Math.atan2(-yActualValue, xActualValue);
@@ -108,8 +118,10 @@ public class JoystickAnalog extends Component {
                      magnitude = magnitude / Math.sqrt(2);
                 }
 
-
                 strength = (double) Math.round(Math.min(1, magnitude)*100) / 100;
+
+                System.out.println("Strength: " + strength);
+                System.out.println("Direction: " + direction);
             }
         }
     }
