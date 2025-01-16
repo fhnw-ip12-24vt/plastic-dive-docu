@@ -89,13 +89,7 @@ class Controller {
         });
 
         if (this.joystick != null) {
-            joystick.onMove();
-            try {
-                Thread.sleep(15);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-            joystick.getAds1115().startContinuousReading(0.1);
+            joystick.onMove((double xPos, double yPos) -> System.out.println("moved"), () -> System.out.println("centered"));
         } else {
             System.out.println("No joystick found");
         }
