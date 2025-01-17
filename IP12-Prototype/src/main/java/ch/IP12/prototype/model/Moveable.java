@@ -10,7 +10,7 @@ public abstract class Moveable {
     protected double x;
     protected double y;
 
-    protected final int speed;
+    protected double speed;
     protected final double length;
     protected final double height;
 
@@ -24,11 +24,11 @@ public abstract class Moveable {
     //path to animation images
     protected final SpriteAnimation animation;
 
-    Moveable(int x, int y, int speed, double maxX, double maxY, Spritesheets spritesheets, double spriteScale){
+    Moveable(int x, int y, double speed, double maxX, double maxY, Spritesheets spritesheets, double spriteScale){
         this(x, y, speed, maxX, maxY, spritesheets.getSpriteAnimation(), spriteScale);
     }
 
-    Moveable(int x, int y, int speed, double maxX, double maxY, SpriteAnimation spriteAnimation, double spriteScale) {
+    Moveable(int x, int y, double speed, double maxX, double maxY, SpriteAnimation spriteAnimation, double spriteScale) {
         this.x = x;
         this.y = y;
         this.speed = speed;
@@ -45,7 +45,7 @@ public abstract class Moveable {
      * Updates the Object instance every x...
      * @param deltaTime
      */
-    public void update(double deltaTime, double strength){
+    public void update(double deltaTime, double strength, boolean playerMove){
         move(strength);
     }
 

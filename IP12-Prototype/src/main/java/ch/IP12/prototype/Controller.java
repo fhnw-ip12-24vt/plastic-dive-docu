@@ -1,8 +1,6 @@
 package ch.IP12.prototype;
 
-import ch.IP12.prototype.components.Ads1115;
 import ch.IP12.prototype.components.JoystickAnalog;
-import com.pi4j.Pi4J;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import ch.IP12.prototype.model.*;
@@ -147,10 +145,10 @@ class Controller {
             }
 
             double deltaTime = 0.016; // Approx. 60 FPS
-            player.update(deltaTime, JoystickAnalog.getStrength());
+            player.update(deltaTime, JoystickAnalog.getStrength(), joystick.inHomePosition());
             obstacles.parallelStream().forEach(obstacle -> {
                 //Obstacle updates
-                obstacle.update(deltaTime, 0.9);
+                obstacle.update(deltaTime, 0.9, false);
 
                 //adds obstacle to deletion list if it is entirely out of frame for the player
                 if (obstacle.getX() + obstacle.getLength() < 0) deletionList.add(obstacle);
