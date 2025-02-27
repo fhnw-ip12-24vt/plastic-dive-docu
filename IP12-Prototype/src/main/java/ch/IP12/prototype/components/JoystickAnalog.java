@@ -1,7 +1,7 @@
 package ch.IP12.prototype.components;
 
 import ch.IP12.prototype.components.helpers.*;
-import javafx.geometry.Pos;
+import ch.IP12.prototype.*;
 
 
 /**
@@ -79,7 +79,9 @@ public class JoystickAnalog extends Component {
             yActualValue = yPos;
             updateVals(onMove, onCenter);
         });
-        ads1115.startContinuousReading(0.1);
+        new Thread(() -> {
+            ads1115.startContinuousReading(0.1);
+        }).start();
     }
 
     private synchronized void updateVals(PositionConsumer onMove, Runnable onCenter){

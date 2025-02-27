@@ -16,7 +16,7 @@
 
         <!-- Setup for the RaspPi -->
         <pi.hostname>pi4j</pi.hostname>
-        <pi.ipnumber>10.175.11.230</pi.ipnumber>
+        <pi.ipnumber>10.175.29.92</pi.ipnumber>
         <!-- <pi.ipnumber>pi4j.local</pi.ipnumber>  --> <!-- can be used if Pi is uniquein wlan -->
         <pi.port>22</pi.port>
         <pi.username>pi</pi.username>
@@ -88,6 +88,12 @@
         <dependency>
             <groupId>com.pi4j</groupId>
             <artifactId>pi4j-plugin-gpiod</artifactId>
+            <version>${pi4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.pi4j</groupId>
+            <artifactId>pi4j-plugin-linuxfs</artifactId>
             <version>${pi4j.version}</version>
         </dependency>
 

@@ -386,7 +386,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <pi.deploydirectory>/home/pi/deploy</pi.deploydirectory>
     <pi.startScript>start.sh</pi.startScript>
-    <pi.ipnumber>10.175.11.230</pi.ipnumber>
+    <pi.ipnumber>10.175.29.92</pi.ipnumber>
     <java.version>21</java.version>
     <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
     <pi4j.version>2.7.0</pi4j.version>
