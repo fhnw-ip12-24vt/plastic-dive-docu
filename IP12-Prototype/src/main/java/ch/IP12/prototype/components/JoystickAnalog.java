@@ -1,6 +1,7 @@
 package ch.IP12.prototype.components;
 
 import ch.IP12.prototype.components.helpers.*;
+import ch.IP12.prototype.*;
 
 
 /**
@@ -78,7 +79,9 @@ public class JoystickAnalog extends Component {
             yActualValue = yPos;
             updateVals(onMove, onCenter);
         });
-        ads1115.startContinuousReading(0.1);
+        new Thread(() -> {
+            ads1115.startContinuousReading(0.1);
+        }).start();
     }
 
     private synchronized void updateVals(PositionConsumer onMove, Runnable onCenter){
@@ -114,9 +117,6 @@ public class JoystickAnalog extends Component {
 
                 //calculate magnitude of joystick direction vector
                 double magnitude = Math.sqrt(Math.pow(yActualValue, 2) + Math.pow(xActualValue, 2));
-                if (magnitude > 1){
-                     magnitude = magnitude / Math.sqrt(2);
-                }
 
                 strength = (double) Math.round(Math.min(1, magnitude)*100) / 100;
 

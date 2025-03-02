@@ -120,9 +120,8 @@ public class JoystickAnalog extends Component {
             return 0.0;
         }
         double magnitude = Math.sqrt(Math.pow(yActualValue, 2) + Math.pow(xActualValue, 2));
-        double strength = magnitude / Math.sqrt(2);
 
-        return (double) Math.round(Math.min(1, strength)*100) / 100;
+        return (double) Math.round(Math.min(1, magnitude)*100) / 100;
     }
 
     public boolean inHomePosition(){

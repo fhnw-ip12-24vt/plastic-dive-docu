@@ -39,10 +39,6 @@ public class App extends Application {
         pi4j.shutdown();
     }
 
-    @Override
-    public void init(){
-    }
-
     public void start(Stage stage) {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         WIDTH = screenSize.width;
