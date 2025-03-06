@@ -3,15 +3,7 @@
 
 [role="arc42help"]
 ****
-Beschreibt die wesentlichen Anforderungen und treibenden Kräfte, die bei der Umsetzung der Softwarearchitektur und Entwicklung des Systems berücksichtigt werden müssen.
-
-Dazu gehören:
-
-* zugrunde liegende Geschäftsziele,
-* wesentliche Aufgabenstellungen,
-* wesentliche funktionale Anforderungen,
-* Qualitätsziele für die Architektur und
-* relevante Stakeholder und deren Erwartungshaltung.
+The Goal of this project is
 ****
 
 === Aufgabenstellung
@@ -38,51 +30,31 @@ Siehe https://docs.arc42.org/section-1/[Anforderungen und Ziele] in der online-D
 
 ****
 
+****
+h
+****
+
 === Qualitätsziele
-
-[role="arc42help"]
-****
-.Inhalt
-Die Top-3 bis Top-5 der Qualitätsanforderungen für die Architektur, deren Erfüllung oder Einhaltung den maßgeblichen Stakeholdern besonders wichtig sind.
-Gemeint sind hier wirklich Qualitätsziele, die nicht unbedingt mit den Zielen des Projekts übereinstimmen. 
-Beachten Sie den Unterschied.
-
-Hier ein Überblick möglicher Themen (basierend auf dem ISO 25010 Standard):
-
-image::01_2_iso-25010-topics-DE.drawio.png["Kategorien von Qualitätsanforderungen"]
-
-.Motivation
-Weil Qualitätsziele grundlegende Architekturentscheidungen oft maßgeblich beeinflussen, sollten Sie die für Ihre Stakeholder relevanten Qualitätsziele kennen, möglichst konkret und operationalisierbar.
-
-.Form
-Tabellarische Darstellung der Qualitätsziele mit möglichst konkreten Szenarien, geordnet nach Prioritäten.
-****
-
-=== Stakeholder
-
-[role="arc42help"]
-****
-.Inhalt
-Expliziter Überblick über die Stakeholder des Systems – über alle Personen, Rollen oder Organisationen –, die
-
-* die Architektur kennen sollten oder
-* von der Architektur überzeugt werden müssen,
-* mit der Architektur oder dem Code arbeiten (z.B. Schnittstellen nutzen),
-* die Dokumentation der Architektur für ihre eigene Arbeit benötigen,
-* Entscheidungen über das System und dessen Entwicklung treffen.
-
-.Motivation
-Sie sollten die Projektbeteiligten und -betroffenen kennen, sonst erleben Sie später im Entwicklungsprozess Überraschungen.
-Diese Stakeholder bestimmen unter anderem Umfang und Detaillierungsgrad der von Ihnen zu leistenden Arbeit und Ergebnisse.
-
-.Form
-Tabelle mit Rollen- oder Personennamen, sowie deren Erwartungshaltung bezüglich der Architektur und deren Dokumentation.
-****
 
 [cols="1,1,2" options="header"]
 |===
-|Rolle |Kontakt |Erwartungshaltung
-| _PM_ | _David Cao_ | _<Erwartung-1>_
-| _UX_ | _Dean Bregenzer_ | _<Erwartung-2>_ 
-| _UX_ | _Dean Bregenzer_ | _<Erwartung-2>_ 
+|ID |Name |Description
+| _Q01_ | _Performance_ | _The game steps should not take more than 16 milliseconds to ensure that game steps do not overlap and feel smooth._
+
+_The Window should not freeze if the main controller is in a loop for an extended period of time._
+| _Q02_ | _Modularity_ | _The code should be modular and reusable in other parts of the codebase._
+| _Q03_ | _Readability_ | _Each function should have a short description before it explaining what it does._
+
+_The code inside long functions should be commented periodically to explain what a section does._
+|===
+
+=== Stakeholders
+
+[cols="1,1,2" options="header"]
+|===
+| Role | Contact | Expectations
+| _Client_ | _Primeo_ | _Functional and maintainable system that they can cost-effectively implement._
+| _Product Owner_ | _Andreas Vogt_ | _A product that fulfills both the clients and users needs._
+| _Users_ | _---_ | _A functional and robust System._
+| _FHNW_ | _---_ | _That all Stakeholders are satisfied by the end result._
 |===

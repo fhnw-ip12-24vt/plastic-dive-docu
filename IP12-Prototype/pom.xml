@@ -91,6 +91,14 @@
             <version>${pi4j.version}</version>
         </dependency>
 
+        <!-- Pi4J Mock Platform -->
+        <dependency>
+            <groupId>com.pi4j</groupId>
+            <artifactId>pi4j-plugin-mock</artifactId>
+            <version>${pi4j.version}</version>
+            <!-- <scope>test</scope> -->
+        </dependency>
+
         <dependency>
             <groupId>com.pi4j</groupId>
             <artifactId>pi4j-plugin-linuxfs</artifactId>
@@ -108,6 +116,13 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+
+        <!-- JAVAFX graphics installation for Windows-->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
             <version>${javafx.version}</version>
         </dependency>
 
