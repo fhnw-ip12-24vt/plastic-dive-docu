@@ -1,31 +1,10 @@
 [[section-architecture-constraints]]
 == Randbedingungen
 
-[role="arc42help"]
-****
-.Inhalt
-Randbedingungen und Vorgaben, die ihre Freiheiten bezüglich Entwurf, Implementierung oder Ihres Entwicklungsprozesses einschränken.
-Diese Randbedingungen gelten manchmal organisations- oder firmenweit über die Grenzen einzelner Systeme hinweg.
-
-.Motivation
-Für eine tragfähige Architektur sollten Sie genau wissen, wo Ihre Freiheitsgrade bezüglich der Entwurfsentscheidungen liegen und wo Sie Randbedingungen beachten müssen.
-Sie können Randbedingungen vielleicht noch verhandeln, zunächst sind sie aber da.
-
-.Form
-Einfache Tabellen der Randbedingungen mit Erläuterungen.
-Bei Bedarf unterscheiden Sie technische, organisatorische und politische Randbedingungen oder übergreifende Konventionen (beispielsweise Programmier- oder Versionierungsrichtlinien, Dokumentations- oder Namenskonvention).
-
-
-.Weiterführende Informationen
-
-Siehe https://docs.arc42.org/section-2/[Randbedingungen] in der online-Dokumentation (auf Englisch!).
-
-****
-
 [cols="1,1,2" options="header"]
 |===
-|Rolle |Kontakt |Erwartungshaltung
-| _PM_ | _Simon Schneider_ | _<Erwartung-1>_
-| _SC_ | _Michael Galambos_ | _<Erwartung-2>_ 
-| _KOM_ | _Bojan Rodic_ | _<Erwartung-3>_ 
+|ID |Name |Description
+| _C01_ | _Platform_ | _Project has to run on a Pi4_
+| _C02_ | _Maven_ | _Maven integration is required to get all libraries_
+| _C03_ | _Network start_ | _Code can be started locally or over a network using a script_
 |===

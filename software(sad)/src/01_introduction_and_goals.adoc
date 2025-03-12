@@ -1,40 +1,12 @@
 [[section-introduction-and-goals]]
-==	Einführung und Ziele
+==	Introduction and goals
 
 [role="arc42help"]
 ****
-The Goal of this project is
+The Goal of this project is to create a fun and enjoyable game that also educates children about how their clothing choices can impact sea life in that they contain plastic and that the washing cycle releases microplastics into bodies of water.
 ****
 
-=== Aufgabenstellung
-
-[role="arc42help"]
-****
-.Inhalt
-Kurzbeschreibung der fachlichen Aufgabenstellung, treibenden Kräfte, Extrakt (oder Abstract) der Anforderungen.
-Verweis auf (hoffentlich vorliegende) Anforderungsdokumente (mit Versionsbezeichnungen und Ablageorten).
-
-.Motivation
-Aus Sicht der späteren Nutzung ist die Unterstützung einer fachlichen Aufgabe oder Verbesserung der Qualität der eigentliche Beweggrund, ein neues System zu schaffen oder ein bestehendes zu modifizieren.
-
-.Form
-Kurze textuelle Beschreibung, eventuell in tabellarischer Use-Case Form.
-Sofern vorhanden, sollte die Aufgabenstellung Verweise auf die entsprechenden Anforderungsdokumente enthalten.
-
-Halten Sie diese Auszüge so knapp wie möglich und wägen Sie Lesbarkeit und Redundanzfreiheit gegeneinander ab.
-
-
-.Weiterführende Informationen
-
-Siehe https://docs.arc42.org/section-1/[Anforderungen und Ziele] in der online-Dokumentation (auf Englisch!).
-
-****
-
-****
-h
-****
-
-=== Qualitätsziele
+=== Quality Goals
 
 [cols="1,1,2" options="header"]
 |===
