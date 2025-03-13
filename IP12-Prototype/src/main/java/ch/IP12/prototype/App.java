@@ -2,10 +2,8 @@ package ch.IP12.prototype;
 
 import ch.IP12.prototype.components.Ads1115;
 import ch.IP12.prototype.components.JoystickAnalog;
-import ch.IP12.prototype.components.helpers.Component;
 import ch.IP12.prototype.scenes.Scenes;
 import com.pi4j.Pi4J;
-import com.pi4j.context.Context;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -75,9 +73,7 @@ public class App extends Application {
         view.startRendering();
 
         //Stops the game if the window is exited
-        stage.setOnCloseRequest(event -> {
-            controller.stopGameLogic();
-        });
+        stage.setOnCloseRequest(event -> controller.stopGameLogic());
     }
 
 }
