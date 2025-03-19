@@ -5,7 +5,12 @@ import javafx.scene.input.KeyCode;
 
 public class BarcodeScanner {
     private final Scene scene;
-    private String Difficulty = "\n";
+    private String DifficultyString = "\n";
+    private long difficulty = 0;
+
+    private final static long EASY_DIFFICULTY = 5181539527921L;
+    private final static long MEDIUM_DIFFICULTY = 6211734858498L;
+    private final static long HARD_DIFFICULTY = 7751064387955L;
 
     public BarcodeScanner(Scene scene) {
         this.scene = scene;
@@ -13,14 +18,15 @@ public class BarcodeScanner {
 
     public void startListening(){
         scene.setOnKeyPressed(event -> {
-            if (Difficulty.replace("\n", "-").substring(Difficulty.length()-1).equals("-")){
-                Difficulty = "";
+            if (DifficultyString.replace("\n", "-").substring(DifficultyString.length()-1).equals("-")){
+                DifficultyString = "";
             }
             if (event.getCode() == KeyCode.ENTER) {
-                Difficulty += "\n";
+                DifficultyString += "\n";
+                if (isValid()) difficulty = Long.parseLong(DifficultyString.replace("\n", ""));
                 return;
             }
-            Difficulty += event.getCode().getChar();
+            DifficultyString += event.getCode().getChar();
         });
     }
 
@@ -28,24 +34,29 @@ public class BarcodeScanner {
         scene.setOnKeyReleased(event -> {});
     }
 
-    public String getDifficulty() {
+    public boolean isValid(){
         long difficulty;
 
-        System.out.println(Difficulty);
         try{
-            difficulty = Long.parseLong(Difficulty.replace("\n", ""));
+            difficulty = Long.parseLong(DifficultyString.replace("\n", ""));
         } catch (NumberFormatException e){
+            return false;
+        }
+
+        return difficulty == EASY_DIFFICULTY || difficulty == MEDIUM_DIFFICULTY || difficulty == HARD_DIFFICULTY;
+    }
+
+    public String getDifficulty() {
+        if (difficulty == 0) {
             return "Invalid code";
         }
 
-        if (difficulty == 7624841656535L) {
+        if (difficulty == EASY_DIFFICULTY) {
             return "Easy";
-        } else if (difficulty == 4016032473633L) {
+        } else if (difficulty == MEDIUM_DIFFICULTY) {
             return "Medium";
-        } else if (difficulty == 3046920045315L) {
+        } else {
             return "Hard";
         }
-
-        return "Invalid code";
     }
 }
