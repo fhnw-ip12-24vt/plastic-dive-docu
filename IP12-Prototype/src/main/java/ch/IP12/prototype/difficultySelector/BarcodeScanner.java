@@ -7,7 +7,7 @@ public class BarcodeScanner {
     private final Scene scene;
     private String Difficulty = "\n";
 
-    BarcodeScanner(Scene scene) {
+    public BarcodeScanner(Scene scene) {
         this.scene = scene;
     }
 
@@ -20,7 +20,7 @@ public class BarcodeScanner {
                 Difficulty += "\n";
                 return;
             }
-            Difficulty += event.getCharacter();
+            Difficulty += event.getCode().getChar();
         });
     }
 
@@ -28,11 +28,24 @@ public class BarcodeScanner {
         scene.setOnKeyReleased(event -> {});
     }
 
-    public boolean checkValidity(String barcode) {
-        return barcode != null && !barcode.isEmpty();
-    }
-
     public String getDifficulty() {
-        return Difficulty;
+        long difficulty;
+
+        System.out.println(Difficulty);
+        try{
+            difficulty = Long.parseLong(Difficulty.replace("\n", ""));
+        } catch (NumberFormatException e){
+            return "Invalid code";
+        }
+
+        if (difficulty == 7624841656535L) {
+            return "Easy";
+        } else if (difficulty == 4016032473633L) {
+            return "Medium";
+        } else if (difficulty == 3046920045315L) {
+            return "Hard";
+        }
+
+        return "Invalid code";
     }
 }
