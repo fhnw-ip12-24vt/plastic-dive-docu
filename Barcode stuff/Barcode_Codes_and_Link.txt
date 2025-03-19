@@ -1,4 +1,5 @@
-Link: https://www.cognex.com/resources/interactive-tools/free-barcode-generator
+Format: EAN-13
+Link:   https://www.cognex.com/resources/interactive-tools/free-barcode-generator
 
 Easy:   5181539527921
 Medium: 6211734858498
