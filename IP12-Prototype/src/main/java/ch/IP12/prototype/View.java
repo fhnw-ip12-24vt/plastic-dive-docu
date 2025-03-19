@@ -6,7 +6,6 @@ import javafx.scene.paint.Color;
 import ch.IP12.prototype.model.Obstacle;
 import ch.IP12.prototype.model.Player;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -14,6 +13,7 @@ public class View {
     private final GraphicsContext graphicsContext;
     private final Player player;
     private final List<Obstacle> obstacles;
+    private boolean initialScene = true;
     private long clock;
 
     View(GraphicsContext graphicsContext, Player player, List<Obstacle> obstacles) {
@@ -44,8 +44,29 @@ public class View {
     private void render() {
         //System.out.println(1000/(System.currentTimeMillis()-clock));
         clock = System.currentTimeMillis();
+
         graphicsContext.setFill(Color.DARKBLUE);
         graphicsContext.fillRect(0, 0, App.WIDTH, App.HEIGHT);
+
+        /*
+        This code can be used for a neat fading effect if we so desired for any transitions
+
+        Current configuration: Fade in
+        (for fade out invert opacity operation and start it at 0)
+
+        for (double opacity = 1.0; opacity > 0.0; opacity -= 0.016) {
+            graphicsContext.setFill(Color.DARKBLUE);
+            graphicsContext.fillRect(0, 0, App.WIDTH, App.HEIGHT);
+
+            graphicsContext.setFill(Color.rgb(0,0,0, opacity));
+            graphicsContext.fillRect(0,0,App.WIDTH, App.HEIGHT);
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        */
 
         graphicsContext.setFill(Color.RED);
         graphicsContext.fillRect(player.getX(), player.getY(), player.getLength(), player.getHeight());
