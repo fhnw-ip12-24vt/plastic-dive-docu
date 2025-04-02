@@ -14,7 +14,7 @@ The Goal of this project is to create a fun and enjoyable game that also educate
 
 _The Window should not freeze if the main controller is in a loop for an extended period of time._
 | _Q02_ | _Usability_ | _A user unfamiliar with the system can use it without many difficulties._
-| _Q03_ | _Reliability_ | _All saved data can be retrieved with little to no corruption being present   ._
+| _Q03_ | _Reliability_ | _All saved data can be retrieved with little to no corruption being present._
 
 _The code inside long functions should be commented periodically to explain what a section does._
 |Q04|Maintainability| _The final product is capable of being modified without extraneous effort._
