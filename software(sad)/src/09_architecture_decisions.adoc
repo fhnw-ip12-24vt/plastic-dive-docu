@@ -1,0 +1,7 @@
+[[section-architechture-decisions]]
+== Architecture Decisions
+
+=== Collision
+****
+Collision is done by checking
+****

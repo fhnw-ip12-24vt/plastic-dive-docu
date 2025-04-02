@@ -1,28 +1,28 @@
 [[section-introduction-and-goals]]
-==	Introduction and goals
+===	Introduction
 
-[role="arc42help"]
 ****
 The Goal of this project is to create a fun and enjoyable game that also educates children about how their clothing choices can impact sea life in that they contain plastic and that the washing cycle releases microplastics into bodies of water.
 ****
 
 === Quality Goals
 
-[cols="1,1,2" options="header"]
+[cols="1,2,9" options="header"]
 |===
 |ID |Name |Description
 | _Q01_ | _Performance_ | _The game steps should not take more than 16 milliseconds to ensure that game steps do not overlap and feel smooth._
 
 _The Window should not freeze if the main controller is in a loop for an extended period of time._
-| _Q02_ | _Modularity_ | _The code should be modular and reusable in other parts of the codebase._
+| _Q02_ | _Usability_ | _A user unfamiliar with the system can use it without many difficulties._
 | _Q03_ | _Readability_ | _Each function should have a short description before it explaining what it does._
 
 _The code inside long functions should be commented periodically to explain what a section does._
+|Q04|Maintainability| _The final product is capable of being modified without extraneous effort._
 |===
 
 === Stakeholders
 
-[cols="1,1,2" options="header"]
+[cols="1,2,6" options="header"]
 |===
 | Role | Contact | Expectations
 | _Client_ | _Primeo_ | _Functional and maintainable system that they can cost-effectively implement._
