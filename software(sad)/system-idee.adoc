@@ -1,0 +1,116 @@
+= Systemidee
+Als Grundlage Ihrer Entwurfstätigkeiten sollten Sie eine Vorstellung wichtiger Systemeigenschaften und Anforderungen besitzen und mindestens folgende Fragen über das System beantwortet haben.
+
+Umfang dieses Dokuments 1-3 A4 Seiten.
+
+== Kernaufgabe des Systems
+****
+- Beschreiben Sie die Kernaufgabe und Verantwortlichkeit des Systems in zwei bis drei Sätzen. Formulieren Sie positiv und benutzen Sie die Kernbegriffe der Fachdomäne.
+- Fügen Sie die wichtigsten Begriffe oder Aspekte der Fachdomäne hinzu; wenige Begriffe (fünf bis zehn) genügen häufig.
+- Stimmen Sie diese Formulierung mit Kunden und Auftraggebern ab!
+
+Eine solche kurze Formulierung erleichtert die Kommunikation über das System. Sie definiert für alle Beteiligten das wichtigste Ziel (= das System). Gleichzeitig schafft sie einen begrifflichen Kontext, an dem sich alle Beteiligten orientieren können.
+
+Das System wird ein Videospiel sein, welches die Zielgruppe aufzeigt wie Mikroplastik ins Grundwasser gelangt und dadurch die Umwelt verschmutzt. Durch die Auswahl von Objekten aus den unterschiedlichen Materialien, welches eingescannt wird, um die Schwierigkeit zu setzten, zeigen wir das unterschiedliches Material unterschiedliche Wirkung am Wasser hat. +
+****
+'''
+****
+Das System ist ein interaktives Videospiel, das die Zielgruppe über den Einfluss von Mikroplastik auf das Grundwasser und dessen Umweltverschmutzung aufklärt.
+
+Durch die Simulation von Materialien und deren Wechselwirkungen mit Wasser ermöglicht das Spiel ein tieferes Verständnis der ökologischen Konsequenzen von Mikroplastik.
+
+Nutzer*innen können verschiedene Objekte auswählen, die durch ein Scanning-Feature analysiert werden, um deren Materialeigenschaften und Auswirkungen auf die Schwierigkeit der Simulation anzupassen.
+
+Das Kernziel ist es, durch spielerische Interaktionen die Bewusstseinsbildung über Umweltverschmutzung und nachhaltige Materialwahl zu fördern.
+
+Das System verbindet die Themen Materialkunde, Umweltbildung und Gamification zu einer informativen und unterhaltsamen Lernerfahrung.
+
+Die technische Umsetzung umfasst die Modellierung der Materialeigenschaften, eine Scanning-Funktion zur Datenerfassung und eine dynamische Anpassung der Spielmechanik basierend auf den eingescannten Materialien.
+
+Die Verantwortung des Systems liegt in der präzisen und transparenten Vermittlung von wissenschaftlichen Zusammenhängen sowie in der Förderung von nachhaltigem Handeln durch immersive Spielerlebnisse.
+****
+
+== Kategorie von System
+****
+- Interaktive Online-Systeme: Auch als operationale Systeme bezeichnet, arbeiten diese Systeme als Teil der normalen Geschäftsprozesse in Unternehmen. In den meisten Fällen enthalten sie Operationen auf Daten (Transaktionen Änderungs-und Lösch-Operationen), die vom Ablauf her in die Benutzeroberfläche eingebettet sind. Die Art der Transaktionen ist festgelegt. Die Systeme operieren auf möglichst aktuellen Datenbeständen. Sie erfordern ein hohes Maß an Systemverfügbarkeit und Performance.
+- Mobile Systeme: Eine (moderne) Variante von Online-Systeme - durch die starke Verbreitung von Smartphones und Tablet-Computern sehr wichtig geworden. Starker Fokus auf Benutzeroberfläche und Benutzbarkeit, oftmals per Internet an Backend-Systeme angebunden.
+- Entscheidungsunterstützungssysteme (decision support system): arbeiten oftmals auf Kopien der aktuellen Unternehmensdaten (data warehouse) und enthalten hauptsächlich lesende Datenzugriffe. Die Art der Anfragen an die Daten ist flexibel. Benutzer können neue Anfragen (queries) formulieren. Daher ist die Laufzeit von Anfragen im Vorfeld kaum abschätzbar. Solche Systeme tolerieren höhere Ausfallzeiten und geringere Performance.
+- Hintergrundsysteme (Offline-Systeme, Batch-Systeme): dienen hauptsächlich der Datenmanipulation, oftmals zur Vor- oder Nachverarbeitung vorhandener Datenbestände; werden zur Interaktion mit anderen Systemen eingesetzt.
+- Eingebettete Systeme (embedded systems): arbeiten eng verzahnt mit spezieller Hardware. Ein Beispiel für eingebettete Systeme sind Mobiltelefone (viele haben auch Echtzeitanforderungen).
+- Systeme mit Echtzeitanforderungen (real-time systems): Operationen werden innerhalb garantierter Zeiten fertiggestellt. Beispiel: Produktionssteuerung (Fließbänder mit festen Taktzeiten), Herzschrittmacher.
+****
+'''
+****
+Das System ist eine interaktive Desktop-Anwendung, die auf einem Raspberry Pi 4 läuft und als eigenständiges Spiel entwickelt wird, um Umweltbildung durch Gamification zu fördern.
+
+Es handelt sich um ein lokales System, das auf die Ressourcen und Leistungsfähigkeit des Raspberry Pi 4 abgestimmt ist und durch In-Memory-Speicherung von Highscores sowie JSON-basierte Datenhaltung eine schnelle und unkomplizierte Nutzung ermöglicht.
+
+Die Anwendung wird mit JavaFX realisiert, um eine benutzerfreundliche Oberfläche und eine intuitive Interaktion zu gewährleisten, die auf dem Raspberry Pi 4 flüssig läuft.
+
+Maven dient als Build- und Dependency-Management-Tool, was die Modularität des Projekts unterstützt und die langfristige Wartbarkeit sowie die einfache Integration auf der Raspberry-Pi-Plattform erleichtert.
+
+Durch die Ausführung auf einem Raspberry Pi 4 ist das System energieeffizient und gleichzeitig leistungsstark genug, um die Anforderungen an Performance und schnelle Reaktionszeiten innerhalb der Anwendung zu erfüllen.
+
+Die JSON-basierte Speicherung der Highscores ermöglicht eine leichte Portabilität der Daten und erlaubt bei Bedarf eine zukünftige Erweiterung, z. B. durch Online-Synchronisation oder externe Backups.
+
+Der Einsatz eines Raspberry Pi 4 als Hardwareplattform macht das System ideal für Bildungszwecke und bietet eine kostengünstige, kompakte und vielseitige Lösung für den Betrieb der Anwendung.
+****
+
+== Wesentliche Qualitätsanforderungen
+****
+Die Qualität von Softwaresystemen wird immer bezogen auf einzelne Eigenschaften oder Merkmale. Beispiele für solche Merkmale sind Effizienz (Performance), Verfügbarkeit, Änderbarkeit, Verständlichkeit und Zuverlässigkeit.
+
+Es gibt eine ganze Reihe unterschiedlicher Definitionen von Qualitätsmodellen und Qualitätsmerkmalen. Alle definieren einige zentrale Qualitätseigenschaften (beispielsweise Zuverlässigkeit, Effizienz, Wartbarkeit, Portabilität etc.) und verfeinern diese Eigenschaften durch eine Hierarchie weiterer Merkmale.
+
+Egal, welches dieser Modelle Sie verwenden: Achten Sie innerhalb Ihrer Systeme oder Projekte auf eine einheitliche Terminologie für Qualitätsanforderungen. Der folgende Link zeigt Ihnen die Qualitätsmerkmale gemäss https://de.wikipedia.org/wiki/ISO/IEC_9126[DIN/ISO 9126]. Diese Norm enthält die wesentlichen Begriffe rund um Softwarequalität.
+
+Weil unsere Systeme auch Hardware enthalten, beziehen wir die oben beschriebenen Qualitäten auf das Gesamtsystem.
+****
+'''
+****
+*Effizienz* (Performance): Das System ist so konzipiert, dass es die begrenzten Ressourcen des Raspberry Pi 4 optimal nutzt und eine flüssige Benutzererfahrung mit schnellen Lade- und Reaktionszeiten bietet.
+
+*Zuverlässigkeit:* Die Anwendung gewährleistet eine robuste Ausführung, bei der Highscores und Spielstände zuverlässig verarbeitet und gespeichert werden, um Datenverlust oder Inkonsistenzen zu vermeiden.
+
+*Wartbarkeit:* Der Einsatz von Maven und JavaFX sorgt für eine klare Projektstruktur und Modularität, wodurch Anpassungen und Erweiterungen des Systems einfach und effizient durchgeführt werden können.
+
+*Benutzerfreundlichkeit:* Die intuitive Gestaltung der Benutzeroberfläche ist speziell auf die Zielgruppe abgestimmt und bietet klare Navigation sowie interaktive Elemente, die das Verständnis fördern.
+
+*Verfügbarkeit:* Durch den Betrieb auf einem Raspberry Pi 4 ist das System für lokale Bildungsprojekte leicht zugänglich und unabhängig von einer kontinuierlichen Internetverbindung.
+
+*Nachhaltigkeit:* Die energieeffiziente Hardware des Raspberry Pi 4 in Kombination mit einer optimierten Softwarelösung gewährleistet ein umweltfreundliches Gesamtsystem, das sich ideal für Bildungszwecke eignet.
+****
+== Relevante Stakeholder
+****
+Welche Rollen oder Personen (= Stakeholder) innerhalb oder ausserhalt der Organisation haben ein Interesse am System? Beispiele sind Benutzer der Kernfunktionalität („Anwender“), Administratoren und Betreiber, Benutzer mit
+Sonderfunktionen.
+****
+'''
+****
+Jugendliche und Kinder sind die primären Anwender des Systems, da sie durch die spielerische Vermittlung von Wissen über die Auswirkungen von Mikroplastik auf die Umwelt zum nachhaltigen Denken angeregt werden sollen.
+
+Lehrer und Pädagogen spielen eine zentrale Rolle als Multiplikatoren, die das Spiel im Unterricht oder bei Workshops einsetzen, um Umweltbewusstsein bei der Zielgruppe zu fördern.
+
+Primo Energie als Auftraggeber hat ein starkes Interesse daran, das System als Teil ihrer Nachhaltigkeitsstrategie und ihres Bildungsauftrags für die nächste Generation einzusetzen.
+
+FHNW-Dozenten agieren als interne Product Owner und technische Berater, um die Zielsetzung, fachliche Inhalte und technische Umsetzung in Einklang zu bringen.
+
+Eltern und Erziehungsberechtigte gehören zu den indirekten Stakeholdern, da sie ein Interesse daran haben, dass ihre Kinder auf spielerische Weise für Umweltthemen sensibilisiert werden.
+
+Administratoren des Systems, die das Spiel verwalten, Updates einspielen und bei Bedarf die gespeicherten Highscores oder JSON-Daten pflegen, sind wichtige Unterstützer im Betrieb des Systems.
+
+Technische Betreuer des Raspberry Pi 4 haben eine Sonderfunktion als Verantwortliche für die Hardwarebereitstellung und -wartung, um die zuverlässige und stabile Nutzung des Systems zu gewährleisten.
+****
+
+== Schnittstellen zu externen Systemen
+****
+Sie sollten immer eine präzise Vorstellung der (fachlichen wie technischen) Umgebung eines Systems besitzen (= Kontext), d. h. welche Nachbarsysteme mit dem System interagieren.
+
+Führen Sie hier eine Liste dieser Systeme auf.
+****
+'''
+****
+Das System interagiert mit Scannern, die verwendet werden, um die Materialien von Objekten einzulesen und deren Eigenschaften zu analysieren, bevor sie ins Spiel integriert werden.
+
+Der JSON-Dateizugriff fungiert als interne Schnittstelle, um die gespeicherten Highscores zu lesen und zu schreiben, was die Grundlage für eine mögliche Anbindung an externe Speicherlösungen schafft.
+****
