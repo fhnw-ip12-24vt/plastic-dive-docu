@@ -1,32 +1,39 @@
 [[section-introduction-and-goals]]
-===	Introduction
+===	Introduktion
 
 ****
-The Goal of this project is to create a fun and enjoyable game that also educates children about how their clothing choices can impact sea life in that they contain plastic and that the washing cycle releases microplastics into bodies of water.
+Das System ist ein interaktives Videospiel, das die Zielgruppe über den Einfluss von Mikroplastik auf das Grundwasser und dessen Umweltverschmutzung aufklärt.
+
+Durch die Simulation von Materialien und deren Wechselwirkungen mit Wasser ermöglicht das Spiel ein tieferes Verständnis der ökologischen Konsequenzen von Mikroplastik.
+
+Nutzer*innen können verschiedene Objekte auswählen, die durch ein Scanning-Feature analysiert werden, um deren Materialeigenschaften und Auswirkungen auf die Schwierigkeit der Simulation anzupassen.
+
+Das Kernziel ist es, durch spielerische Interaktionen die Bewusstseinsbildung über Umweltverschmutzung und nachhaltige Materialwahl zu fördern.
 ****
 
-=== Quality Goals
+=== Qualitätsziele
 
 [cols="1,2,9" options="header"]
 |===
 |ID |Name |Description
-| _Q01_ | _Performance_ | _The game steps should not take more than 16 milliseconds to ensure that game steps do not overlap and feel smooth._
+| Q01 | Performance | The game steps should not take more than 16 milliseconds to ensure that game steps do not overlap and feel smooth
 
-_The Window should not freeze if the main controller is in a loop for an extended period of time._
-| _Q02_ | _Usability_ | _A user unfamiliar with the system can use it without many difficulties._
-| _Q03_ | _Reliability_ | _All saved data can be retrieved with little to no corruption being present._
+The Window should not freeze if the main controller is in a loop for an extended period of time
+| Q02 | Usability | A user unfamiliar with the system can use it without many difficulties
+| Q03 | Reliability | All saved data can be retrieved with little to no corruption being present
 
-_The code inside long functions should be commented periodically to explain what a section does._
-|Q04|Maintainability| _The final product is capable of being modified without extraneous effort._
+The code inside long functions should be commented periodically to explain what a section does
+|Q04|Maintainability| The final product is capable of being modified without extraneous effort
+|Q05|Accessibility|The project can run on a RaspberryPi 5 without an internet connection
 |===
 
 === Stakeholders
 
 [cols="1,2,6" options="header"]
 |===
-| Role | Contact | Expectations
-| _Client_ | _Primeo_ | _Functional and maintainable system that they can cost-effectively implement._
-| _Product Owner_ | _Andreas Vogt_ | _A product that fulfills both the clients and users needs._
-| _Users_ | _---_ | _A functional and robust System._
-| _FHNW_ | _---_ | _That all Stakeholders are satisfied by the end result._
+| Role | Kontakt | Erwartungen
+| Client | Primeo | Functional and maintainable system that they can cost-effectively implement
+| Product Owner | Andreas Vogt | A product that fulfills both the clients and users needs
+| Users | --- | A functional and robust System
+| FHNW | --- | That all Stakeholders are satisfied by the end result
 |===

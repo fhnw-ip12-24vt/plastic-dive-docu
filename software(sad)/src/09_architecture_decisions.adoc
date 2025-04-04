@@ -3,5 +3,15 @@
 
 === Collision
 ****
-Collision is done by checking
+Collision is done by checking if two objects x and y values overlap by way of comparing two ranges of numbers together for.
+****
+'''
+=== Data Storage
+****
+All data that persists between instances of the game is stored in a json file that cannot exceed a set amount of entries (amount tbd), this is to ensure a manageable storage method that does not require excess effort.
+****
+'''
+=== External input
+****
+A barcode scanner is used to start the game to be more interactive for the player, allowing them to have a physical interaction with the materials mentioned.
 ****
