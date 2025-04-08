@@ -11,9 +11,9 @@ Umfang dieses Dokuments 1-3 A4 Seiten.
 
 Eine solche kurze Formulierung erleichtert die Kommunikation über das System. Sie definiert für alle Beteiligten das wichtigste Ziel (= das System). Gleichzeitig schafft sie einen begrifflichen Kontext, an dem sich alle Beteiligten orientieren können.
 
-Das System wird ein Videospiel sein, welches die Zielgruppe aufzeigt wie Mikroplastik ins Grundwasser gelangt und dadurch die Umwelt verschmutzt. Durch die Auswahl von Objekten aus den unteschiedlichen Materialien, welches eingescannt wird ,um die Schwierigkeit zu setzten, zeigen wir das unterschiedliches Material unteschiedliche Wirkung am Wasser hat. +
+Das System wird ein Videospiel sein, welches die Zielgruppe aufzeigt wie Mikroplastik ins Grundwasser gelangt und dadurch die Umwelt verschmutzt. Durch die Auswahl von Objekten aus den unterschiedlichen Materialien, welches eingescannt wird, um die Schwierigkeit zu setzten, zeigen wir das unterschiedliches Material unterschiedliche Wirkung am Wasser hat. +
 ****
-***
+'''
 ****
 Das System ist ein interaktives Videospiel, das die Zielgruppe über den Einfluss von Mikroplastik auf das Grundwasser und dessen Umweltverschmutzung aufklärt.
 
@@ -39,7 +39,7 @@ Die Verantwortung des Systems liegt in der präzisen und transparenten Vermittlu
 - Eingebettete Systeme (embedded systems): arbeiten eng verzahnt mit spezieller Hardware. Ein Beispiel für eingebettete Systeme sind Mobiltelefone (viele haben auch Echtzeitanforderungen).
 - Systeme mit Echtzeitanforderungen (real-time systems): Operationen werden innerhalb garantierter Zeiten fertiggestellt. Beispiel: Produktionssteuerung (Fließbänder mit festen Taktzeiten), Herzschrittmacher.
 ****
-***
+'''
 ****
 Das System ist eine interaktive Desktop-Anwendung, die auf einem Raspberry Pi 4 läuft und als eigenständiges Spiel entwickelt wird, um Umweltbildung durch Gamification zu fördern.
 
@@ -66,7 +66,7 @@ Egal, welches dieser Modelle Sie verwenden: Achten Sie innerhalb Ihrer Systeme o
 
 Weil unsere Systeme auch Hardware enthalten, beziehen wir die oben beschriebenen Qualitäten auf das Gesamtsystem.
 ****
-***
+'''
 ****
 *Effizienz* (Performance): Das System ist so konzipiert, dass es die begrenzten Ressourcen des Raspberry Pi 4 optimal nutzt und eine flüssige Benutzererfahrung mit schnellen Lade- und Reaktionszeiten bietet.
 
@@ -85,7 +85,7 @@ Weil unsere Systeme auch Hardware enthalten, beziehen wir die oben beschriebenen
 Welche Rollen oder Personen (= Stakeholder) innerhalb oder ausserhalt der Organisation haben ein Interesse am System? Beispiele sind Benutzer der Kernfunktionalität („Anwender“), Administratoren und Betreiber, Benutzer mit
 Sonderfunktionen.
 ****
-***
+'''
 ****
 Jugendliche und Kinder sind die primären Anwender des Systems, da sie durch die spielerische Vermittlung von Wissen über die Auswirkungen von Mikroplastik auf die Umwelt zum nachhaltigen Denken angeregt werden sollen.
 
@@ -108,8 +108,9 @@ Sie sollten immer eine präzise Vorstellung der (fachlichen wie technischen) Umg
 
 Führen Sie hier eine Liste dieser Systeme auf.
 ****
-***
+'''
 ****
 Das System interagiert mit Scannern, die verwendet werden, um die Materialien von Objekten einzulesen und deren Eigenschaften zu analysieren, bevor sie ins Spiel integriert werden.
 
 Der JSON-Dateizugriff fungiert als interne Schnittstelle, um die gespeicherten Highscores zu lesen und zu schreiben, was die Grundlage für eine mögliche Anbindung an externe Speicherlösungen schafft.
+****

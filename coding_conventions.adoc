@@ -1,19 +1,33 @@
 
-+---------------------+---------------+--------------------------------------------+
-| **Keyword**         | **Notation**  | **Beispiel**                               |
-+---------------------+---------------+--------------------------------------------+
-| Variables           | camelCase     | public int scoreCounter                    |
-| Konstante           | camelCase     | public final int ipAddress                 |
-| Klasse              | PascalCase    | public class CallCenter                    |
-| Methoden            | camelCase     | public void isSenior()                     |
-|                     |               | Methoden sollte auch ein Verb sein         |
-|                     |               | oder eine Frage*                           |
-| Konstruktoren       | PascalCase    | public CallCenter()                        |
-| Enum                | PascalCase    | public enum AgeGroups                      |
-| Enum Elemente       | PascalCase    | PlayingChildreen,                          |
-|                     |               | WorkingAdults,                             |
-|                     |               | PensionedSeniors                           |
-| Java Datei          | PascalCase    | GameEngine.java                            |
-| Packages            | alllowercase  | creditcardmanager                          |
-|                     | (not snake_case) |                                        |
-+---------------------+---------------+--------------------------------------------+
+[[section-coding-conventions]]
+== Benutzte Konventionen
+
+|===
+|Keyword|Notation|Example
+
+|Variables|camelCase|public int scoreCounter
+
+|Konstante|camelCase|public final int ipAddress
+
+|Klasse|PascalCase|public class CallCenter
+
+|Methoden|camelCase|public void isSenior()
+
+|Konstruktoren|PascalCase|public CallCenter()
+
+|Enum|PascalCase|public enum AgeGroups
+
+|Enum Elemente|PascalCase|PlayingChildren,
+WorkingAdults,
+PensionedSeniors
+
+|Java Datei|PascalCase|GameEngine.java
+
+|Packages|alllowercase
+(not snake_case)|creditcardmanager
+
+|===
+
+== Sicherstellung der Einhaltung der Konventionen
+
+_Durch das ehrenamtliche Einhalten der Tabelle_
