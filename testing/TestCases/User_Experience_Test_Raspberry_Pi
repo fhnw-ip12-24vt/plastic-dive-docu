@@ -32,11 +32,18 @@ Den groben Prototypen des Spiels zu evaluieren, um:
 
 ## Testablauf
 
-### 1. Einführung (5 Minuten)
+### 1. Test der Wissensstand überprüft
+- **Test**
+    - Was ist Mikroplastik?
+    - Wie entsteht Mikropalstik?
+    - Wieso ist Mikroplastik schlecht?
+    - Wer ist von Mikroplastikverschmutzung betroffen? (Tiere, Pflanzen, Umwelt, Menschen)
+
+### 1.1 Einführung (5 Minuten)
 - **Aufgabe**:
   - Kurze Vorstellung des Spiels:
     - "Der Spieler steuert einen Fisch, der Müll ausweichen muss. Ziel ist es, so gut wie möglich auszuweichen."
-  - Teilnehmer werden gebeten, Feedback zu notieren, während sie spielen.
+  - Teilnehmer werden gebeten, Feedback laut und direkt auszusprechen, während sie spielen.
 
 ---
 
@@ -47,19 +54,19 @@ Den groben Prototypen des Spiels zu evaluieren, um:
     - Überprüfen, wie präzise die Steuerung auf Joystick oder Tastatur-Eingaben reagiert.
   - **Verweildauer**:
     - 2 Minuten freies Bewegen.
-- **Bewertungskriterien**:
+- **Bewertungskriterien**: Likert Skala 1-5, zusätzliches Feedback notieren
   - Reaktionszeit (Verzögerung wahrnehmbar?).
   - Genauigkeit (Bewegt sich der Fisch wie erwartet?).
   - Haptik des Joysticks oder der Tastatur (angenehme Bedienung?).
 
 ---
 
-### 3. Gameplay-Test (15 Minuten)
+### 3. Gameplay-Test (5 Minuten)
 - **Aufgabe**:
   - Spielen Sie zwei vollständige Durchgänge des Spiels:
     - **1. Durchgang**: Ohne Anweisungen (intuitiv lernen).
     - **2. Durchgang**: Mit kurzen Hinweisen zum Ausweichen von Hindernissen und dem Einfluss der gescannten Objekte.
-- **Bewertungskriterien**:
+- **Bewertungskriterien**: Likert Skala 1-5, zusätzliches Feedback notieren
   - Verständnis des Spielziels (Ist das Ziel sofort klar?).
   - Schwierigkeitsgrad (Ist das Spiel zu leicht/schwer/frustrierend?).
   - Sichtbarkeit und Klarheit der Hindernisse.
@@ -68,7 +75,7 @@ Den groben Prototypen des Spiels zu evaluieren, um:
 
 ### 4. Visuelles Feedback (5 Minuten)
 - **Aufgabe**:
-  - Kommentieren Sie die visuelle Gestaltung:
+  - Kommentieren Sie die visuelle Gestaltung: Likert Skala 1-5, zusätzliches Feedback notieren
     - Ist der Fisch und der Müll klar erkennbar?
     - Sind die Animationen flüssig?
     - Passt das Farbschema (Kontraste, Lesbarkeit)?
@@ -76,7 +83,7 @@ Den groben Prototypen des Spiels zu evaluieren, um:
 ---
 
 ### 5. Feedbackrunde (10 Minuten)
-- **Fragen an die Tester**:
+- **Fragen an die Tester**: Likert Skala 1-5, zusätzliches Feedback notieren
   - War die Steuerung intuitiv? Wenn nein, warum?
   - Hat das Spiel Spaß gemacht? Was könnte verbessert werden?
   - Hatten Sie technische Probleme (z. B. Ruckler, Joystick-Ausfall)?
@@ -84,6 +91,13 @@ Den groben Prototypen des Spiels zu evaluieren, um:
   - Wie bewerten Sie das Gesamterlebnis auf einer Skala von 1-10?
 
 ---
+
+### 6. Test der Wissensstand überprüft
+- **Test**
+    - Was ist Mikroplastik?
+    - Wie entsteht Mikropalstik?
+    - Wieso ist Mikroplastik schlecht?
+    - Wer ist von Mikroplastikverschmutzung betroffen? (Tiere, Pflanzen, Umwelt, Menschen)
 
 ## Ergebnisanalyse
 
@@ -99,9 +113,13 @@ Den groben Prototypen des Spiels zu evaluieren, um:
 ### 3. Technische Probleme:
 - Liste der gemeldeten Bugs oder Performance-Probleme.
 
+### 4. Wissenserwerb:
+- Auswertung der Tests. Was wurde dazugelernt.
+
 ---
 
 ## Erwartetes Ergebnis
 Dieser Test wird grundlegendes Feedback zur Benutzerfreundlichkeit und Intuitivität des Spiels liefern.
 Auf Basis der Ergebnisse können Anpassungen an der Steuerung, der Schwierigkeitsbalance und der visuellen Gestaltung vorgenommen werden.
+Der Wissenserwerb wird durch die beiden Tests Dokumentiert und ausgewertet.
 ```
