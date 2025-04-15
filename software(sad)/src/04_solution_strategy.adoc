@@ -1,12 +1,66 @@
-# Übersicht
+# Overview
 
-Dieses Dokument sollte dazu dienen unsere technischen Entscheidungen zu erläutern und erklärt wie diese
-unsere Qualitätsziele erreichen.
+This document should serve to help the reader understand why certain technical decisions were made in
+the software and why/how it helps reach our quality goals.
 
-# Entscheidungen
+# Decisions
 
-|Entscheidungs ID|Qualitätsziel|Beschreibung|Status|Links|
-|:---:|:---:|:---:|:---:|:---:|
-|   |   |   |   |   |
-|   |   |   |   |   |
-|   |   |   |   |   |
+[cols="^1,^1,3,1,2", options="header"]
+|===
+| Entscheidungs-ID | Qualitätsziel | Beschreibung | Status | Links
+
+| D01 DTO for Obstacle-Classes 
+| link:https://fhnw-projecttrack.atlassian.net/wiki/spaces/IP1224vt01/pages/787447809/Q03+Smooth+Framerate[Q03] 
+| A DTO (Data Transfer Object) is a simple object used to transfer data between layers or systems without exposing internal structures, making data handling cleaner, more secure, and easier to maintain.
+| cancelled 
+| link:https://www.baeldung.com/java-dto-pattern[DTO Design Pattern]
+
+| D02 Obstacle Spawner Factory 
+| link:https://fhnw-projecttrack.atlassian.net/wiki/spaces/IP1224vt01/pages/787447809/Q03+Smooth+Framerate[Q03] 
+| The Factory Design Pattern is a creational pattern that provides a method for creating objects without specifying the exact class of the object to be created, promoting flexibility and decoupling in object creation.
+| in work 
+| link:https://www.baeldung.com/java-factory-pattern[Factory Design Pattern]
+|===
+
+## D01 DTO for Obstacle-Classes
+
+*Problem*:  
+We have identified that the "Movable" class and all its children have very long and repetitive parameter
+lists in their constructors. This leads to bloated instantiations and can negatively impact performance,
+readability, and future maintainability, as every instantiation must manually pass numerous parameters.
+
+*Solution*:  
+A DTO (Data Transfer Object) is a design pattern where all the attributes of a class are encapsulated
+in a separate, dedicated data class. This DTO contains private fields along with getters and setters,
+allowing controlled access to its data. This not only improves encapsulation and debugging but also
+simplifies parameter management. In our case, the constructor of the "Movable" class can be reduced
+to accept a single DTO object, promoting cleaner code and better separation of concerns. Additional
+benefits include the ability to:
+- Set default values,
+- Implement logic inside setters (e.g., auto-update related fields),
+- Reuse the DTO for multiple instances.
+
+*Alternatives*:  
+We considered using a Java "record" class, which offers a similar concise structure. However, records
+make all fields immutable (final), which is unsuitable for dynamic values like x and y coordinates in
+our game. Thus, the DTO approach provides the necessary flexibility.
+
+*CANCELLED*: some people in the team regarded the DTO as "overkill" and not needed after it was completed
+@michael galambos
+
+## D02 Obstacle Spawner Factory
+*Problem*:
+In our initial implementation, obstacle classes were instantiated directly using their constructors.
+This tightly coupled the creation logic to specific classes, which made it difficult to switch between
+different obstacle types, dynamically adjust spawning behavior, or scale the system with new obstacle
+variations. This approach also violated the Open-Closed Principle, since adding new obstacle types
+often required modifying existing spawning code.
+
+*Solution*:
+We implemented the Factory Design Pattern to encapsulate the creation logic of obstacle classes in a
+centralized "ObstacleFactory". This factory takes input parameters such as type identifiers or DTOs
+and returns the appropriate obstacle instance. This improves flexibility by allowing different obstacle
+types to be instantiated dynamically at runtime, based on game state or configuration. It also enhances
+maintainability, as new obstacle types can be added without modifying core spawning logic — only the
+factory needs to be extended. In addition, this design simplifies testing, as factories can be mocked
+or stubbed to control object creation in unit tests.
