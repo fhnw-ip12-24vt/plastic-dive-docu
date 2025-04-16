@@ -1,9 +1,9 @@
-# Overview
+= Overview
 
 This document should serve to help the reader understand why certain technical decisions were made in
 the software and why/how it helps reach our quality goals.
 
-## Decisions
+== Decisions
 
 [cols="*5", options="header"]
 |===
@@ -17,18 +17,18 @@ the software and why/how it helps reach our quality goals.
 
 | D02 Obstacle Spawner Factory 
 | link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/01_introduction_and_goals.adoc?ref_type=heads[Q04] 
-| The Factory Design Pattern is a creational pattern that provides a method for creating objects without specifying the exact class of the object to be created, promoting flexibility and decoupling in object creation.
+| The Factory Design Pattern is a creation pattern that provides a method for creating objects without specifying the exact class of the object to be created, promoting flexibility and decoupling in object creation.
 | in work 
 | link:https://www.baeldung.com/java-factory-pattern[Factory Design Pattern]
 
 | D03 MVC
 | link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/01_introduction_and_goals.adoc?ref_type=heads[Q04] 
-| The MVC design pattern allows seperation of concern between logic, data and graphics allowing for greater modularity and maintainability.
+| The MVC design pattern allows separation of concern between logic, data and graphics allowing for greater modularity and maintainability.
 | finished 
 | link:https://javabeginners.de/Design_Patterns/Model-View-Controller.php[MVC Design Pattern]
 |===
 
-## D01 DTO for Obstacle-Classes
+== D01 DTO for Obstacle-Classes
 
 *Problem*:  
 We have identified that the "Movable" class and all its children have very long and repetitive parameter
@@ -54,7 +54,7 @@ our game. Thus, the DTO approach provides the necessary flexibility.
 *CANCELLED*: some people in the team regarded the DTO as "overkill" and not needed after it was already
 completed @michael galambos
 
-## D02 Obstacle Spawner Factory
+== D02 Obstacle Spawner Factory
 
 *Problem*:
 In our initial implementation, obstacle classes were instantiated directly using their constructors.
@@ -73,19 +73,19 @@ factory needs to be extended. In addition, this design simplifies testing, as fa
 or stubbed to control object creation in unit tests.
 
 *Alternatives*:
-Manually instanciating the obstacles directly would have been a possible choice since it makes 
+Manually instantiating the obstacles directly would have been a possible choice since it makes
 code implementation simpler but comes with the downsides explained in the problem section.
 
-## D03 MVC
+== D03 MVC
 
 *Problem*:
-We need a way to seperate gui, logic and data from each other, otherwise debugging the code and getting
+We need a way to separate gui, logic and data from each other, otherwise debugging the code and getting
 an overview will be significantly more difficult. The MVC design pattern offers a solution for exactly
 that issue.
 
 *Solution*:
-We decided to implement the MVC pattern since the beginning of the project and it is continiously being
-upheld. The MVC follows clean code standards such as the seperation of concern principle since it neatly
+We decided to implement the MVC pattern since the beginning of the project and it is continuously being
+upheld. The MVC follows clean code standards such as the separation of concern principle since it neatly
 divides logic, data and graphic from each other making debugging easier.
 
 *Alternatives*: 

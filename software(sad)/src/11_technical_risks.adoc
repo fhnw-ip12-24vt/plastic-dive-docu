@@ -1,4 +1,4 @@
-# Overview
+= Overview
 
 The purpose of this document is to highlight the potential risks associated with the respective technical
 decisions (link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/04_solution_strategy.adoc?ref_type=heads[Solution Strategy])
@@ -7,41 +7,41 @@ and general software construction (link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24
 The risk register holds all identified risks of our technical decisions so far and evaluates them based
 on *likelihood* (how likely is it that this risk becomes a problem), 
 *impact* (if it becomes a problem, how much does it incapacitate our progress and our ability to continue developing)
-and *Strategy* (what messure the team has taken to deal with that risk) on whos potential strategies are:
+and *Strategy* (what measure the team has taken to deal with that risk) on who's potential strategies are:
 
-- *accept*: we allow this risk to be without counter meassures
+- *accept*: we allow this risk to be without countermeasures
 - *mitigate*: we reduce the likelihood or impact of the risk with certain tools
-- *avoid*: we implement a different technical decision to eliminate the risk and potentionally replace it with a new risk
+- *avoid*: we implement a different technical decision to eliminate the risk and potentially replace it with a new risk
 
-# Risk Register
+== Risk Register
 
-[cols="*5", options="header"]
+[cols="1,1,8,1,1,4", options="header"]
 |===
 |Risk ID|Decisions-ID/Software Architecture Decisions|Description|Likelihood|Impact|Strategy
 
 |R01
 |link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/04_solution_strategy.adoc?ref_type=heads&plain=0[D01]
-|Implementing a *DTO* may cause a lot bloat code and excessive use of getters and setters potentionally violating established link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/coding_conventions.adoc?ref_type=heads[coding conventions] for "Chained Calls"
+|Implementing a *DTO* may cause a lot bloat code and excessive use of getters and setters potentially violating established link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/coding_conventions.adoc?ref_type=heads[coding conventions] for "Chained Calls"
 |high
 |low
 |avoid: @Michael Galambos does not like DTOs and a bit of bloat code, therefore it was removed
 
 |R02
 |link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/04_solution_strategy.adoc?ref_type=heads&plain=0[D02]
-|Utilizing the *factory design pattern* may cause over-engineering or premature abstracting which may end up adding unnecessary complexity early on, especially for simple object creation. One factory can become many which bloats the codebase with tons of tiny factory classes with overlapping logic. Factories often rely on if-else or switch statements to decide which class to instantiate which means that every time a new type is added, you modify the factory, defeating the point of polymorphism. Additionally it can make unit-testing significantly harder to do.
+|Utilizing the *factory design pattern* may cause over-engineering or premature abstracting which may end up adding unnecessary complexity early on, especially for simple object creation. One factory can become many which bloats the codebase with tons of tiny factory classes with overlapping logic. Factories often rely on if-else or switch statements to decide which class to instantiate which means that every time a new type is added, you modify the factory, defeating the point of polymorphism. Additionally, it can make unit-testing significantly harder to do.
 |medium
 |medium
 |accept: @Michael Galambos likes factory patterns
 
 |R03
 |link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/04_solution_strategy.adoc?ref_type=heads&plain=0[D03]
-|Business logic may creep into controllers, violating separation of concerns when using *MVC*. The View and Controller could be coupled too thightly making unit testing  harder to do.
+|Business logic may creep into controllers, violating separation of concerns when using *MVC*. The View and Controller could be coupled too tightly making unit testing  harder to do.
 |medium
 |medium
 |mitigate: Code reviews and making team members conscious about this potential risk should reduce the likelihood of this outcome
 |===
 
-# Mitigation and Remediation Strategy
+== Mitigation and Remediation Strategy
 
 Should a risk despite established strategy become a problem or the team encounters an unanticipated risk,
 the team should call a meeting and forge a code refactoring or change technical decisions.

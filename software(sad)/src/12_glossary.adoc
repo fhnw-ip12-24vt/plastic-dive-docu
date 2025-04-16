@@ -1,5 +1,5 @@
 [[section-glossary]]
-# Glossary
+= Glossary
 
 The Terms in the table below are words, phrases or abbreviations used elsewhere in this documentation, whose meaning may not be clear to all
 the people reading this.

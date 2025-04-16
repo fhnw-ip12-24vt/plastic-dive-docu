@@ -1,8 +1,8 @@
-# Coding Conventions
+= Coding Conventions
 
-This document serves to setup rules for the coding style and helps bring coherence to the software.
+This document serves to set up rules for the coding style and helps bring coherence to the software.
 
-## Naming Conventions
+== Naming Conventions
 
 [cols="*3", options="header"]
 |===
@@ -27,7 +27,7 @@ This document serves to setup rules for the coding style and helps bring coheren
 |Packages|alllowercase(not snake_case)|creditcardmanager
 |===
 
-## Code Length
+== Code Length
 
 [cols="*3", options="header"]
 |===
@@ -48,13 +48,13 @@ This document serves to setup rules for the coding style and helps bring coheren
 |Line|100|A single line of code should not exceed ~100 characters
 |===
 
-## Ensuring compliance with conventions
+== Ensuring compliance with conventions
 
 We have informed the Team of the existence of this document and agreed upon that team member with the
 "SC" (Source Code Dev) should orient themselves with this document. Occasionally, there are quick
 code reviews done to ensure consistency.
 
-## Code reviews
+== Code reviews
 [cols="*4", options="header"]
 |===
 |Name|Date|Reviewers|Comments
