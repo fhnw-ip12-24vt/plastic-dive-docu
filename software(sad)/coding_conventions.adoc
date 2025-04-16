@@ -1,4 +1,4 @@
-= Coding Conventions
+== Overview
 
 This document serves to set up rules for the coding style and helps bring coherence to the software.
 
