@@ -5,9 +5,9 @@ the software and why/how it helps reach our quality goals.
 
 # Decisions
 
-[cols="^1,^1,3,1,2", options="header"]
+[cols="*5", options="header"]
 |===
-| Entscheidungs-ID | Qualitätsziel | Beschreibung | Status | Links
+| Decisions-ID | Quality Goal | Description | Status | Links
 
 | D01 DTO for Obstacle-Classes 
 | link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/01_introduction_and_goals.adoc?ref_type=heads[Q04] 
@@ -20,6 +20,12 @@ the software and why/how it helps reach our quality goals.
 | The Factory Design Pattern is a creational pattern that provides a method for creating objects without specifying the exact class of the object to be created, promoting flexibility and decoupling in object creation.
 | in work 
 | link:https://www.baeldung.com/java-factory-pattern[Factory Design Pattern]
+
+| D03 MVC
+| link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/01_introduction_and_goals.adoc?ref_type=heads[Q04] 
+| The MVC design pattern allows seperation of concern between logic, data and graphics allowing for greater modularity and maintainability.
+| finished 
+| link:https://javabeginners.de/Design_Patterns/Model-View-Controller.php[MVC Design Pattern]
 |===
 
 ## D01 DTO for Obstacle-Classes
@@ -49,6 +55,7 @@ our game. Thus, the DTO approach provides the necessary flexibility.
 completed @michael galambos
 
 ## D02 Obstacle Spawner Factory
+
 *Problem*:
 In our initial implementation, obstacle classes were instantiated directly using their constructors.
 This tightly coupled the creation logic to specific classes, which made it difficult to switch between
@@ -64,3 +71,27 @@ types to be instantiated dynamically at runtime, based on game state or configur
 maintainability, as new obstacle types can be added without modifying core spawning logic — only the
 factory needs to be extended. In addition, this design simplifies testing, as factories can be mocked
 or stubbed to control object creation in unit tests.
+
+*Alternatives*:
+Manually instanciating the obstacles directly would have been a possible choice since it makes 
+code implementation simpler but comes with the downsides explained in the problem section.
+
+## D03 MVC
+
+*Problem*:
+We need a way to seperate gui, logic and data from each other, otherwise debugging the code and getting
+an overview will be significantly more difficult. The MVC design pattern offers a solution for exactly
+that issue.
+
+*Solution*:
+We decided to implement the MVC pattern since the beginning of the project and it is continiously being
+upheld. The MVC follows clean code standards such as the seperation of concern principle since it neatly
+divides logic, data and graphic from each other making debugging easier.
+
+*Alternatives*: 
+MVVM (Model-View-ViewModel) is a software architectural pattern that separates the user interface (UI)
+from the underlying business logic and data. The Model represents the actual data, domain logic, and
+business rules of the application. The View is what the user sees and interacts with — typically, this
+is your UI (buttons, text fields, etc.). The ViewModel acts as a middle layer between the View and the
+Model. Its job is to prepare and manage the data for the View. Because the MVVM design pattern however
+is rather foreign to us, we decided against it and used the much more well established MVC.
