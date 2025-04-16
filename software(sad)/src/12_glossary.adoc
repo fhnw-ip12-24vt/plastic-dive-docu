@@ -1,0 +1,14 @@
+[[section-glossary]]
+# Glossary
+
+The Terms in the table below are words, phrases or abbreviations used elsewhere in this documentation, whose meaning may not be clear to all
+the people reading this.
+
+[cols="1,3" options="header"]
+|===
+| Term | Definition
+|Data Transfer Object|
+|MVC|
+|MVVM|
+|JavaDoc|
+|===
