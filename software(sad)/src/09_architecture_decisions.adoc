@@ -15,3 +15,6 @@ All data that persists between instances of the game is stored in a json file th
 ****
 A barcode scanner is used to start the game to be more interactive for the player, allowing them to have a physical interaction with the materials mentioned.
 ****
+****
+A Joystick is used for movement, as it is a simple and intuitive control system.
+****
