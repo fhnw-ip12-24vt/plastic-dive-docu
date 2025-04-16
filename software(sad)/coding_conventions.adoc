@@ -1,33 +1,63 @@
+# Coding Conventions
 
-[[section-coding-conventions]]
-== Benutzte Konventionen
+This document serves to setup rules for the coding style and helps bring coherence to the software.
 
+## Naming Conventions
+
+[cols="*3", options="header"]
 |===
 |Keyword|Notation|Example
 
 |Variables|camelCase|public int scoreCounter
 
-|Konstante|camelCase|public final int ipAddress
+|Constants|camelCase|public final int ipAddress
 
-|Klasse|PascalCase|public class CallCenter
+|Class|PascalCase|public class CallCenter
 
-|Methoden|camelCase|public void isSenior()
+|Methods|camelCase|public void isSenior()
 
-|Konstruktoren|PascalCase|public CallCenter()
+|Constructors|PascalCase|public CallCenter()
 
 |Enum|PascalCase|public enum AgeGroups
 
-|Enum Elemente|PascalCase|PlayingChildren,
-WorkingAdults,
-PensionedSeniors
+|Enum Elements|PascalCase|PlayingChildren, WorkingAdults, PensionedSeniors
 
-|Java Datei|PascalCase|GameEngine.java
+|Java File|PascalCase|GameEngine.java
 
-|Packages|alllowercase
-(not snake_case)|creditcardmanager
-
+|Packages|alllowercase(not snake_case)|creditcardmanager
 |===
 
-== Sicherstellung der Einhaltung der Konventionen
+## Class/Method Length
 
-_Durch das ehrenamtliche Einhalten der Tabelle_
+[cols="*3", options="header"]
+|===
+|Code Elements|Approximate Max. Length|Explination
+
+|Class|400|A class should not exceed a length of ~400 lines
+
+|Method|40|A method should not exceed a length of ~40 lines
+
+|Parameters|4|Constructors and methods should not exceed 4 parameters
+
+|Block Nesting Depth|4|Example: there should not be more than 4 for loops nested in each other
+
+|Chained Calls|4|Example: method().method().method().method();
+
+|Name|24|Example: ThisIsAWayTooLongNameForAnyVariableMethodOrClass
+
+|Line|100|A single line of code should not exceed ~100 characters
+|===
+
+# Ensuring compliance with conventions
+
+We have informed the Team of the existance of this document and agreed upon that team memeber with the
+"SC" (Source Code Dev) should orient themselves with this document. Occasionally, there are quick
+code reviews done to ensure consistency.
+
+## Code reviews
+[cols="*4", options="header"]
+|===
+|Name|Date|Reviewers|Comments
+
+|Code Review 01|16.04.2025|@Klemen Zmahar @Bojan Rodic|Maybe use more JavaDocs, otherwise all clean
+|===
