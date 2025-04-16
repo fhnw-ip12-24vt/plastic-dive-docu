@@ -1,4 +1,6 @@
-# Overview
+# Technical Risks
+
+## Overview
 
 The purpose of this document is to highlight the potential risks associated with the respective technical
 decisions (link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/04_solution_strategy.adoc?ref_type=heads[Solution Strategy])
@@ -13,7 +15,7 @@ and *Strategy* (what messure the team has taken to deal with that risk) on whos 
 - *mitigate*: we reduce the likelihood or impact of the risk with certain tools
 - *avoid*: we implement a different technical decision to eliminate the risk and potentionally replace it with a new risk
 
-# Risk Register
+## Risk Register
 
 [cols="*5", options="header"]
 |===
@@ -41,7 +43,7 @@ and *Strategy* (what messure the team has taken to deal with that risk) on whos 
 |mitigate: Code reviews and making team members conscious about this potential risk should reduce the likelihood of this outcome
 |===
 
-# Mitigation and Remediation Strategy
+## Mitigation and Remediation Strategy
 
 Should a risk despite established strategy become a problem or the team encounters an unanticipated risk,
 the team should call a meeting and forge a code refactoring or change technical decisions.
