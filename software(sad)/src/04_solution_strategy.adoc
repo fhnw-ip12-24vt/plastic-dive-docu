@@ -1,4 +1,6 @@
-# Overview
+# Solution Strategy
+
+## Overview
 
 This document should serve to help the reader understand why certain technical decisions were made in
 the software and why/how it helps reach our quality goals.
