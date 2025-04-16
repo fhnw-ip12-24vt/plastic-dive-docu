@@ -5,23 +5,26 @@ the software and why/how it helps reach our quality goals.
 
 ## Decisions
 
-[cols="*5", options="header"]
+[cols="*6", options="header"]
 |===
-| Decisions-ID | Quality Goal | Description | Status | Links
+| Decisions-ID | Title | Quality Goal | Description | Status | Links
 
-| D01 DTO for Obstacle-Classes 
+| D01 
+| DTO for Obstacle-Classes 
 | link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/01_introduction_and_goals.adoc?ref_type=heads[Q04] 
 | A DTO (Data Transfer Object) is a simple object used to transfer data between layers or systems without exposing internal structures, making data handling cleaner, more secure, and easier to maintain.
 | cancelled 
 | link:https://www.baeldung.com/java-dto-pattern[DTO Design Pattern]
 
-| D02 Obstacle Spawner Factory 
+| D02 
+| Obstacle Spawner Factory 
 | link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/01_introduction_and_goals.adoc?ref_type=heads[Q04] 
 | The Factory Design Pattern is a creational pattern that provides a method for creating objects without specifying the exact class of the object to be created, promoting flexibility and decoupling in object creation.
 | in work 
 | link:https://www.baeldung.com/java-factory-pattern[Factory Design Pattern]
 
-| D03 MVC
+| D03 
+| MVC
 | link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/01_introduction_and_goals.adoc?ref_type=heads[Q04] 
 | The MVC design pattern allows seperation of concern between logic, data and graphics allowing for greater modularity and maintainability.
 | finished 
