@@ -8,8 +8,8 @@ the people reading this.
 |===
 | Term | Definition | Link
 
-|Data Transfer Object|A DTO is a simple object without much logic, used for transfering field data across different parts of the software|link:https://de.wikipedia.org/wiki/Transferobjekt
-|MVC|Stands for *Model View Controller* and is a design pattern that seperates logic, visual and control|link:https://de.wikipedia.org/wiki/Model_View_Controller
-|MVVM|Stands for *Model View View-Model* and is basically the cursed microsoft version of MVC|link:https://de.wikipedia.org/wiki/Model_View_ViewModel
-|JavaDoc|JavaDoc is a tool that automatically create documentation based on specially formatted comments in code|link:https://de.wikipedia.org/wiki/Javadoc
+|Data Transfer Object|A DTO is a simple object without much logic, used for transfering field data across different parts of the software|link:https://de.wikipedia.org/wiki/Transferobjekt[]
+|MVC|Stands for *Model View Controller* and is a design pattern that seperates logic, visual and control|link:https://de.wikipedia.org/wiki/Model_View_Controller[]
+|MVVM|Stands for *Model View View-Model* and is basically the cursed microsoft version of MVC|link:https://de.wikipedia.org/wiki/Model_View_ViewModel[]
+|JavaDoc|JavaDoc is a tool that automatically create documentation based on specially formatted comments in code|link:https://de.wikipedia.org/wiki/Javadoc[]
 |===
