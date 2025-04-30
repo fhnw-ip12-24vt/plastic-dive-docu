@@ -30,6 +30,13 @@ the software and why/how it helps reach our quality goals.
 | The MVC design pattern allows separation of concern between logic, data and graphics allowing for greater modularity and maintainability.
 | finished 
 | link:https://javabeginners.de/Design_Patterns/Model-View-Controller.php[MVC Design Pattern]
+
+| D04
+| Singleton for Logger
+| link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/01_introduction_and_goals.adoc?ref_type=heads[Q04]
+| A singleton is a design pattern that ensures a class has only one instance throughout the program and provides a global point of access to that instance. It's commonly used for managing shared resources like configuration settings or logging systems.
+| finished
+| https://www.baeldung.com/java-singleton[Singleton Design Pattern]
 |===
 
 == D01 DTO for Obstacle-Classes
@@ -99,3 +106,25 @@ business rules of the application. The View is what the user sees and interacts 
 is your UI (buttons, text fields, etc.). The ViewModel acts as a middle layer between the View and the
 Model. Its job is to prepare and manage the data for the View. Because the MVVM design pattern however
 is rather foreign to us, we decided against it and used the much more well established MVC.
+
+== D04 Singleton for Logger
+
+*Problem*: The software uses simple print statements (or none at all!) to track what is happening where
+and when. This may be useful for developers when debugging, looking into the console, however it makes
+the code look cluttered and much more difficult to maintain since any class can call the print statement
+and it would be hard to track from which class it came.
+
+*Solution*: Instead of using print statements, an object can rely on a singleton instance of a logger
+class, which can be accessed globally throughout the code. This allows developers to track exactly which
+object invoked the logger and store that information in a log file for later analysis, while also
+making it easier to enforce global logging rules through the singleton.
+
+*Alternatives*: An alternative to using a singleton logger would be dependency injection, where each
+object or module receives a logger instance explicitly (often passed as a constructor or method argument).
+This approach improves testability, makes dependencies clearer, and avoids the global state issues
+associated with singletons. However this introduces potential risks of violating
+link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/coding_conventions.adoc[coding conventions]
+and make parameters in many methods too long. Additionally it would be harder to enforce a global rule
+on all objects who use the logger and make a log file, since there can be multiple different logger
+instances used in the code.
+
