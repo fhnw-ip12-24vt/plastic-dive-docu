@@ -70,5 +70,9 @@ The game uses a fixed timestep loop of 60 fps.
 
 = Operational Concepts
 
-The game (should) start automatically when the arcade machine is turned on. A door on the back of the
+*Startup & Shutdown Behavior*:The game (should) start automatically when the arcade machine is turned on. A door on the back of the
 machine can be opened to take out / provide maintanance to the electronics if needed.
+
+*Logging*: The "Logger.java" stores certain events happening in the code in a log file.
+
+*Usage Data*: Highscores are stored within a (theoratical) json file.
