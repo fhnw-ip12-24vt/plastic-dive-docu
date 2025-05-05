@@ -23,7 +23,7 @@ The following hardware components have been used:
 - 1 x USB-C Cable
 - 1 x USB-A Cable
 - 1 x HDMI Cable
-- 1 x Micro USB Cable
+- 1 x HDMI USB Cable
 - 1 x HDMI to Micro USB Adapter
 - 2 x Joystick
 - 2 x Buttons
