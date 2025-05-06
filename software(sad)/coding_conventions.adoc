@@ -43,7 +43,7 @@ This document serves to set up rules for the coding style and helps bring cohere
 
 |Chained Calls|4|Example: method().method().method().method();
 
-|Name|24|Example: ThisIsAWayTooLongNameForAnyVariableMethodOrClass
+|Name|24|Example: ThisIsAWayTooLongNameForAnyVariableMethodOrClass (unit test classes are exempt from this rule)
 
 |Line|100|A single line of code should not exceed ~100 characters
 |===
