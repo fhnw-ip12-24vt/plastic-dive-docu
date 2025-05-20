@@ -4,16 +4,16 @@
 
 ### Test Metadata
 
-| Field           | Value                            |
-|-----------------|----------------------------------|
-| Tester Name     | [Your Name]                      |
-| Test Date       | 20/05/2025                       |
-| Environment     | [e.g., Windows 11, Ubuntu 22.04] |
-| Java Version    | 23.0.2                           |
-| Maven Version   | 3.9.9                            |
-| Game Version    | [v1.0.0 or commit hash]          |
-| Input Device    | Analog Joystick                  |
-| File Under Test | View.java                        |
+| Field           | Value                                                                                         |
+|-----------------|-----------------------------------------------------------------------------------------------|
+| Tester Name     | Michael Galambos                                                                              |
+| Test Date       | 20/05/2025                                                                                    |
+| Environment     | Debian, Debian GNU/Linux 12 (bookworm), bookworm, release 12 (our raspberry pi Linux version) |
+| Java Version    | 23.0.2                                                                                        |
+| Maven Version   | 3.9.9                                                                                         |
+| Game Version    | commit 7f8dd054e0b18dc17e1c7f6b89d6755654206da9                                               |
+| Input Device    | Analog Joystick                                                                               |
+| File Under Test | View.java                                                                                     |
 
 ---
 
@@ -21,64 +21,64 @@
 
 #### Test Case ID: TC001 – Idle State
 
-| Step | Action                | Expected Result                | Actual Result   | Pass/Fail | Notes            |
-|------|-----------------------|--------------------------------|-----------------|-----------|------------------|
-| 1    | Launch the game       | Game loads and shows character | [actual result] | [ ]       | [optional notes] |
-| 2    | Do not touch joystick | Character remains still        | [actual result] | [ ]       |                  |
+| Step | Action                | Expected Result                | Actual Result                  | Pass/Fail | Notes |
+|------|-----------------------|--------------------------------|--------------------------------|-----------|-------|
+| 1    | Launch the game       | Game loads and shows character | Game loads and shows character | Y         |       |
+| 2    | Do not touch joystick | Character remains still        | Character remains still        | Y         |       |
 
 ---
 
 #### Test Case ID: TC002 – Move Up
 
-| Step | Action               | Expected Result        | Actual Result   | Pass/Fail | Notes |
-|------|----------------------|------------------------|-----------------|-----------|-------|
-| 1    | Push joystick upward | Character moves upward | [actual result] | [ ]       |       |
-| 2    | Release joystick     | Character stops moving | [actual result] | [ ]       |       |
+| Step | Action               | Expected Result        | Actual Result          | Pass/Fail | Notes |
+|------|----------------------|------------------------|------------------------|-----------|-------|
+| 1    | Push joystick upward | Character moves upward | Character moves upward | Y         |       |
+| 2    | Release joystick     | Character stops moving | Character stops moving | Y         |       |
 
 ---
 
 ### Test Case ID: TC003 – Move Down
 
-| Step | Action                 | Expected Result          | Actual Result   | Pass/Fail | Notes |
-|------|------------------------|--------------------------|-----------------|-----------|-------|
-| 1    | Push joystick downward | Character moves downward | [actual result] | [ ]       |       |
-| 2    | Release joystick       | Character stops moving   | [actual result] | [ ]       |       |
+| Step | Action                 | Expected Result          | Actual Result            | Pass/Fail | Notes |
+|------|------------------------|--------------------------|--------------------------|-----------|-------|
+| 1    | Push joystick downward | Character moves downward | Character moves downward | Y         |       |
+| 2    | Release joystick       | Character stops moving   | Character stops moving   | Y         |       |
 
 ---
 
 ### Test Case ID: TC004 – Move Left
 
-| Step | Action             | Expected Result        | Actual Result   | Pass/Fail | Notes |
-|------|--------------------|------------------------|-----------------|-----------|-------|
-| 1    | Push joystick left | Character moves left   | [actual result] | [ ]       |       |
-| 2    | Release joystick   | Character stops moving | [actual result] | [ ]       |       |
+| Step | Action             | Expected Result        | Actual Result          | Pass/Fail | Notes |
+|------|--------------------|------------------------|------------------------|-----------|-------|
+| 1    | Push joystick left | Character moves left   | Character moves left   | Y         |       |
+| 2    | Release joystick   | Character stops moving | Character stops moving | Y         |       |
 
 ---
 
 ### Test Case ID: TC005 – Move Right
 
-| Step | Action              | Expected Result        | Actual Result   | Pass/Fail | Notes |
-|------|---------------------|------------------------|-----------------|-----------|-------|
-| 1    | Push joystick right | Character moves right  | [actual result] | [ ]       |       |
-| 2    | Release joystick    | Character stops moving | [actual result] | [ ]       |       |
+| Step | Action              | Expected Result        | Actual Result          | Pass/Fail | Notes |
+|------|---------------------|------------------------|------------------------|-----------|-------|
+| 1    | Push joystick right | Character moves right  | Character moves right  | Y         |       |
+| 2    | Release joystick    | Character stops moving | Character stops moving | Y         |       |
 
 ---
 
 ### Test Case ID: TC006 – Diagonal Movement
 
-| Step | Action                                    | Expected Result            | Actual Result   | Pass/Fail | Notes |
-|------|-------------------------------------------|----------------------------|-----------------|-----------|-------|
-| 1    | Push joystick diagonally (e.g., up-right) | Character moves diagonally | [actual result] | [ ]       |       |
-| 2    | Release joystick                          | Character stops moving     | [actual result] | [ ]       |       |
+| Step | Action                                    | Expected Result            | Actual Result              | Pass/Fail | Notes |
+|------|-------------------------------------------|----------------------------|----------------------------|-----------|-------|
+| 1    | Push joystick diagonally (e.g., up-right) | Character moves diagonally | Character moves diagonally | Y         |       |
+| 2    | Release joystick                          | Character stops moving     | Character stops moving     | Y         |       |
 
 ---
 
 ### Test Case ID: TC007 – Analog Sensitivity
 
-| Step | Action                                     | Expected Result                                 | Actual Result   | Pass/Fail | Notes |
-|------|--------------------------------------------|-------------------------------------------------|-----------------|-----------|-------|
-| 1    | Slightly tilt joystick (e.g., 25% forward) | Character moves slowly in intended direction    | [actual result] | [ ]       |       |
-| 2    | Push joystick fully in same direction      | Character moves at full speed in that direction | [actual result] | [ ]       |       |
+| Step | Action                                     | Expected Result                                 | Actual Result                                   | Pass/Fail | Notes |
+|------|--------------------------------------------|-------------------------------------------------|-------------------------------------------------|-----------|-------|
+| 1    | Slightly tilt joystick (e.g., 25% forward) | Character moves slowly in intended direction    | Character moves slowly in intended direction    | Y         |       |
+| 2    | Push joystick fully in same direction      | Character moves at full speed in that direction | Character moves at full speed in that direction | Y         |       |
 
 ---
 
@@ -86,16 +86,13 @@
 
 | Total Test Cases | Passed | Failed | Blocked |
 |------------------|--------|--------|---------|
-| 7                | [#]    | [#]    | [#]     |
+| 7                | 7      | 0      | 0       |
 
 ### Observations
 
-- [e.g., Minor delay when releasing joystick]
-- [e.g., Diagonal movement is slightly faster than expected]
+Everything worked as expected.
 
 ### Recommendations
-
-- [Optional: Improvements, bug reports, etc.]
 
 # Visuals
 
