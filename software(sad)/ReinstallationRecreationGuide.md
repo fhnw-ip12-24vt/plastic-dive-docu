@@ -27,7 +27,7 @@
 ## Hardware
 
 ### Recreating the Arcade Box
-
+[Our Plan](../hardware/BT800-700_report.pdf)
 #### Tools
 
 - Milling machine (preferably with a guide, e.g., Fastool)
