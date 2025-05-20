@@ -64,7 +64,7 @@ The game uses a fixed timestep loop of 60 fps.
 
 *Development Tools*:
 
-- IntelliJ / Visual Studio Code🤢
+- IntelliJ / Visual Studio Code
 - Git, GitLab, GitKraken, GitDesktop
 - Maven
 
