@@ -19,3 +19,13 @@ Total: ???W
 A stable table should be available.
 * **Space:** 
 Sufficient space for two players must be provided to ensure comfortable use.
+
+== Environmental Requirements
+
+* **Lighting:** Ambient lighting should allow screen visibility without glare.
+* **Dust Control:** Minimize dust exposure to protect ventilation and electronic components.
+
+== Hardware and Interaction Requirements
+
+* **Input Devices:** All buttons, joysticks, and other controllers must be fully functional and responsive.
+* **Display:** Screen should be clearly visible under typical indoor lighting conditions.
