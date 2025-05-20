@@ -61,4 +61,7 @@ code reviews done to ensure consistency.
 
 |Code Review 01|16.04.2025|@Klemen Zmahar
 @Bojan Rodic|Some methods are missing JavaDocs, besides that, most of the code conforms to the standards.
+
+|Code Review 02|19.05.2025|@Klemen Zmahar
+@Bojan Rodic|Nothing negative was noticed.
 |===
