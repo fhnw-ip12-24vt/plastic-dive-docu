@@ -1,0 +1,21 @@
+= Operating boundry conditions
+
+To ensure reliable operation, the following conditions must be met:
+
+== Minimum Requirements
+
+* **Power Supply:** 
+One power cable is required.
+
+* **Power Consumption:** 
+Power usage must be supported by appropriate infrastructure.
+Monitor: ???W
+Pi5: ???W
+Total: ???W
+
+== Additional Requirements (Recommended)
+
+* **Table:**
+A stable table should be available.
+* **Space:** 
+Sufficient space for two players must be provided to ensure comfortable use.
