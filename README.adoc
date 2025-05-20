@@ -19,7 +19,7 @@ Sie sollen diese Dokumentation im Ascii-Doc Format schreiben. Referenzen hierfü
 == Softwaredokumentation
 Die Softwaredokumentation soll nach den Vorgaben von arc42 erstellt werden (https://arc42.org/). Als erstes soll jedoch die link:software(sad)/system-idee.adoc[System-Idee] geschrieben werden.
 
-Für das Einsteigen die Software empfiehlt es sich link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/01_introduction_and_goals.adoc?ref_type=heads[01_introduction_and_goals.adoc]
+Für das Einsteigen in die Software empfiehlt es sich link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/01_introduction_and_goals.adoc?ref_type=heads[01_introduction_and_goals.adoc]
 zu studieren. Für weitere Informationen über die Software stehen folgende Dokumente zur verfügung:
 
 - link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/02_architecture_constraints.adoc?ref_type=heads[02_architecture_constraints.adoc] Technische Limitationen
@@ -37,7 +37,7 @@ In der Hardwaredokumentation sollen Sie alles erfassen, was zum Bauen des Produk
 - *Files*: Alle Files, welche sie für die Erstellung von physischen Bauteilen aus Holz (z.b. Laser) oder Plastik (z.b. 3D-Druck) gebraucht haben.
 - *Abmessungen*: Für Elemente, welche sie nicht automatisiert herstellen liessen geben Sie die Masse an.
 
-Für das Einsteigen die Hardware empfiehlt es sich link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/07_deployment_view.adoc?ref_type=heads[07_deployment_view.adoc]
+Für das Einsteigen in die Hardware empfiehlt es sich link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/07_deployment_view.adoc?ref_type=heads[07_deployment_view.adoc]
 zu studieren.
 
 == Testdokumentation
