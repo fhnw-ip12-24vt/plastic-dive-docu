@@ -19,12 +19,26 @@ Sie sollen diese Dokumentation im Ascii-Doc Format schreiben. Referenzen hierfü
 == Softwaredokumentation
 Die Softwaredokumentation soll nach den Vorgaben von arc42 erstellt werden (https://arc42.org/). Als erstes soll jedoch die link:software(sad)/system-idee.adoc[System-Idee] geschrieben werden.
 
+Für das Einsteigen die Software empfiehlt es sich link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/01_introduction_and_goals.adoc?ref_type=heads[01_introduction_and_goals.adoc]
+zu studieren. Für weitere Informationen über die Software stehen folgende Dokumente zur verfügung:
+
+- link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/02_architecture_constraints.adoc?ref_type=heads[02_architecture_constraints.adoc] Technische Limitationen
+- link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/03_system_scope_and_context.adoc?ref_type=heads[03_system_scope_and_context.adoc] Projektumfang
+- link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/04_solution_strategy.adoc?ref_type=heads[04_solution_strategy.adoc] Programmiertechnische Entscheidungen (Design Patterns)
+- link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/06_runtime_view.adoc?ref_type=heads[06_runtime_view.adoc] Verhalten der Software auf Laufzeit
+- link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/08_concepts.adoc?ref_type=heads[08_concepts.adoc] Konzeptuelle Integrität
+- link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/09_architecture_decisions.adoc?ref_type=heads[09_architecture_decisions] Architektur Entscheidungen
+- link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/11_technical_risks.adoc?ref_type=heads[11_technical_risks] Assozierte technische Risiken von 04_solution_strategy.adoc
+
 == Hardwaredokumentation
 In der Hardwaredokumentation sollen Sie alles erfassen, was zum Bauen des Produkts nötig ist. Dazu gehören:
 
 - *Teileliste*: In der Teileliste führen sie alle Teile auf, welche Sie verbaut haben. Für jedes Teil soll auch noch angegeben werden, wie viel es gekostet hat und wie es verdrahtet wurde.
 - *Files*: Alle Files, welche sie für die Erstellung von physischen Bauteilen aus Holz (z.b. Laser) oder Plastik (z.b. 3D-Druck) gebraucht haben.
 - *Abmessungen*: Für Elemente, welche sie nicht automatisiert herstellen liessen geben Sie die Masse an.
+
+Für das Einsteigen die Hardware empfiehlt es sich link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/07_deployment_view.adoc?ref_type=heads[07_deployment_view.adoc]
+zu studieren.
 
 == Testdokumentation
 Die Testdokumentation zeigt auf, wie sie geprüft haben, ob das Produkt den Vorgaben entspricht. Einige Vorgaben werden automatisch mit Unit-Test überprüfbar sein, ander mit manuellen Tests.
