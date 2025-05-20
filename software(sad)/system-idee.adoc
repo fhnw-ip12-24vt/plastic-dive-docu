@@ -5,16 +5,6 @@ Umfang dieses Dokuments 1-3 A4 Seiten.
 
 == Kernaufgabe des Systems
 ****
-- Beschreiben Sie die Kernaufgabe und Verantwortlichkeit des Systems in zwei bis drei Sätzen. Formulieren Sie positiv und benutzen Sie die Kernbegriffe der Fachdomäne.
-- Fügen Sie die wichtigsten Begriffe oder Aspekte der Fachdomäne hinzu; wenige Begriffe (fünf bis zehn) genügen häufig.
-- Stimmen Sie diese Formulierung mit Kunden und Auftraggebern ab!
-
-Eine solche kurze Formulierung erleichtert die Kommunikation über das System. Sie definiert für alle Beteiligten das wichtigste Ziel (= das System). Gleichzeitig schafft sie einen begrifflichen Kontext, an dem sich alle Beteiligten orientieren können.
-
-Das System wird ein Videospiel sein, welches die Zielgruppe aufzeigt wie Mikroplastik ins Grundwasser gelangt und dadurch die Umwelt verschmutzt. Durch die Auswahl von Objekten aus den unterschiedlichen Materialien, welches eingescannt wird, um die Schwierigkeit zu setzten, zeigen wir das unterschiedliches Material unterschiedliche Wirkung am Wasser hat. +
-****
-'''
-****
 Das System ist ein interaktives Videospiel, das die Zielgruppe über den Einfluss von Mikroplastik auf das Grundwasser und dessen Umweltverschmutzung aufklärt.
 
 Durch die Simulation von Materialien und deren Wechselwirkungen mit Wasser ermöglicht das Spiel ein tieferes Verständnis der ökologischen Konsequenzen von Mikroplastik.
@@ -31,15 +21,6 @@ Die Verantwortung des Systems liegt in der präzisen und transparenten Vermittlu
 ****
 
 == Kategorie von System
-****
-- Interaktive Online-Systeme: Auch als operationale Systeme bezeichnet, arbeiten diese Systeme als Teil der normalen Geschäftsprozesse in Unternehmen. In den meisten Fällen enthalten sie Operationen auf Daten (Transaktionen Änderungs-und Lösch-Operationen), die vom Ablauf her in die Benutzeroberfläche eingebettet sind. Die Art der Transaktionen ist festgelegt. Die Systeme operieren auf möglichst aktuellen Datenbeständen. Sie erfordern ein hohes Maß an Systemverfügbarkeit und Performance.
-- Mobile Systeme: Eine (moderne) Variante von Online-Systeme - durch die starke Verbreitung von Smartphones und Tablet-Computern sehr wichtig geworden. Starker Fokus auf Benutzeroberfläche und Benutzbarkeit, oftmals per Internet an Backend-Systeme angebunden.
-- Entscheidungsunterstützungssysteme (decision support system): arbeiten oftmals auf Kopien der aktuellen Unternehmensdaten (data warehouse) und enthalten hauptsächlich lesende Datenzugriffe. Die Art der Anfragen an die Daten ist flexibel. Benutzer können neue Anfragen (queries) formulieren. Daher ist die Laufzeit von Anfragen im Vorfeld kaum abschätzbar. Solche Systeme tolerieren höhere Ausfallzeiten und geringere Performance.
-- Hintergrundsysteme (Offline-Systeme, Batch-Systeme): dienen hauptsächlich der Datenmanipulation, oftmals zur Vor- oder Nachverarbeitung vorhandener Datenbestände; werden zur Interaktion mit anderen Systemen eingesetzt.
-- Eingebettete Systeme (embedded systems): arbeiten eng verzahnt mit spezieller Hardware. Ein Beispiel für eingebettete Systeme sind Mobiltelefone (viele haben auch Echtzeitanforderungen).
-- Systeme mit Echtzeitanforderungen (real-time systems): Operationen werden innerhalb garantierter Zeiten fertiggestellt. Beispiel: Produktionssteuerung (Fließbänder mit festen Taktzeiten), Herzschrittmacher.
-****
-'''
 ****
 Das System ist eine interaktive Desktop-Anwendung, die auf einem Raspberry Pi 4 läuft und als eigenständiges Spiel entwickelt wird, um Umweltbildung durch Gamification zu fördern.
 
@@ -58,16 +39,6 @@ Der Einsatz eines Raspberry Pi 4 als Hardwareplattform macht das System ideal f�
 
 == Wesentliche Qualitätsanforderungen
 ****
-Die Qualität von Softwaresystemen wird immer bezogen auf einzelne Eigenschaften oder Merkmale. Beispiele für solche Merkmale sind Effizienz (Performance), Verfügbarkeit, Änderbarkeit, Verständlichkeit und Zuverlässigkeit.
-
-Es gibt eine ganze Reihe unterschiedlicher Definitionen von Qualitätsmodellen und Qualitätsmerkmalen. Alle definieren einige zentrale Qualitätseigenschaften (beispielsweise Zuverlässigkeit, Effizienz, Wartbarkeit, Portabilität etc.) und verfeinern diese Eigenschaften durch eine Hierarchie weiterer Merkmale.
-
-Egal, welches dieser Modelle Sie verwenden: Achten Sie innerhalb Ihrer Systeme oder Projekte auf eine einheitliche Terminologie für Qualitätsanforderungen. Der folgende Link zeigt Ihnen die Qualitätsmerkmale gemäss https://de.wikipedia.org/wiki/ISO/IEC_9126[DIN/ISO 9126]. Diese Norm enthält die wesentlichen Begriffe rund um Softwarequalität.
-
-Weil unsere Systeme auch Hardware enthalten, beziehen wir die oben beschriebenen Qualitäten auf das Gesamtsystem.
-****
-'''
-****
 *Effizienz* (Performance): Das System ist so konzipiert, dass es die begrenzten Ressourcen des Raspberry Pi 4 optimal nutzt und eine flüssige Benutzererfahrung mit schnellen Lade- und Reaktionszeiten bietet.
 
 *Zuverlässigkeit:* Die Anwendung gewährleistet eine robuste Ausführung, bei der Highscores und Spielstände zuverlässig verarbeitet und gespeichert werden, um Datenverlust oder Inkonsistenzen zu vermeiden.
@@ -81,11 +52,6 @@ Weil unsere Systeme auch Hardware enthalten, beziehen wir die oben beschriebenen
 *Nachhaltigkeit:* Die energieeffiziente Hardware des Raspberry Pi 4 in Kombination mit einer optimierten Softwarelösung gewährleistet ein umweltfreundliches Gesamtsystem, das sich ideal für Bildungszwecke eignet.
 ****
 == Relevante Stakeholder
-****
-Welche Rollen oder Personen (= Stakeholder) innerhalb oder ausserhalt der Organisation haben ein Interesse am System? Beispiele sind Benutzer der Kernfunktionalität („Anwender“), Administratoren und Betreiber, Benutzer mit
-Sonderfunktionen.
-****
-'''
 ****
 Jugendliche und Kinder sind die primären Anwender des Systems, da sie durch die spielerische Vermittlung von Wissen über die Auswirkungen von Mikroplastik auf die Umwelt zum nachhaltigen Denken angeregt werden sollen.
 
@@ -103,12 +69,6 @@ Technische Betreuer des Raspberry Pi 4 haben eine Sonderfunktion als Verantwortl
 ****
 
 == Schnittstellen zu externen Systemen
-****
-Sie sollten immer eine präzise Vorstellung der (fachlichen wie technischen) Umgebung eines Systems besitzen (= Kontext), d. h. welche Nachbarsysteme mit dem System interagieren.
-
-Führen Sie hier eine Liste dieser Systeme auf.
-****
-'''
 ****
 Das System interagiert mit Scannern, die verwendet werden, um die Materialien von Objekten einzulesen und deren Eigenschaften zu analysieren, bevor sie ins Spiel integriert werden.
 
