@@ -1,6 +1,8 @@
 == Overview
 
 This document serves to set up rules for the coding style and helps bring coherence to the software.
+The coding conventions where inspired by link:https://www.oracle.com/technetwork/java/codeconventions-150003.pdf[Oracle Java Coding Conventions]
+and approved by vote of the team and writen down in this document.
 
 == Naming Conventions
 
