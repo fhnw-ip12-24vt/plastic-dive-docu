@@ -49,4 +49,4 @@ Bei den manuellen Test sollen Testprotokolle darüber auskunft geben, wann was g
 
 
 == Programmierkonventionen (Coding-Conventions)
-Die Coding-Conventions geben vor, wie der Code geschrieben werden soll. Hierbei soll sich das Team an schon vorhandenen Coding-Conventions orientieren. Interessant ist vielmehr, wie sichergestellt wurde, dass diese Regeln auch eingehalten wurden.
+Die link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/coding_conventions.adoc?ref_type=heads[Coding-Conventions] geben vor, wie der Code geschrieben werden soll. Hierbei soll sich das Team an schon vorhandenen Coding-Conventions orientieren. Interessant ist vielmehr, wie sichergestellt wurde, dass diese Regeln auch eingehalten wurden.
