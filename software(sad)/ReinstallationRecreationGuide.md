@@ -154,45 +154,29 @@ Use a plunge saw to cut out. Note: The top panel and back door require angled cu
     - Run the project.
 
 ##### Step 2: Auto Start on Pi
-For the autostart we wrote a script called [gameStarterScript.sh](https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/ueberduengung/-/blob/dev/src/assembly/gameStarterScript.sh?ref_type=heads) that we place manually under *home/deploy/*
+For the autostart we wrote a script called [gameStarterScript.sh](https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/ueberduengung/-/blob/dev/src/assembly/gameStarterScript.sh?ref_type=heads) that we place automatically under */home/pi/*
 
-- Ensure the script is executable:
-  ```sh
-  chmod +x /home/deploy/gameStarterScript.sh
-  ```
 
 ##### Create a systemd Service File
 Create a new service file:
 ```sh
-sudo nano /etc/systemd/system/gameStarterScript.service
-```
-
-Add the following content (adjust paths as needed):
-```ini
-[Unit]
-Description=This timer executes a script to start a java game on pi startup
-After=network.target
-
-[Service]
-ExecStart=/home/pi/gameStarterScript.sh
-WorkingDirectory=/home/pi
-User=pi
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
+cd ~
+chmod +x /home/deploy/gameStarterScript.service
+mkdir .config/systemd/users/
+sudo mv deploy/Ueberduengung/gameStarterScript .config/systemd/users/gameStarterScript.service
 ```
 
 ##### Enable and Start the Service
 Reload `systemd`, enable the service, and start it:
 ```sh
-sudo systemctl daemon-reload
-sudo systemctl enable gameStarterScript.service
-sudo systemctl start gameStarterScript.service
+sudo loginctl enable-linger pi
+systemctl --user daemon-reload
+systemctl enable --user gameStarterScript.service
+systemctl start --user gameStarterScript.service
 ```
 
 ##### Check Status
-Verify the service is running:
+Verify the service is running and enabled:
 ```sh
-sudo systemctl status gameStarterScript.service
+systemctl --user status gameStarterScript.service
 ```
