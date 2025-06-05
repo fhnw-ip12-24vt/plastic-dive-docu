@@ -149,34 +149,17 @@ Use a plunge saw to cut out. Note: The top panel and back door require angled cu
 4. To run locally, execute the main() in App.java.
 5. To deploy to the Pi:
     - Ensure Pi and your PC are on the same network.
+    - Ensure the username and hostname in the pom.xml are correct
     - Edit line 34 in pom.xml to use your Pi’s IP.
     - Select the "run on pi" Maven profile.
     - Run the project.
 
-##### Step 2: Auto Start on Pi
-For the autostart we wrote a script called [gameStarterScript.sh](https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/ueberduengung/-/blob/dev/src/assembly/gameStarterScript.sh?ref_type=heads) that we place automatically under */home/pi/*
-
-
-##### Create a systemd Service File
-Create a new service file:
-```sh
-cd ~
-chmod +x /home/deploy/gameStarterScript.service
-mkdir .config/systemd/users/
-sudo mv deploy/Ueberduengung/gameStarterScript .config/systemd/users/gameStarterScript.service
-```
-
-##### Enable and Start the Service
-Reload `systemd`, enable the service, and start it:
-```sh
-sudo loginctl enable-linger pi
-systemctl --user daemon-reload
-systemctl enable --user gameStarterScript.service
-systemctl start --user gameStarterScript.service
-```
+##### Step 2: Auto Start on pi
+The pom should automatically create a user service for the specified user that will boot the game on login.
+The status of the service should be checked before being deemed reinstalled
 
 ##### Check Status
-Verify the service is running and enabled:
+Verify the service is enabled:
 ```sh
 systemctl --user status gameStarterScript.service
 ```
