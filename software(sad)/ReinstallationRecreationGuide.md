@@ -134,7 +134,7 @@ Lay the monitor into the monitor panel and then screw the plank in over it. depe
 - ads controller
 
 #### Process
-Follow the pin
+Follow the pinlayout on [pi4j for the joystick](https://www.pi4j.com/examples/components/joystickanalog/)
 
 ---
 
