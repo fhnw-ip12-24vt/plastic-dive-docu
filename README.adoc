@@ -41,6 +41,10 @@ In der Hardwaredokumentation sollen Sie alles erfassen, was zum Bauen des Produk
 Für das Einsteigen in die Hardware empfiehlt es sich link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/07_deployment_view.adoc?ref_type=heads[07_deployment_view.adoc]
 zu studieren.
 
+Das Produkt verwendet 3D gedruckte Elemente. Die 3D Modele dafür befinden sich unter dem sad link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/joystick_model.stl?ref_type=heads[joystick_model.stl]
+und link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/jostick_case_model.stl[jostick_case_model.stl].
+Um neue Teile zu erstellen wenden Sie sich an die link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/Reinstallation_Recreation_Guide.docx[Reinstallation_Recreation_Guide.docx].
+
 == Testdokumentation
 Die Testdokumentation zeigt auf, wie sie geprüft haben, ob das Produkt den Vorgaben entspricht. Einige Vorgaben werden automatisch mit Unit-Test überprüfbar sein, ander mit manuellen Tests.
 
