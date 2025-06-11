@@ -13,9 +13,9 @@ Here is described what and how everything is handed over to the user per [agreem
   - 3 Pieces of clothing
 ### Software
 - [Game Code](https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/ueberduengung/-/tree/dev?ref_type=heads)
-- [Software Documentation](https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/tree/main/software(sad)?ref_type=heads)
-- [Hardware Documentation](https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/tree/main/hardware?ref_type=heads)
-- [Produkt Management](No link yet will be a zip)
+- [Software Documentation](./software(sad))
+- [Hardware Documentation](./hardware)
+- [Produkt Management](./Confluence_11.06.2025.zip)
 - [Reinstallation / Recreation Guide](https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/ReinstallationRecreationGuide.md?ref_type=heads)
 - [Tests With our Results](https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/tree/main/testing?ref_type=heads)
 - [Information around our barcode scanner and the barcodes we use for recreation](https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/tree/main/Barcode%20stuff?ref_type=heads)
