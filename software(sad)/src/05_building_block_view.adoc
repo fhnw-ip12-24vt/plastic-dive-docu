@@ -9,7 +9,7 @@ image::../images/building_block_view.png[building_block_view]
 
 == Scope & Context
 
-The more detailed scope and context is specified in document 03: link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/03_system_scope_and_context.adoc[Scope and Context]
+The more detailed scope and context is specified in document 03: link:./03_system_scope_and_context.adoc[Scope and Context]
 
 This view contains actors interacting with our product:
 

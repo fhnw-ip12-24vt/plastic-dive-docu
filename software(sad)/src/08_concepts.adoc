@@ -4,7 +4,7 @@
 This document aims to explain and set the conventions for technical architecture, design, and behavior
 across the entire system. The main purpose of this document is to ensure conceptual integrity.
 
-= Domain Models
+== Domain Models
 
 Definition of terms used in the software to describe abstract entities.
 
@@ -26,30 +26,28 @@ Definition of terms used in the software to describe abstract entities.
 
 |===
 
-= User Experience Concepts
+== User Experience Concepts
 
 TBD
 
-= Safety and Security Concepts
+== Safety and Security Concepts
 
 It should not be possible to cheat in our game, hence we will have to ensure data integrity and security.
 Since the game is isolated and running locally in an arcade machine, there wont be specific technical
 implementation dedicated to security, instead, debugging should be main priority (example; check that
 the player cannot swim outside of boundaries).
 
-= Architecture and Design Patterns
+== Architecture and Design Patterns
 
-- link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/04_solution_strategy.adoc[Design Patterns]
+- link:./04_solution_strategy.adoc[Design Patterns]
 
-- link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/09_architecture_decisions.adoc[Architecture Decisions]
+- link:./09_architecture_decisions.adoc[Architecture Decisions]
 
-= “Under-the-hood” Concepts
+== “Under-the-hood” Concepts
 
 The game uses a fixed timestep loop of 60 fps.
 
--UML class diagram here-
-
-= Development Concepts
+== Development Concepts
 
 *Language & Imports*:
 
@@ -68,7 +66,7 @@ The game uses a fixed timestep loop of 60 fps.
 - Git, GitLab, GitKraken, GitDesktop
 - Maven
 
-= Operational Concepts
+== Operational Concepts
 
 *Startup & Shutdown Behavior*:The game (should) start automatically when the arcade machine is turned on. A door on the back of the
 machine can be opened to take out / provide maintanance to the electronics if needed.

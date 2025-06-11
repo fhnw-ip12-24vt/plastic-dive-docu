@@ -131,8 +131,8 @@ Lay the monitor into the monitor panel and then screw the plank in over it. depe
 #### Material
 - Pin Cables
 - 2 KY-023 Joysticks
-- Joystick model ([joystick_model.stl](https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/joystick_model.stl?ref_type=heads))
-- Joystick cover model ([joystick_case_model.stl](https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/jostick_case_model.stl?ref_type=heads))
+- Joystick model ([joystick_model.stl](./joystick_model.stl))
+- Joystick cover model ([joystick_case_model.stl](./jostick_case_model.stl))
 - PrucaSlicer Software
 - ADS115 controller
 

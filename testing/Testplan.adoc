@@ -38,7 +38,7 @@ Dieser Testplan bietet eine strukturierte Anleitung für die Durchführung und D
 
 ## Testpläne
 
-# Testplan für die Projektwoche (25.11. – 29.11.2024)
+## Testplan für die Projektwoche (25.11. – 29.11.2024)
 
 ### 1. User-Experience-Test für Prototypen (Raspberry Pi oder PC)
 - **Ziel**: Evaluierung der Benutzererfahrung bei der Steuerung, speziell der Joystick-Eingaben.

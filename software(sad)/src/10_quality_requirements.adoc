@@ -1,7 +1,7 @@
 [[section-quality-requirements]]
 == Overview
 
-This document references link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/01_introduction_and_goals.adoc?ref_type=heads[01_introduction_and_goals] and specificies and quantifies the quality goals in a meassurable way.
+This document references link:./01_introduction_and_goals.adoc[01_introduction_and_goals] and specificies and quantifies the quality goals in a meassurable way.
 
 === Quality Tree
 

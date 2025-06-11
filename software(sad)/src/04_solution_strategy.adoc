@@ -4,7 +4,7 @@
 This document should serve to help the reader understand why certain technical decisions were made in
 the software and why/how it helps reach our quality goals.
 
-= Decisions
+== Decisions
 
 [cols="1,3,1,6,1,3", options="header"]
 |===
@@ -12,28 +12,28 @@ the software and why/how it helps reach our quality goals.
 
 | D01
 | DTO for Obstacle-Classes
-| link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/01_introduction_and_goals.adoc?ref_type=heads[Q04] 
+| link:./01_introduction_and_goals.adoc[Q04]
 | A DTO (Data Transfer Object) is a simple object used to transfer data between layers or systems without exposing internal structures, making data handling cleaner, more secure, and easier to maintain.
 | cancelled 
 | link:https://www.baeldung.com/java-dto-pattern[DTO Design Pattern]
 
 | D02
 | Obstacle Spawner Factory
-| link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/01_introduction_and_goals.adoc?ref_type=heads[Q04] 
+| link:./01_introduction_and_goals.adoc[Q04]
 | The Factory Design Pattern is a creation pattern that provides a method for creating objects without specifying the exact class of the object to be created, promoting flexibility and decoupling in object creation.
 | in work 
 | link:https://www.baeldung.com/java-factory-pattern[Factory Design Pattern]
 
 | D03
 | MVC
-| link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/01_introduction_and_goals.adoc?ref_type=heads[Q04] 
+| link:./01_introduction_and_goals.adoc[Q04]
 | The MVC design pattern allows separation of concern between logic, data and graphics allowing for greater modularity and maintainability.
 | finished 
 | link:https://javabeginners.de/Design_Patterns/Model-View-Controller.php[MVC Design Pattern]
 
 | D04
 | Singleton for Logger
-| link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/01_introduction_and_goals.adoc?ref_type=heads[Q04]
+| link:./01_introduction_and_goals.adoc[Q04]
 | A singleton is a design pattern that ensures a class has only one instance throughout the program and provides a global point of access to that instance. It's commonly used for managing shared resources like configuration settings or logging systems.
 | finished
 | https://www.baeldung.com/java-singleton[Singleton Design Pattern]
@@ -123,7 +123,7 @@ making it easier to enforce global logging rules through the singleton.
 object or module receives a logger instance explicitly (often passed as a constructor or method argument).
 This approach improves testability, makes dependencies clearer, and avoids the global state issues
 associated with singletons. However this introduces potential risks of violating
-link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/coding_conventions.adoc[coding conventions]
+link:../coding_conventions.adoc[coding conventions]
 and make parameters in many methods too long. Additionally it would be harder to enforce a global rule
 on all objects who use the logger and make a log file, since there can be multiple different logger
 instances used in the code.
