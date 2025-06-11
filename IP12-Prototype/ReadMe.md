@@ -1,7 +1,6 @@
-# IP12 - Prototype
+#IP12 - Prototype
 
 ## Contents
-
     English
       \__Project setup
             \___Libraries

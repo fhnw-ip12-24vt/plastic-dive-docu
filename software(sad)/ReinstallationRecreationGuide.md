@@ -130,11 +130,17 @@ Lay the monitor into the monitor panel and then screw the plank in over it. depe
 
 #### Material
 - Pin Cables
-- 2 ... Joysticks
-- ads controller
+- 2 KY-023 Joysticks
+- ADS115 controller
 
 #### Process
-Follow the pin
+[Pi5 pin Map](https://www.pi4j.com/documentation/pin-numbering/)
+
+Connect 3V3 pins on both Joysticks and the ADS115 Controller to the 3V3 pin on the Pi5
+
+Connect grounding pins on both Joysticks and the ADS115 Controller to the grounding pins on the Pi5
+
+Connect the x and y of a joystick to the A0 and A1 pins on the ADS115 Controller and repeat for the second joystick with the A2 and A3 pins, test with the game whether x and y are connected to the correct pins.
 
 ---
 
@@ -155,13 +161,15 @@ Follow the pin
 1. Clone the Git repository.
 2. Add pom.xml as a Maven project.
 3. Run:  
-   mvn clean install
+   mvn clean package
 4. To run locally, execute the main() in App.java.
 5. To deploy to the Pi:
     - Ensure Pi and your PC are on the same network.
-    - Ensure the username and hostname in the pom.xml are correct
+    - Ensure the username and hostname in the pom.xml correspond to the pi's hostname and user
     - Edit line 34 in pom.xml to use your Pi’s IP.
-    - Select the "run on pi" Maven profile.
+    - Select the "run on pi" Maven profile or run
+   ````mvn install -f pom.xml -Prelease,user ````
+   in the same folder as the pom.xml of the project.
     - Run the project.
 
 ##### Step 2: Auto Start on pi
