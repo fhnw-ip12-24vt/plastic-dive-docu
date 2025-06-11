@@ -101,30 +101,40 @@ Use a plunge saw to cut out. Note: The top panel and back door require angled cu
 ### Raspberry Pi
 
 #### Tools
+- Screwdriver
 
+#### Material
+- 2-4 screws
+- Raspberry Pi 5
 
 #### Process
-
+Depending on how hard the wood is you have to pre-drill holes for the screws and then screw in the raspberry pie.
 
 ---
 
 ### Monitor
-
 #### Tools
+- Screwdriver
 
+#### Material
+- 2-4 screws
+- Monitor (ours is from Xiaomi any works, but you might have to reduce the resolution because the game lags on to high resolution)
+- wooden plank (wider then the monitor less than 70cm)
 
 #### Process
-
+Lay the monitor into the monitor panel and then screw the plank in over it. depending on how thick  the monitor is you might have to attach some material to press the screen against the monitor panel. 
 
 ---
 
 ### Joysticks
 
-#### Tools
-
+#### Material
+- Pin Cables
+- 2 ... Joysticks
+- ads controller
 
 #### Process
-
+Follow the pin
 
 ---
 
