@@ -131,6 +131,9 @@ Lay the monitor into the monitor panel and then screw the plank in over it. depe
 #### Material
 - Pin Cables
 - 2 KY-023 Joysticks
+- Joystick model ([joystick_model.stl](https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/joystick_model.stl?ref_type=heads))
+- Joystick cover model ([joystick_case_model.stl](https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/jostick_case_model.stl?ref_type=heads))
+- PrucaSlicer Software
 - ADS115 controller
 
 #### Process
@@ -142,6 +145,12 @@ Connect 3V3 pins on both joysticks and the ADS115 Controller to the 3V3 pin on t
 Connect grounding pins on both joysticks and the ADS115 Controller to the grounding pins on the Pi5
 
 Connect the x and y of a joystick to the A0 and A1 pins on the ADS115 Controller and repeat for the second joystick with the A2 and A3 pins, test with the game whether x and y are connected to the correct pins.
+
+Import the STL 3D-models (joystick + joystick cover) into PrucaSlicer and click "slice now". Add support pillers to models and export to 3D print. After models have been printed into a plastic piece u may have to do minor readjustement:
+- For the joystick model, drill into the bottom side with 3mm drill until you reach the end of the tube, then drill 3.5mm in the same spot with the same depth as the height of the mechanical joystick pole.
+- For the joystick cover model, if joystick scrapes the underside of the cover, take sandpaper and sand off the hole on the side to make it slightly bigger
+
+put the jostick model onto the mechanical jostick until firm and glue joystick gover on top of it.
 
 ---
 
