@@ -1,5 +1,7 @@
 [[section-quality-requirements]]
-== Quality Requirements
+== Overview
+
+This document references link:https://gitlab.fhnw.ch/ip12-24vt/ip12-24vt_ueberduengung/docu/-/blob/main/software(sad)/src/01_introduction_and_goals.adoc?ref_type=heads[01_introduction_and_goals] and specificies and quantifies the quality goals in a meassurable way.
 
 === Quality Tree
 
@@ -7,20 +9,20 @@
 |===
 |Quality Category |Quality |Description | Scenario
 
-|Performance|||
-||||
+|Performance|Accuracy|Measurements and calculations shall be correct, hitboxes do not deviate 20 pixels from the sprite|SC01
+||FPS|The game runs in 60 fps|
+||Stability|The Window should not freeze if the main controller is in a loop for an extended period of time|
+||Smoothness|The game steps should not take more than 16 milliseconds to ensure that game steps do not overlap and feel smooth|
 
-|Usability|||
-||||
+|Usability|Ease of maintainance|A new person unfamiliar with the system can use/fix/extend it intuitively and can orient themselves with provided documentation|
+||Ease of use|A new person can intuitively play the game with no longer than a 1 minute explanation|SC02
 
-|Reliability|||
-||||
+|Reliability|Integrity|All saved data can be retrieved with little to no corruption being present|SC03
+||Readability|The code inside long methods should be commented periodically to explain what a section does|
 
-|Maintainability|||
-||||
+|Maintainability|Modification|The final product is capable of being modified without extraneous effort|SC04
 
-|Accessibility|||
-||||
+|Accessibility|Independence|The project can run on a RaspberryPi 5 without an internet connection|SC05
 
 |===
 
@@ -29,9 +31,9 @@
 [cols="1,9" options="header"]
 |===
 |ID|Scenario
-|SC01|
-|SC02|
-|SC03|
-|SC04|
-|SC05|
+|SC01|A player should be able to dodge obstacles and expect that the hitbox approximately fits with the sprite and does not deviate more than 20 Pixels from it.
+|SC02|The player should not waste time in long tutorials but intuitively immediately jump into the game. Explaining should not take longer than a Minute.
+|SC03|Example, the highscore should be able to be loaded in at the end of the game and display the scores accurately with no error.
+|SC04|If the client want to modify of continue developing the game, they should not have great difficulties doing so. Documentation and code should be comprehensible enough for someone without experience to be able to jump right into development.
+|SC05|The hardware of the game (RaspberryPi 5) should be able to run independently and without internet connection.
 |===
